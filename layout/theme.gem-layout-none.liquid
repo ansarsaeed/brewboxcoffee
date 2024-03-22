@@ -1,0 +1,220 @@
+{% comment %}
+	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
+
+	You SHOULD NOT modify source code in this page because
+	It is automatically generated from GEMPAGE BUILDER
+	Try to edit page with the live editor.
+{% endcomment %}
+<!doctype html>
+<html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
+  <head>
+    <script>
+      window.Store = window.Store || {};
+      window.Store.id = {{ shop.id }};
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+    <link rel="preconnect" href="https://cdn.shopify.com">
+    <link rel="preconnect" href="https://fonts.shopifycdn.com">
+    <link rel="preconnect" href="https://v.shopify.com">
+    <link rel="preconnect" href="https://cdn.shopifycloud.com">
+
+    <title>
+      {{- page_title -}}
+
+      {%- if current_tags -%}
+        {% capture cat_array %}{%- render 'advanced-tag-loop' -%}{% endcapture %}
+        {% assign cat_array = cat_array | split: '|' %}
+        {% assign title_tags = '' %}
+        {% assign meta_tags = current_tags | join: ', ' %}
+        {%- for tag in current_tags -%}
+          {% assign is_advanced_tag = false %}
+          {% assign cat = tag | split: '_' | first %}
+
+          {%- unless cat == tag -%}
+            {%- if cat_array contains cat -%}
+              {% assign is_advanced_tag = true %}
+              {% assign title_tags = title_tags | append: ', ' | append: tag | replace_first: '_', ': ' %}
+            {%- endif -%}
+          {%- endunless -%}
+
+          {%- unless is_advanced_tag -%}
+            {% assign title_tags = title_tags | append: ', ' | append: tag %}
+          {%- endunless -%}
+        {%- endfor -%}
+        {{ 'general.title.tags' | t: tags: title_tags | remove_first: ', ' }}
+      {%- endif -%}
+
+      {%- if current_page != 1 -%}
+        {{- 'general.title.page' | t: page: current_page -}}
+      {%- endif -%}
+
+      {%- unless page_title contains shop.name -%}
+        {{- 'general.title.shop' | t: shop: shop.name -}}
+      {%- endunless -%}
+    </title>
+
+    {% if page_description != blank %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'favicon' %}
+
+    {% if template contains 'collection' and current_tags %}
+      <meta name="robots" content="noindex">
+      <link rel="canonical" href="{{ shop.url }}{{ collection.url }}">
+    {% else %}
+      <link rel="canonical" href="{{ canonical_url }}">
+    {% endif %}
+
+    <meta name="viewport" content="width=device-width">
+
+    {% assign x_handle = settings.social_x | split: 'x.com/' | last | split: 'twitter.com/' | last %}
+    {%
+      render 'social-meta-tags',
+      twitter_handle: x_handle,
+    %}
+
+    <link rel="preload" href="{{ settings.type_menu | font_url }}" as="font" crossorigin="anonymous">
+    <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
+
+    {% comment %}{{ content_for_header }}{% endcomment %}
+    {% capture modified_content_for_header %}{{ content_for_header }}{% endcapture %}
+    {% assign modified_content_for_header = modified_content_for_header
+      | remove: 'https:\/\/cdn.shopify.com\/s\/files\/1\/0071\/7114\/5831\/t\/11\/assets\/zendesk-embeddable.js?v=1602613287\u0026shop=brew-box-coffee.myshopify.com'
+    %}
+    {% assign modified_content_for_header = modified_content_for_header
+      | remove: 'https:\/\/geolocation-recommendations.shopifyapps.com\/locale_bar\/script.js?shop=brew-box-coffee.myshopify.com'
+    %}
+    {% assign modified_content_for_header = modified_content_for_header
+      | remove: 'https:\/\/d217z8zw4dqir.cloudfront.net\/script_tags\/loop_snippets?shop=brew-box-coffee.myshopify.com'
+    %}
+    {% assign modified_content_for_header = modified_content_for_header
+      | remove: 'https:\/\/static.klaviyo.com\/onsite\/js\/klaviyo.js?company_id=LFCj4C\u0026shop=brew-box-coffee.myshopify.com'
+    %}
+    {% assign modified_content_for_header = modified_content_for_header
+      | remove: 'https:\/\/js.convertflow.co\/production\/websites\/59300.js?shop=brew-box-coffee.myshopify.com'
+    %}
+
+    {{ modified_content_for_header }}
+
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+    {% unless settings.reduce_animations %}
+      {{ 'ripple.css' | asset_url | stylesheet_tag }}
+    {% endunless %}
+
+    {% comment %}Inject theme-object begin{% endcomment %}
+    <script async>
+      window.Theme = window.Theme || {};
+      window.Theme.version = '11.0.0';
+      window.Theme.name = 'Empire';
+      window.Theme.routes = {
+        "root_url": "{{ routes.root_url }}",
+        "account_url": "{{ routes.account_url }}",
+        "account_login_url": "{{ routes.account_login_url }}",
+        "account_logout_url": "{{ routes.account_logout_url }}",
+        "account_register_url": "{{ routes.account_register_url }}",
+        "account_addresses_url": "{{ routes.account_addresses_url }}",
+        "collections_url": "{{ routes.collections_url }}",
+        "all_products_collection_url": "{{ routes.all_products_collection_url }}",
+        "search_url": "{{ routes.search_url }}",
+        "predictive_search_url": "{{ routes.predictive_search_url }}",
+        "cart_url": "{{ routes.cart_url }}",
+        "cart_add_url": "{{ routes.cart_add_url }}",
+        "cart_change_url": "{{ routes.cart_change_url }}",
+        "cart_clear_url": "{{ routes.cart_clear_url }}",
+        "product_recommendations_url": "{{ routes.product_recommendations_url }}",
+      };
+    </script>
+    {% comment %}Inject theme-object end{% endcomment %}
+  {% render 'gp-head' %}
+<!--Gem_Page_Header_Script-->
+{% render 'gem-app-header-scripts' %}
+<!--End_Gem_Page_Header_Script-->
+</head>
+
+  <body>
+<div class="gem-container">
+	{{ content_for_layout }}
+</div><!-- end .gem-container --><!--Gem_Page_Footer_Script-->
+  {%- liquid
+    assign gpTemplateSuffix = template.suffix
+    assign arrSplitSuffix = gpTemplateSuffix | split: '-'
+    if gpTemplateSuffix contains 'gem-' and gpTemplateSuffix contains '-template' and arrSplitSuffix.size == 3
+      assign isV6GpTemplate = true
+    endif
+    assign gpShopMeta = shop.metafields.gempages
+    if gpShopMeta
+      if gpShopMeta['productV6-default'] == 'true' and request.page_type == 'product'
+        assign isProductDefault = true
+      endif
+      if gpShopMeta['collectionV6-default'] == 'true' and request.page_type == 'collection'
+        assign isCollectionDefault = true
+      endif
+      if gpShopMeta['indexV6-default'] == 'true' and request.page_type == 'index'
+        assign isIndexDefault = true
+      endif
+      if isProductDefault or isCollectionDefault or isIndexDefault or isPreviewV6
+        assign isV6GpTemplate = true
+      endif
+    endif
+  %}
+  {% if isV6GpTemplate %}
+    {% render 'gem-app-footer-scripts', GEM_FOOTER_SCRIPT: GEM_FOOTER_SCRIPT %}
+  {% endif %}
+<!--End_Gem_Page_Footer_Script-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

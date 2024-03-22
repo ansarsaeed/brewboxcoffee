@@ -1,0 +1,86 @@
+{% comment %}
+	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
+
+	You SHOULD NOT modify source code in this page because
+	It is automatically generated from GEMPAGE BUILDER
+	Try to edit page with the live editor.
+{% endcomment %}
+
+(function( jQuery ){
+  var $module = jQuery('#m-1616834440018');
+  var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+  $module.css({
+    'height': 'auto'
+  });
+  jQuery(window).resize(function(){
+    $module.css('height', 'auto');
+  });
+  $module.children('.module').removeClass('full-height');
+
+  var image = $module.children('.module').data('image') || '';
+  if ($module.children('.module').data('speed') || $module.children('.module').data('speed') == 0) {
+    var speed = parseFloat($module.children('.module').data('speed'));
+  } else {
+    var speed = 0.2;
+  }
+  if($module.data('gfv3parallax') != undefined) {
+    $module.removeData('gfv3parallax');
+  }
+  $module.gfV3Parallax({
+    'image': image,
+    'speed': speed,
+    'mode': mode
+  });
+  if(mode == 'dev') {
+    var moduleId = "1616834440018";
+    var moduleIdSlug = moduleId.toString().replace(/-/g, '');
+    if (moduleIdSlug == "1616834440018") {
+      window.getParallax1616834440018 = function() {
+        return $module.data('gfv3parallax');
+      }
+    }
+  }
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1616686039128').children('.module');
+  $module.gfV3Product();
+})( window.GemQuery || jQuery );
+    
+(function(jQuery) {
+  var $module = jQuery('#m-1616686039128-0').children('.module');
+  var effect = $module.attr('data-effect');
+  var magnify = $module.attr('data-zoom-level');
+  var displayType = $module.attr('data-displaytype');
+  $module.gfV3ProductImage({
+    'effect': effect,
+    'displayType': displayType,
+    'magnify': magnify
+  })
+})(window.GemQuery || jQuery);
+    
+    
+(function(jQuery) {
+    var $module = jQuery('#m-1616686039128-2').children('.module');
+    $module.gfV3ProductPrice({
+        displayCurrency: true
+    });
+})(window.GemQuery || jQuery);
+    
+    
+    
+    
