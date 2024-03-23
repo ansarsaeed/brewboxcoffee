@@ -331,14 +331,7 @@
     <div class="productitem__container">
       {{ recently_viewed_header }}
 
-      {%  assign composition = product.metafields.custom.product_composition.value %}
-
-
       <div class="productitem__image-container">
-        {%  if composition.size > 0 and template.suffix contains 'shopcoffee' %}
-          {% render 'product-composition', composition:composition %}
-        {%  endif %}
-
         <a
           class="productitem--image-link"
           href="{{ product.url | within: collection }}"

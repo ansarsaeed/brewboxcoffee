@@ -95,7 +95,7 @@
     {{ 'theme.css' | asset_url | stylesheet_tag }}
 
     {% unless settings.reduce_animations %}
-      {{ 'ripple.css' | asset_url | stylesheet_tag }}
+      {{ 'ripple.css' | asset_url | stylesheet_tag: preload: true }}
     {% endunless %}
 
     {% comment %}Inject theme-object begin{% endcomment %}
@@ -122,7 +122,10 @@
       };
     </script>
     {% comment %}Inject theme-object end{% endcomment %}
-  {% render 'gp-head' %}
+  <!--Gem_Page_Header_Script-->
+{% render 'gem-app-header-scripts' %}
+<!--End_Gem_Page_Header_Script-->
+{% render 'gp-head' %}
 </head>
 
   <body

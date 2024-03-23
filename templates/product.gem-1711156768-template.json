@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "update-static-product",
+      "type": "static-product",
       "blocks": {
         "title": {
           "type": "title",
@@ -13,13 +13,13 @@
           "settings": {
           }
         },
-        "short_description_ey4pnJ": {
-          "type": "short-description",
+        "rating": {
+          "type": "rating",
           "settings": {
           }
         },
-        "rating": {
-          "type": "rating",
+        "price": {
+          "type": "price",
           "settings": {
           }
         },
@@ -34,15 +34,21 @@
           "type": "share",
           "settings": {
           }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "title",
         "vendor",
-        "short_description_ey4pnJ",
         "rating",
+        "price",
         "form",
-        "share"
+        "share",
+        "description"
       ],
       "settings": {
         "gallery_aspect_ratio": "natural",
