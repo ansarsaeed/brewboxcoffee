@@ -1,3 +1,84 @@
+{% style %}
+ .collection--section .productitem__image-container{
+  position:relative;
+ }
+ .collection--section .productitem__image-container figure{
+  width: 100%;
+    height: 236px;
+ } 
+ .collection--section .productitem__image-container img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+ }
+ .collection--section .productitem__image-container .compostions{
+    position: absolute;
+    background-color: rgba(232, 153, 60, .5);
+    backdrop-filter: saturate(1.8) blur(10px);
+    z-index: 1;
+    left:0px;
+    width:100%;
+    bottom:0px;
+    top:0px;
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    padding:10px 5px;
+    justify-content:space-between;
+    align-items:space-between;
+    transform:scale(0);
+    animation: scaleDown  .4s linear;
+ }
+ .collection--section .productitem__image-container:hover .compostions{
+  display:flex;
+  transform:scale(1);
+  animation: scaleUp  .4s linear;
+ }
+
+ @keyframes scaleUp{
+  from{
+    display:none;
+    transform:scale(0);
+  }
+  to{
+    display:flex;
+    transform:scale(1);
+  }
+ }
+
+ @keyframes scaleDown{
+  from{
+    display:flex;
+    transform:scale(1);
+  }
+  to{
+    display:none;
+    transform:scale(0);
+  }
+ }
+
+ .collection--section .productitem__image-container .compostions > div h3{
+  font-size:14px;
+  margin-top:0px;
+  margin-bottom:3px;
+ }
+ .collection--section .productitem__image-container .compostions > div p{
+  font-size:12px;
+  margin:0px;
+ }
+ @media (max-width:768px){
+    .collection--section .productitem__image-container .compostions > div h3{
+        font-size:10px;
+    }
+    .collection--section .productitem__image-container .compostions > div p{
+        font-size:9px;
+    }
+    .collection--section .productitem__image-container figure{
+        height:190px;
+    }
+ }  
+{%  endstyle %}
+
 
 {%- liquid
   assign filter_block = nil

@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "static-product",
+      "type": "update-static-product",
       "blocks": {
         "title": {
           "type": "title",
@@ -13,13 +13,8 @@
           "settings": {
           }
         },
-        "price_rwHWkm": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "description_QTPxna": {
-          "type": "description",
+        "short_description_ey4pnJ": {
+          "type": "short-description",
           "settings": {
           }
         },
@@ -44,8 +39,7 @@
       "block_order": [
         "title",
         "vendor",
-        "price_rwHWkm",
-        "description_QTPxna",
+        "short_description_ey4pnJ",
         "rating",
         "form",
         "share"
