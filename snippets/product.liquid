@@ -325,6 +325,10 @@
                   {{ readmore_split[0] }}
                 </div>
               {% endif %}
+            {% when 'short-description' %}
+                {% assign short_description = product.metafields.custom.product_short_description %}
+                {{ short_description | metafield_tag  }}
+  
 
             {% when 'form' %}
               <div

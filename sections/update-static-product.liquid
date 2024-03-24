@@ -6,12 +6,224 @@
     endif
   endfor
 %}
-{% style  %}
-span.atc-button--text  span,
-span.atc-button--text .product__price {
-  display:none;
+{% style %}
+.product-gallery{
+  background-color: #dddddd;
+    padding: 20px;
+    border-radius:5px;
+    width: calc(60% + 50px);
 }
-{%  endstyle %}
+.product-details{
+  position: relative;
+    padding: 50px 20px;
+    border-radius: 20px;
+    top:50%;
+    background-color: white;
+    z-index: 600;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    transform: translate(-70px, -50%);
+}
+.product-vendor a{
+  color:#e8993c;
+}
+.product-form--atc .product-form__action-wrapper{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:flex-start;
+}
+.product-form--atc button[type="submit"]{
+  background-color:#e8993c;
+  color:#ffffff;
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+}
+.product-form--atc button[type="submit"]:hover{
+  background-color:#d1852b;
+}
+/* quantity-selector{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+[data-button-wrapper-minus] button,
+[data-button-wrapper-plus] button{
+  border-radius: 100% !important;
+  width:50px;
+  height:50px;
+  border:1px solid #000000;
+}
+.quantity-selector__input{
+   border:0px;
+   min-width:45px;
+} */
+.section--collapse{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+._collapse{
+  background: #dddddd;
+    border-radius: 5px;
+    max-width: 780px;
+    cursor:pointer;
+    border:1px solid #e8993c;
+}
+._collapse._active,
+._collapse:hover{
+  background-color:#ffffff;
+}
+._collapse ._collapse__title{
+  position:relative;
+  padding:15px 20px;
+  font-size:25px;
+  font-weight:bold;
+  font-style:italic;
+  text-transform:uppercase;
+}
+
+._collapse._active ._collapse__title,
+._collapse:hover ._collapse__title{
+  color:#000000;
+}
+._collapse ._collapse__title::after{
+  content:"+";
+  position:absolute;
+  right:1rem;
+  top:50%;
+  background-color:#ffffff;
+  width:30px;
+  height:30px;
+  border-radius:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#000000;
+  transform:translateY(-50%);
+}
+._collapse._active ._collapse__title::after{
+  content:"-";
+}
+._collapse._active ._collapse__title::after,
+._collapse:hover ._collapse__title::after{
+  background-color:#dddddd;
+}
+._collapse ._collapse__content{
+  display:none;
+  padding:0 20px 20px;
+  border-top:2px solid  #bbbbbb;
+}
+._collapse._active ._collapse__content,
+._collapse:hover ._collapse__content
+{ 
+  border-top:2px solid  #e8993c;
+  color:#000000;
+}
+._collapse._active ._collapse__content{
+  display:block;
+}
+.section--compostion--container{
+  background-color:#ffffff;
+  padding:50px 30px;
+  margin:20px auto;
+  border:1px solid #e8993c;
+  border-radius:10px;
+}
+.section--compostion h2{
+  font-size:40px;
+  position:relative;
+}
+.section--compostion h2:after{
+  content: "";
+    position: absolute;
+    height: 3px;
+    background-color: #e8993c;
+    width: 100px;
+    left: 7px;
+    bottom: -10px;
+}
+.compostions{
+  margin-top:80px;
+  display:flex;
+  flex-wrap:wrap;
+  column-gap:50px;
+  row-gap:20px;
+}
+.compostions > div{
+  min-width:calc(25% - 50px);
+}
+.compostions > div h3{
+  font-size:28px;
+  position:relative;
+  margin-top:0px;
+}
+.compostions > div h3:after{
+  content:"";
+  position: absolute;
+    height: 3px;
+    background-color: #e8993c;
+    width: 60px;
+    left: 0px;
+    bottom: -10px;
+
+}
+@media(max-width:976px){
+  .product-details {
+    transform: translate(0px, -50%);
+}
+.product-main{
+  width:50%;
+}
+.product-gallery{
+  width:50%;
+}
+}
+@media(max-width:768px){
+  .product-details {
+    transform: unset;
+    box-shadow:unset;
+    padding:10px;
+}
+[data-product-wrapper]{
+  display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+[data-product-wrapper] .product-main{
+  width:100%;
+}
+[data-product-wrapper] .product-gallery{
+  width:100%;
+}
+.section--collapse{
+  padding-left:15px;
+  padding-right:15px;
+}
+._collapse ._collapse__title{
+  font-size:20px;
+}
+.section--compostion{
+  padding-left:15px;
+  padding-right:15px;
+}
+.section--compostion h2{
+  font-size:26px;
+}
+.compostions > div h3{
+  font-size:20px;
+}
+.compostions{
+  margin-top:50px;
+}
+.section--compostion--container{
+  padding-left:20px;
+  padding-right:20px;
+}
+}
+{% endstyle %}
 
 <script
   type="application/json"
@@ -50,7 +262,7 @@ span.atc-button--text .product__price {
 <section
   class="
     product__container
-    product__container--two-columns
+      product__container--two-columns
   "
   data-product-wrapper
 >
@@ -67,6 +279,51 @@ span.atc-button--text .product__price {
   %}
 </section>
 
+{%  assign composition = product.metafields.custom.product_composition.value %}
+
+{% if composition.size > 0 %}
+<section class="section--compostion product__container">
+  <div class="section--compostion--container">
+    
+    {% if product.metafields.custom.composition_title != blank  %}
+      <h2>{{ product.metafields.custom.composition_title }}</h2>
+    {% else %}
+      <h2>COMPOSITION</h2>
+    {% endif %}
+
+    {% render 'product-composition', composition:composition %}
+    
+  </div>
+</section>
+{% endif %}
+
+<section class="section--collapse product__container">
+  <div class="_collapse _active">
+    <div class="_collapse__title">About this Coffee</div>
+    <div class="_collapse__content">
+        {{ product.content }}
+    </div>
+  </div>
+  <div class="_collapse">
+    <div class="_collapse__title">About The Farmer</div>
+    <div class="_collapse__content">
+    {{ product.metafields.custom.about_farmer |  metafield_tag }}
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  let _collapse = document.querySelectorAll('.section--collapse ._collapse');
+  _collapse.forEach((_col)=>{
+
+    _col.addEventListener('click', function (e) { 
+      console.log( _col.classList);
+        _col.classList.toggle('_active');
+    })
+  })
+})();
+</script>
 {% schema %}
 {
   "name": "t:sections.product_information.name",
@@ -194,6 +451,12 @@ span.atc-button--text .product__price {
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type":"short-description",
+      "name":"Short Description",
+      "limit":1,
+      "settings": []
     },
     {
       "type": "collapsible-tab",

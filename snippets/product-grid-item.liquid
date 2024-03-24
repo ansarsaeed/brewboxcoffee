@@ -60,6 +60,8 @@
   {% assign product_description_size = product.description | strip_html | size %}
   {% if recently_viewed == true %}
     {%- capture recently_viewed_header -%}
+
+   
     <div class="product-recently-viewed-card-time" data-product-handle="{{product.handle}}">
       <button
         class="product-recently-viewed-card-remove"
@@ -330,8 +332,11 @@
 
     <div class="productitem__container">
       {{ recently_viewed_header }}
-
+      {%  assign composition = product.metafields.custom.product_composition.value %}
       <div class="productitem__image-container">
+        {%  if composition.size > 0 and template.suffix contains 'shopcoffee' %}
+          {% render 'product-composition', composition:composition %}
+        {%  endif %}
         <a
           class="productitem--image-link"
           href="{{ product.url | within: collection }}"
