@@ -43,7 +43,7 @@
   .product-form--atc button[type="submit"]:hover{
     background-color:#d1852b;
   }
-  quantity-selector{
+  /* quantity-selector{
     display:flex;
     align-items:center;
     gap:10px;
@@ -58,7 +58,7 @@
   .quantity-selector__input{
      border:0px;
      min-width:45px;
-  }
+  } */
   .section--collapse{
     display:flex;
     flex-direction:column;
@@ -73,7 +73,7 @@
   }
   ._collapse._active,
   ._collapse:hover{
-    background-color:#e8993c;
+    background-color:#ffffff;
   }
   ._collapse ._collapse__title{
     position:relative;
@@ -86,14 +86,14 @@
   
   ._collapse._active ._collapse__title,
   ._collapse:hover ._collapse__title{
-    color:#ffffff;
+    color:#000000;
   }
   ._collapse ._collapse__title::after{
     content:"+";
     position:absolute;
     right:1rem;
     top:50%;
-    background-color:white;
+    background-color:#ffffff;
     width:30px;
     height:30px;
     border-radius:100%;
@@ -103,6 +103,13 @@
     color:#000000;
     transform:translateY(-50%);
   }
+  ._collapse._active ._collapse__title::after{
+    content:"-";
+  }
+  ._collapse._active ._collapse__title::after,
+  ._collapse:hover ._collapse__title::after{
+    background-color:#dddddd;
+  }
   ._collapse ._collapse__content{
     display:none;
     padding:0 20px 20px;
@@ -111,17 +118,14 @@
   ._collapse._active ._collapse__content,
   ._collapse:hover ._collapse__content
   { 
-    border-top:2px solid  #ffffff;
-    color:#ffffff;
+    border-top:2px solid  #e8993c;
+    color:#000000;
   }
   ._collapse._active ._collapse__content{
     display:block;
   }
   .section--compostion--container{
-    background-image:url(https://workshopcoffee.com/cdn/shop/files/Mask_group_2.png?v=1706250321);
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    background-color:#ffffff;
     padding:50px 30px;
     margin:20px auto;
     border:1px solid #e8993c;
@@ -274,21 +278,7 @@
       gallery_hover_zoom: section.settings.gallery_hover_zoom
     %}
   </section>
-  
-  <section class="section--collapse product__container">
-    <div class="_collapse _active">
-      <div class="_collapse__title">Product Description</div>
-      <div class="_collapse__content">
-          {{ product.content }}
-      </div>
-    </div>
-    <div class="_collapse">
-      <div class="_collapse__title">About The Farmer</div>
-      <div class="_collapse__content">
-      {{ product.metafields.custom.about_farmer |  metafield_tag }}
-      </div>
-    </div>
-  </section>
+
   {%  assign composition = product.metafields.custom.product_composition.value %}
   
   {% if composition.size > 0 %}
@@ -306,6 +296,22 @@
     </div>
   </section>
   {% endif %}
+  
+  <section class="section--collapse product__container">
+    <div class="_collapse _active">
+      <div class="_collapse__title">“About this Coffee</div>
+      <div class="_collapse__content">
+          {{ product.content }}
+      </div>
+    </div>
+    <div class="_collapse">
+      <div class="_collapse__title">About The Farmer</div>
+      <div class="_collapse__content">
+      {{ product.metafields.custom.about_farmer |  metafield_tag }}
+      </div>
+    </div>
+  </section>
+  
   <script>
   (function(){
     let _collapse = document.querySelectorAll('.section--collapse ._collapse');
