@@ -10,8 +10,7 @@
     "variants": {
       "choose_option": "Escolha um {{ option }}",
       "chosen_option_html": "{{ option }}: <span>{{ value }}<\/span>",
-      "choose_variant": "Escolha uma variante",
-      "unavailable": "Indisponível"
+      "choose_variant": "Escolha uma variante"
     },
     "general": {
       "by_vendor": "por {{ vendor }}",
@@ -126,10 +125,6 @@
       "dropdown_label": "País",
       "submit_button_label": "Atualização País"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "Topo",
-      "mobile_button_label": "Voltar ao topo"
-    },
     "breadcrumbs": {
       "home": "Início",
       "collections": "Coleções"
@@ -181,7 +176,7 @@
       "social_media_icon": "Encontre-nos no {{ platform }}",
       "share_on_facebook": "Compartilhar no Facebook",
       "share_on_pinterest": "Pinar no Pinterest",
-      "share_on_x": "Compartilhar no X",
+      "share_on_twitter": "Tweetar no Twitter",
       "share_on_linkedin": "Compartilhar no LinkedIn",
       "no_matched_products": "{{ tag }} não tem produtos correspondentes",
       "total_reviews": "total de avaliações",
@@ -217,14 +212,6 @@
         "tooltip_link": "Ver produto"
       }
     },
-    "faq": {
-      "summary": "Quer saber mais alguma coisa?",
-      "content": "Economize o tempo e o trabalho de escrever o mesmo e-mail repetidamente, listando as perguntas e respostas mais frequentes aqui. Uma página de perguntas frequentes dedicada deve ajudar a atender às necessidades básicas de seus clientes, reduzindo o número de e-mails de atendimento ao cliente, aumentando as conversões e criando uma experiência de compra mais satisfatória!",
-      "categories": {
-        "view_all": "Ver tudo",
-        "view_less": "Ver menos"
-      }
-    },
     "countdown-timer": {
       "days": "Dias",
       "hours": "Horas",
@@ -248,9 +235,7 @@
       "name_placeholder": "Nome do destinatário (opcional)",
       "message_label": "Mensagem (opcional)",
       "message_placeholder": "Mensagem (opcional)",
-      "max_characters": "Máximo de {{ max_characters }} caracteres",
-      "send_on_label": "Enviar em (opcional)",
-      "send_on_placeholder": "AAAA-MM-DD"
+      "max_characters": "Máximo de {{ max_characters }} caracteres"
     }
   },
   "header": {
@@ -323,11 +308,6 @@
       "no_shipping_required": "Seu carrinho não necessita de envio.",
       "shipment_too_heavy": "Desculpe, mas essa remessa é pesada demais para ser enviada.",
       "error_general": "Desculpe, não conseguimos calcular o valor do seu frete no momento."
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "<strong>{{ amount }}<\/strong> longe do frete grátis!",
-      "free_shipping_eligible_html": "Você está elegível para <strong>frete grátis<\/strong>!",
-      "free_shipping_empty_html": "Frete grátis em pedidos acima de <strong>{{ amount }}<\/strong>!"
     }
   },
   "contact": {
@@ -498,9 +478,6 @@
       "remove_filter": "Remover filtro",
       "clear_all": "Limpar tudo"
     },
-    "menus": {
-      "title": "Menus"
-    },
     "sort_by": {
       "title": "Organizar por"
     },
@@ -558,8 +535,7 @@
       "posts_title": "Postagens",
       "pages_and_posts_title": "Páginas e Postagens",
       "view_all_results": "Pesquise \"{{ terms }}\"",
-      "no_results": "Nenhum resultado correspondente encontrado.",
-      "products_title": "Produtos"
+      "no_results": "Nenhum resultado correspondente encontrado."
     }
   },
   "onboarding": {
@@ -582,6 +558,12 @@
       "title": "Título do produto",
       "vendor": "Fabricante do produto",
       "by_vendor": "Pelo fabricante"
+    },
+    "twitter": {
+      "title": "Feed do Twitter",
+      "tweet_html": "Conecte sua conta do Twitter para engajar clientes dentro e fora do seu site!",
+      "username": "nome de usuário",
+      "time": "8 horas atrás"
     },
     "page": {
       "title": "Título da página"

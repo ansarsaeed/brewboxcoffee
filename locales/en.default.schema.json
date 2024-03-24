@@ -440,128 +440,6 @@
         "content": "Gift cards"
       }
     },
-    "faq": {
-      "name": "FAQ",
-      "title": {
-        "label": "Heading"
-      },
-      "blocks": {
-        "heading": {
-          "name": "Heading",
-          "heading": {
-            "label": "Heading"
-          }
-        },
-        "question": {
-          "name": "Question",
-          "title": {
-            "label": "Question"
-          },
-          "content": {
-            "label": "Answer"
-          },
-          "question": {
-            "label": "Question"
-          },
-          "answer": {
-            "label": "Answer"
-          },
-          "icon": {
-            "label": "Icon",
-            "option_1": "No icon",
-            "option_2": "Award trophy",
-            "option_3": "Car",
-            "option_4": "Cell phone",
-            "option_5": "Chat",
-            "option_6": "Chat alternate",
-            "option_7": "Credit card",
-            "option_8": "Delivery",
-            "option_9": "Delivery cart",
-            "option_10": "Delivery door",
-            "option_11": "Delivery hand off",
-            "option_12": "Delivery package",
-            "option_13": "Discount",
-            "option_14": "Email",
-            "option_15": "Envelope",
-            "option_16": "Gift card",
-            "option_17": "Heart",
-            "option_18": "Information",
-            "option_19": "Label tag",
-            "option_20": "Lock",
-            "option_21": "Number 14",
-            "option_22": "Number 24",
-            "option_23": "Number 30",
-            "option_24": "People",
-            "option_25": "Pin",
-            "option_26": "Question mark",
-            "option_27": "Rating 5 star",
-            "option_28": "Rating star",
-            "option_29": "Smile",
-            "option_30": "Store",
-            "option_31": "Tape measure",
-            "option_32": "Thumbs up",
-            "option_33": "Transfer"
-          },
-          "image": {
-            "label": "Image",
-            "info": "50 x 50px recommended. Uploading an image will override any icon selected above."
-          }
-        },
-        "category": {
-          "name": "Category",
-          "heading": {
-            "label": "Heading"
-          },
-          "header_1": {
-            "content": "Category cards"
-          },
-          "show_category_card": {
-            "label": "Show category card"
-          },
-          "image": {
-            "label": "Category card image",
-            "info": "100 x 100px recommended."
-          }
-        }
-      },
-      "presets": {
-        "category": "Text",
-        "name": "FAQ"
-      },
-      "section_width": {
-        "label": "Section width",
-        "option_1": "Regular",
-        "option_2": "Wide",
-        "option_3": "Full width"
-      },
-      "heading": {
-        "label": "Heading"
-      },
-      "header_1": {
-        "content": "Categories"
-      },
-      "enable_category_cards": {
-        "label": "Enable category cards"
-      },
-      "category_card_image_crop": {
-        "label": "Category card image crop",
-        "option_1": "Original",
-        "option_2": "Square",
-        "option_3": "Circle"
-      },
-      "category_heading_size": {
-        "label": "Category heading size",
-        "option_1": "Small",
-        "option_2": "Medium",
-        "option_3": "Large"
-      },
-      "header_2": {
-        "content": "Question"
-      },
-      "icon_color": {
-        "label": "Icon color"
-      }
-    },
     "countdown_timer": {
       "name": "Countdown timer",
       "full_width": {
@@ -917,8 +795,7 @@
         "label": "Heading"
       },
       "layout": {
-        "desktop_label": "Desktop layout",
-        "mobile_label": "Mobile layout",
+        "label": "Layout",
         "option_1": "Grid",
         "option_2": "Slideshow"
       },
@@ -943,18 +820,19 @@
         "title_card": {
           "name": "Title card",
           "image": {
-            "desktop_label": "Image",
-            "mobile_label": "Mobile image",
+            "label": "Image",
             "info": "500 x 750px .jpg recommended"
           },
           "horizontal_size": {
-            "label": "Horizontal state on desktop",
+            "label": "Horizontal size",
+            "info": "Only applies to 'Grid' layout.",
             "option_1": "1 column",
             "option_2": "2 columns",
             "option_3": "3 columns"
           },
           "vertical_size": {
-            "label": "Vertical state on desktop",
+            "label": "Vertical size",
+            "info": "Only applies to 'Grid' layout.",
             "option_1": "1 row",
             "option_2": "2 rows"
           },
@@ -979,12 +857,6 @@
           "text_color": {
             "label": "Text color"
           },
-          "show_on_mobile": {
-            "label": "Show title card on mobile"
-          },
-          "enable_full_width_on_mobile": {
-            "label": "Enable full width on mobile"
-          },
           "header_1": {
             "content": "Call to action"
           },
@@ -999,16 +871,12 @@
           },
           "overlay_opacity": {
             "label": "Opacity"
-          },
-          "header_3": {
-            "content": "Grid layout"
           }
         },
         "view_all_card": {
           "name": "View all card",
           "image": {
-            "desktop_label": "Image",
-            "mobile_label": "Mobile image",
+            "label": "Image",
             "info": "500 x 750px .jpg recommended"
           },
           "text_alignment": {
@@ -1040,15 +908,6 @@
           },
           "overlay_opacity": {
             "label": "Opacity"
-          },
-          "header_2": {
-            "content": "Grid layout"
-          },
-          "show_on_mobile": {
-            "label": "Show view all card on mobile"
-          },
-          "enable_full_width_on_mobile": {
-            "label": "Enable full width on mobile"
           }
         }
       },
@@ -1234,7 +1093,10 @@
         "label": "Subheading"
       },
       "text_alignment": {
-        "label": "Text alignment"
+        "label": "Text alignment",
+        "option_1": "Left",
+        "option_2": "Center",
+        "option_3": "Right"
       },
       "button_label": {
         "label": "Button label"
@@ -1498,7 +1360,10 @@
         "option_3": "Large"
       },
       "text_alignment": {
-        "label": "Text alignment"
+        "label": "Text alignment",
+        "option_1": "Left",
+        "option_2": "Center",
+        "option_3": "Right"
       },
       "presets": {
         "rich_text": {
@@ -1600,7 +1465,10 @@
         "option_2": "Secondary"
       },
       "textbox_text_alignment": {
-        "label": "Text alignment"
+        "label": "Text alignment",
+        "option_1": "Left",
+        "option_2": "Center",
+        "option_3": "Right"
       },
       "textbox_text_position": {
         "label": "Text position",
@@ -1694,7 +1562,10 @@
             "label": "Background link"
           },
           "text_alignment": {
-            "label": "Text alignment"
+            "label": "Text alignment",
+            "option_1": "Left",
+            "option_2": "Center",
+            "option_3": "Right"
           },
           "header_1": {
             "content": "Buttons"
@@ -1784,6 +1655,27 @@
         "testimonials": {
           "name": "Testimonials",
           "category": "Testimonials"
+        }
+      }
+    },
+    "twitter_feed": {
+      "name": "Twitter feed",
+      "title": {
+        "label": "Heading"
+      },
+      "username": {
+        "label": "Username"
+      },
+      "retweets": {
+        "label": "Show retweets"
+      },
+      "images": {
+        "label": "Show images"
+      },
+      "presets": {
+        "twitter_feed": {
+          "name": "Twitter feed",
+          "category": "Social media"
         }
       }
     },
@@ -1910,9 +1802,6 @@
       "name": "Cart page",
       "show_sku": {
         "label": "Show SKU"
-      },
-      "show_vendor": {
-        "label": "Show vendor"
       },
       "enable_order_notes": {
         "label": "Enable order notes text box"
@@ -2069,9 +1958,6 @@
           }
         }
       }
-    },
-    "faq_page": {
-      "name": "FAQ page"
     },
     "footer": {
       "name": "Footer",
@@ -2464,8 +2350,7 @@
         "content": "Subcollections"
       },
       "layout": {
-        "desktop_label": "Desktop layout",
-        "mobile_label": "Mobile layout",
+        "label": "Layout",
         "option_1": "Grid",
         "option_2": "Slideshow"
       },
@@ -2487,10 +2372,6 @@
       },
       "shop_all_card_background_color": {
         "label": "Background"
-      },
-      "enable_full_width_on_mobile": {
-        "label": "Enable full width on mobile",
-        "info": "Only applies to 'Grid' layout."
       }
     },
     "subcollections_grid": {
@@ -2659,16 +2540,6 @@
       "show_logo": {
         "label": "Show logo",
         "info": "Visit [brand settings](\/admin\/settings\/branding) to edit logo."
-      }
-    },
-    "performance": {
-      "name": "Performance",
-      "header_1": {
-        "content": "Scripts"
-      },
-      "minify_scripts": {
-        "label": "Minify scripts",
-        "info": "Minified scripts may improve performance but pose challenges for custom code adjustments."
       }
     },
     "colors": {
@@ -3042,19 +2913,6 @@
       "name": "Cart",
       "enable_checkout_lock_icon": {
         "label": "Show lock icon on checkout buttons"
-      },
-      "header": {
-        "content": "Free shipping bar"
-      },
-      "paragraph": {
-        "content": "Configure your shipping rates separately from the free shipping bar. [Learn more](https:\/\/help.shopify.com\/en\/manual\/discounts\/discount-types\/free-shipping)."
-      },
-      "enable_free_shipping_bar": {
-        "label": "Enable free shipping bar"
-      },
-      "free_shipping_minimum_amount": {
-        "label": "Free shipping minimum amount",
-        "info": "Only shown in your default currency. Enter a number without currency symbols or letters. Separate dollars and cents using a decimal. Example: '200.00'."
       }
     },
     "continue_shopping_link": {
@@ -3076,12 +2934,6 @@
     "advanced": {
       "name": "Advanced",
       "header_1": {
-        "content": "Back to top"
-      },
-      "enable_back_to_top_button": {
-        "label": "Enable back-to-top button"
-      },
-      "header_2": {
         "content": "Gift card"
       },
       "gift_card_logo": {

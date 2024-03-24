@@ -68,12 +68,8 @@
       {% capture search_button %}
         <div class="site-header-mobile-search-button--button" tabindex="-1">
           {% render 'icon-search' %}
-          <span class="visually-hidden">
-            {{- 'general.accessibility.search' | t -}}
-          </span>
         </div>
       {% endcapture %}
-
       {% if section.settings.enable_live_search %}
         <button
           class="site-header-mobile-search-button"

@@ -26,7 +26,21 @@
 
 {% assign product_form_class = 'option-style-' | append: settings.product_option_style %}
 
-{% form 'product', product, class: product_form_class, data-product-form: '' %}
+{% form 'product', product, class: product_form_class, data-product-form: ''  ,data-loop-product-id:product.id %}
+
+{% assign template_exists = false %}
+{% capture template_content %}
+    {% render 'chargezen-plan-picker', type: 'product-widget', product: product %}
+{% endcapture %}
+
+{% if template_content contains 'Rendering loop-subscriptions' %}
+  {% assign template_exists = true %}
+{% endif %}
+
+{% if template_exists %}
+  {% render 'chargezen-plan-picker', type: 'product-widget', product: product %}
+{% endif %}
+
   {% comment %}
     Display variant options for a product
 
@@ -65,7 +79,6 @@
   {% liquid
     assign product = product
     assign selected_variant = selected_variant
-    assign select_first_available_variant = settings.select_first_available_variant
     assign style = settings.product_option_style
     assign enable_swatches = settings.swatches_enable
     assign sold_out_options = settings.sold_out_options
@@ -106,7 +119,6 @@
     Display variant options for a product
   
     @param product
-    @param select_first_available_variant
     @param selected_variant
     @param variant_selection_id
     @param sold_out_options
@@ -119,10 +131,6 @@
     @param swatches_product_page_size
     @param swatches_custom_colors
   {% endcomment %}
-  
-  {%- if select_first_available_variant == nil -%}
-    {% assign select_first_available_variant = true %}
-  {%- endif -%}
   
   <variant-selection
     {% if variant_selection_id != blank %}id="{{ variant_selection_id }}"{% endif %}
@@ -176,7 +184,6 @@
         Display variant options for a product
       
         @param product
-        @param select_first_available_variant
         @param selected_variant
         @param variant_selection_id
         @param sold_out_options
@@ -196,9 +203,7 @@
         style="display: none;"
         {% if sold_out_options == 'disabled' %}disable-unavailable{% endif %}
         {% if sold_out_options == 'hidden' %}remove-unavailable{% endif %}
-        {% if select_first_available_variant %}select-first-available{% endif %}
         data-options-selection
-        data-unavailable-text="{{ 'product.variants.unavailable' | t }}"
       >
         <script>
           (function() {
@@ -323,7 +328,6 @@
         </label>
       </summary>
   
-      {% comment %} Recipient email {% endcomment %}
       <div class="recipient-form" data-recipient-form>
         <div class="recipient-form__field">
           {%- if show_recipient_form_labels -%}
@@ -341,7 +345,7 @@
             {%- endcapture -%}
           {%- endif -%}
   
-          {%- capture recipient_email -%}
+          {%- capture recipient_email_input -%}
             <input
               class="
                 recipient-form__input
@@ -372,19 +376,18 @@
           {%- if recipient_form_label_position == 'top' -%}
             <div class="recipient-form__input-wrapper">
               {{- recipient_email_label -}}
-              {{- recipient_email -}}
+              {{- recipient_email_input -}}
             </div>
             {{- recipient_error_message -}}
           {%- else -%}
             <div class="recipient-form__input-wrapper">
-              {{- recipient_email -}}
+              {{- recipient_email_input -}}
               {{- recipient_email_label -}}
             </div>
             {{- recipient_error_message -}}
           {%- endif -%}
         </div>
   
-        {% comment %} Recipient name {% endcomment %}
         <div class="recipient-form__field">
           <div class="recipient-form__input-wrapper">
             {%- if show_recipient_form_labels -%}
@@ -401,7 +404,7 @@
               {%- endcapture -%}
             {%- endif -%}
   
-            {%- capture recipient_name -%}
+            {%- capture recipient_name_input -%}
               <input
                 class="
                   recipient-form__input
@@ -424,15 +427,14 @@
   
             {%- if recipient_form_label_position == 'top' -%}
               {{ recipient_name_label }}
-              {{ recipient_name }}
+              {{ recipient_name_input }}
             {%- else -%}
-              {{ recipient_name }}
+              {{ recipient_name_input }}
               {{ recipient_name_label }}
             {%- endif -%}
           </div>
         </div>
   
-        {% comment %} Recipient message {% endcomment %}
         <div class="recipient-form__field">
           <div class="recipient-form__input-wrapper">
             {%- liquid
@@ -457,7 +459,7 @@
               {%- endcapture -%}
             {%- endif -%}
   
-            {%- capture recipient_message -%}
+            {%- capture recipient_message_input -%}
               <textarea
                 class="
                   recipient-form__input
@@ -485,9 +487,9 @@
   
             {%- if recipient_form_label_position == 'top' -%}
               {{ recipient_message_label }}
-              {{ recipient_message }}
+              {{ recipient_message_input }}
             {%- else -%}
-              {{ recipient_message }}
+              {{ recipient_message_input }}
               {{ recipient_message_label }}
             {%- endif -%}
           </div>
@@ -499,56 +501,6 @@
               </small>
             </span>
           {%- endif -%}
-        </div>
-  
-        {% comment %} Recipient send on date {% endcomment %}
-        <div class="recipient-form__field">
-          <div class="recipient-form__input-wrapper">
-            {%- if show_recipient_form_labels -%}
-              {%- capture recipient_date_label -%}
-                <label
-                  class="
-                    recipient-form__label
-                    {{ recipient_form_label_classes }}
-                  "
-                  for="recipient-date-{{ section.id }}"
-                >
-                  {{- 'recipient.form.send_on_label' | t -}}
-                </label>
-              {%- endcapture -%}
-            {%- endif -%}
-  
-            {%- capture recipient_date -%}
-              <input
-                class="
-                  recipient-form__input
-                  recipient-form__input--date
-                  {{ recipient_form_input_classes }}
-                "
-                id="recipient-date-{{ section.id }}"
-                {%- if show_recipient_form_placeholders -%}
-                  placeholder="{{- 'recipient.form.send_on_placeholder' | t -}}"
-                {%- endif -%}
-                {%- unless show_recipient_form_labels -%}
-                  aria-label="{{- 'recipient.form.send_on_placeholder' | t -}}"
-                {%- endunless -%}
-                type="date"
-                name="properties[Send on]"
-                autocomplete="send_on"
-                pattern="\d{4}-\d{2}-\d{2}"
-                value="{{ form.send_on }}"
-                data-recipient-form-input
-              >
-            {%- endcapture -%}
-  
-            {%- if recipient_form_label_position == 'top' -%}
-              {{ recipient_date_label }}
-              {{ recipient_date }}
-            {%- else -%}
-              {{ recipient_date }}
-              {{ recipient_date_label }}
-            {%- endif -%}
-          </div>
         </div>
       </div>
     </details>
@@ -563,20 +515,15 @@
         context: 'product',
       %}
 
-      {% assign variant_available = true %}
-      {% if selected_variant and selected_variant.available == false %}
-        {% assign variant_available = false %}
-      {% endif %}
-
       <button
         class="
           product-form--atc-button
-          {% if variant_available == false or product.available == false %}
+          {% if selected_variant and selected_variant.available == false %}
             disabled
           {% endif %}
         "
         type="submit"
-        {% if variant_available == false or product.available == false %}
+        {% if selected_variant and selected_variant.available == false %}
           disabled
         {% endif %}
         data-product-atc
@@ -585,28 +532,11 @@
         {% endif %}
       >
         <span class="atc-button--text">
-          {% unless variant_available == false or product.available == false %}
+          {% unless selected_variant and selected_variant.available == false %}
           {% if product.template_suffix contains 'pre-order' %}
               {{ 'product.buttons.pre_order' | t }}
             {% else %}
               {{ 'product.buttons.add_to_cart' | t }}
-              <span>•</span>
-              {%
-                render 'product-price',
-                product: product,
-                class_root: 'product',
-                price: price,
-                price_varies: false,
-                compare_at_price: compare_at_price,
-                compare_at_price_varies: false,
-                on_sale: on_sale,
-                emphasize_price: false,
-                show_original: true,
-                show_range: false,
-                include_unit_price: true,
-                include_tax_line: true,
-                include_hidden_price: true
-              %}
             {% endif %}
           {% else %}
             {{ 'product.buttons.sold_out' | t }}

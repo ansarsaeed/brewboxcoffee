@@ -103,8 +103,7 @@
               render 'rimg',
               img: media,
               size: 'x700',
-              lazy: false,
-              attr: 'fetchpriority="high"',
+              lazy: true,
               background: true
             %}
           {% endif %}
@@ -114,9 +113,8 @@
             img: media,
             class: 'product-gallery--loaded-image'
             size: 'x700',
-            lazy: false,
-            canvas: false,
-            attr: 'fetchpriority="high"',
+            lazy: true,
+            canvas: true
           %}
         </div>
       {% when 'external_video' %}

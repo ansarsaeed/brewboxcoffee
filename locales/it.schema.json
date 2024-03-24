@@ -440,128 +440,6 @@
         "content": "Buoni regalo"
       }
     },
-    "faq": {
-      "name": "Domande frequenti",
-      "title": {
-        "label": "Titolo"
-      },
-      "blocks": {
-        "heading": {
-          "name": "Titolo",
-          "heading": {
-            "label": "Titolo"
-          }
-        },
-        "question": {
-          "name": "Domanda",
-          "title": {
-            "label": "Domanda"
-          },
-          "content": {
-            "label": "Risposta"
-          },
-          "question": {
-            "label": "Domanda"
-          },
-          "answer": {
-            "label": "Risposta"
-          },
-          "icon": {
-            "label": "Icona",
-            "option_1": "Nessuna icona",
-            "option_2": "Trofeo premio",
-            "option_3": "Auto",
-            "option_4": "Cellulare",
-            "option_5": "Chat",
-            "option_6": "Chat alternativa",
-            "option_7": "Carta di credito",
-            "option_8": "Consegna",
-            "option_9": "Carrello di consegna",
-            "option_10": "Porta di consegna",
-            "option_11": "Passaggio a mano",
-            "option_12": "Pacco di consegna",
-            "option_13": "Sconto",
-            "option_14": "Email",
-            "option_15": "Busta",
-            "option_16": "Buono regalo",
-            "option_17": "Cuore",
-            "option_18": "Informazioni",
-            "option_19": "Etichetta tag",
-            "option_20": "Lucchetto",
-            "option_21": "Numero 14",
-            "option_22": "Numero 24",
-            "option_23": "Numero 30",
-            "option_24": "Persone",
-            "option_25": "Puntina",
-            "option_26": "Punto interrogativo",
-            "option_27": "Valutazione a 5 stelle",
-            "option_28": "Stella di valutazione",
-            "option_29": "Sorriso",
-            "option_30": "Negozio",
-            "option_31": "Metro a nastro",
-            "option_32": "Pollice su",
-            "option_33": "Trasferimento"
-          },
-          "image": {
-            "label": "Immagine",
-            "info": "Consigliata 50 x 50px. Caricando un'immagine, si sovrascrive qualsiasi icona selezionata sopra."
-          }
-        },
-        "category": {
-          "name": "Categoria",
-          "heading": {
-            "label": "Intestazione"
-          },
-          "header_1": {
-            "content": "Carte di categoria"
-          },
-          "show_category_card": {
-            "label": "Mostra la scheda della categoria"
-          },
-          "image": {
-            "label": "Immagine della scheda della categoria",
-            "info": "Consigliata 100 x 100px."
-          }
-        }
-      },
-      "presets": {
-        "category": "Testo",
-        "name": "Domande frequenti"
-      },
-      "section_width": {
-        "label": "Larghezza della sezione",
-        "option_1": "Regolare",
-        "option_2": "Larga",
-        "option_3": "A larghezza piena"
-      },
-      "heading": {
-        "label": "Intestazione"
-      },
-      "header_1": {
-        "content": "Categorie"
-      },
-      "enable_category_cards": {
-        "label": "Abilita le schede delle categorie"
-      },
-      "category_card_image_crop": {
-        "label": "Ritaglio dell'immagine della scheda della categoria",
-        "option_1": "Originale",
-        "option_2": "Quadrata",
-        "option_3": "Circolare"
-      },
-      "category_heading_size": {
-        "label": "Dimensione dell'intestazione della categoria",
-        "option_1": "Piccola",
-        "option_2": "Media",
-        "option_3": "Grande"
-      },
-      "header_2": {
-        "content": "Domanda"
-      },
-      "icon_color": {
-        "label": "Colore dell'icona"
-      }
-    },
     "countdown_timer": {
       "name": "Conto alla rovescia",
       "full_width": {
@@ -917,8 +795,7 @@
         "label": "Intestazione"
       },
       "layout": {
-        "desktop_label": "Layout desktop",
-        "mobile_label": "Layout mobile",
+        "label": "Layout",
         "option_1": "Griglia",
         "option_2": "Presentazione"
       },
@@ -943,19 +820,18 @@
         "title_card": {
           "name": "Card titolo",
           "image": {
-            "desktop_label": "Immagine",
-            "mobile_label": "Immagine mobile",
+            "label": "Immagine",
             "info": "Consigliato 500 x 750px in formato .jpg"
           },
           "horizontal_size": {
-            "label": "Stato orizzontale sul desktop",
+            "label": "Dimensione orizzontale",
             "info": "Si applica solo al layout \"Griglia\".",
             "option_1": "1 colonna",
             "option_2": "2 colonne",
             "option_3": "3 colonne"
           },
           "vertical_size": {
-            "label": "Stato verticale sul desktop",
+            "label": "Dimensione verticale",
             "info": "Si applica solo al layout \"Griglia\".",
             "option_1": "1 riga",
             "option_2": "2 righe"
@@ -981,12 +857,6 @@
           "text_color": {
             "label": "Colore del testo"
           },
-          "show_on_mobile": {
-            "label": "Mostra scheda del titolo su mobile"
-          },
-          "enable_full_width_on_mobile": {
-            "label": "Abilita larghezza completa su mobile"
-          },
           "header_1": {
             "content": "Call to action"
           },
@@ -1001,16 +871,12 @@
           },
           "overlay_opacity": {
             "label": "Opacità"
-          },
-          "header_3": {
-            "content": "Layout a griglia"
           }
         },
         "view_all_card": {
           "name": "Visualizza tutte le carte",
           "image": {
-            "desktop_label": "Immagine",
-            "mobile_label": "Immagine mobile",
+            "label": "Immagine",
             "info": "Consigliato 500 x 750px in formato .jpg"
           },
           "text_alignment": {
@@ -1042,15 +908,6 @@
           },
           "overlay_opacity": {
             "label": "Opacità"
-          },
-          "header_2": {
-            "content": "Layout a griglia"
-          },
-          "show_on_mobile": {
-            "label": "Mostra la scheda di visualizzazione completa sul cellulare"
-          },
-          "enable_full_width_on_mobile": {
-            "label": "Abilita larghezza completa su mobile"
           }
         }
       },
@@ -1236,7 +1093,10 @@
         "label": "Sottotitolo"
       },
       "text_alignment": {
-        "label": "Allineamento del testo"
+        "label": "Allineamento del testo",
+        "option_1": "Sinistra",
+        "option_2": "Centro",
+        "option_3": "Destra"
       },
       "button_label": {
         "label": "Etichetta bottone"
@@ -1500,7 +1360,10 @@
         "option_3": "Grande"
       },
       "text_alignment": {
-        "label": "Allineamento del testo"
+        "label": "Allineamento del testo",
+        "option_1": "Sinistra",
+        "option_2": "Centro",
+        "option_3": "Destra"
       },
       "presets": {
         "rich_text": {
@@ -1602,7 +1465,10 @@
         "option_2": "Secondario"
       },
       "textbox_text_alignment": {
-        "label": "Allineamento del testo"
+        "label": "Allineamento del testo",
+        "option_1": "Sinistra",
+        "option_2": "Centro",
+        "option_3": "Destra"
       },
       "textbox_text_position": {
         "label": "Posizione del testo",
@@ -1696,7 +1562,10 @@
             "label": "Link in background"
           },
           "text_alignment": {
-            "label": "Allineamento del testo"
+            "label": "Allineamento del testo",
+            "option_1": "Sinistra",
+            "option_2": "Centro",
+            "option_3": "Destra"
           },
           "header_1": {
             "content": "Bottoni"
@@ -1786,6 +1655,27 @@
         "testimonials": {
           "name": "Testimonial",
           "category": "Testimonial"
+        }
+      }
+    },
+    "twitter_feed": {
+      "name": "Feed di Twitter",
+      "title": {
+        "label": "Intestazione"
+      },
+      "username": {
+        "label": "Nome utente"
+      },
+      "retweets": {
+        "label": "Mostra retweet"
+      },
+      "images": {
+        "label": "Mostra immagini"
+      },
+      "presets": {
+        "twitter_feed": {
+          "name": "Feed di Twitter",
+          "category": "Social media"
         }
       }
     },
@@ -1912,9 +1802,6 @@
       "name": "Pagina del carrello",
       "show_sku": {
         "label": "Mostra SKU"
-      },
-      "show_vendor": {
-        "label": "Mostra fornitore"
       },
       "enable_order_notes": {
         "label": "Abilita la casella di testo delle note dell'ordine"
@@ -2071,9 +1958,6 @@
           }
         }
       }
-    },
-    "faq_page": {
-      "name": "Pagina FAQ"
     },
     "footer": {
       "name": "Piè di pagina",
@@ -2466,8 +2350,7 @@
         "content": "Sottoraccolte"
       },
       "layout": {
-        "desktop_label": "Layout desktop",
-        "mobile_label": "Layout mobile",
+        "label": "Layout",
         "option_1": "Griglia",
         "option_2": "Presentazione"
       },
@@ -2489,10 +2372,6 @@
       },
       "shop_all_card_background_color": {
         "label": "Sfondo"
-      },
-      "enable_full_width_on_mobile": {
-        "label": "Abilita larghezza completa su mobile",
-        "info": "Si applica solo al layout 'Grid'."
       }
     },
     "subcollections_grid": {
@@ -2661,16 +2540,6 @@
       "show_logo": {
         "label": "Mostra logo",
         "info": "Vai su [impostazioni del marchio](\/admin\/settings\/branding) per modificare il logo."
-      }
-    },
-    "performance": {
-      "name": "Prestazione",
-      "header_1": {
-        "content": "Script"
-      },
-      "minify_scripts": {
-        "label": "Minimizzare script",
-        "info": "Gli script minimizzati possono migliorare le prestazioni ma pongono sfide per gli aggiustamenti del codice personalizzato."
       }
     },
     "colors": {
@@ -3044,19 +2913,6 @@
       "name": "Carrello",
       "enable_checkout_lock_icon": {
         "label": "Mostra l'icona del lucchetto sui bottoni di pagamento"
-      },
-      "header": {
-        "content": "Barra di spedizione gratuita"
-      },
-      "paragraph": {
-        "content": "Configura le tariffe di spedizione separatamente dalla barra di spedizione gratuita. [Ulteriori informazioni](https:\/\/help.shopify.com\/it\/manual\/discounts\/discount-types\/free-shipping)."
-      },
-      "enable_free_shipping_bar": {
-        "label": "Abilita la barra di spedizione gratuita"
-      },
-      "free_shipping_minimum_amount": {
-        "label": "Importo minimo per la spedizione gratuita",
-        "info": "Visualizzato solo nella tua valuta predefinita. Inserisci un numero senza simboli di valuta o lettere. Separa i dollari e i centesimi usando un punto decimale. Esempio: '200.00'."
       }
     },
     "continue_shopping_link": {
@@ -3078,12 +2934,6 @@
     "advanced": {
       "name": "Avanzate",
       "header_1": {
-        "content": "Torna su"
-      },
-      "enable_back_to_top_button": {
-        "label": "Abilita il pulsante per tornare su"
-      },
-      "header_2": {
         "content": "Carta regalo"
       },
       "gift_card_logo": {

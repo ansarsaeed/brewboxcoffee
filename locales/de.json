@@ -10,8 +10,7 @@
     "variants": {
       "choose_option": "Wählen Sie eine {{ option }}",
       "chosen_option_html": "{{ option }}: <span>{{ value }}<\/span>",
-      "choose_variant": "Wählen Sie eine Variante",
-      "unavailable": "Nicht verfügbar"
+      "choose_variant": "Wählen Sie eine Variante"
     },
     "general": {
       "by_vendor": "von {{ vendor }}",
@@ -126,10 +125,6 @@
       "dropdown_label": "Land",
       "submit_button_label": "Land aktualisieren"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "Nach oben",
-      "mobile_button_label": "Nach oben"
-    },
     "breadcrumbs": {
       "home": "Home",
       "collections": "Sammlungen"
@@ -181,7 +176,7 @@
       "social_media_icon": "Finden Sie uns auf {{ platform }}",
       "share_on_facebook": "Auf Facebook teilen",
       "share_on_pinterest": "Auf Pinterest anpinnen",
-      "share_on_x": "Teilen auf X",
+      "share_on_twitter": "Auf Twitter teilen",
       "share_on_linkedin": "Auf LinkedIn teilen",
       "no_matched_products": "{{ tag }} hat keine Produktübereinstimmungen",
       "total_reviews": "Bewertungen insgesamt",
@@ -217,14 +212,6 @@
         "tooltip_link": "Produkt anzeigen"
       }
     },
-    "faq": {
-      "summary": "Möchten Sie noch etwas wissen?",
-      "content": "Sparen Sie sich Zeit und Mühe, immer wieder dieselbe E-Mail zu schreiben, indem Sie hier Ihre am häufigsten gestellten Fragen und Antworten auflisten. Eine spezielle FAQ-Seite soll Ihnen dabei helfen, die Grundbedürfnisse Ihrer Kunden zu erfüllen, E-Mails des Kundenservice zu reduzieren, die Conversions zu steigern und ein zufriedenstellenderes Einkaufserlebnis zu schaffen!",
-      "categories": {
-        "view_all": "Alle anzeigen",
-        "view_less": "Weniger anzeigen"
-      }
-    },
     "countdown-timer": {
       "days": "Tage",
       "hours": "Std",
@@ -248,9 +235,7 @@
       "name_placeholder": "Name des Empfängers (optional)",
       "message_label": "Nachricht (optional)",
       "message_placeholder": "Nachricht (optional)",
-      "max_characters": "Maximal {{ max_characters }} Zeichen",
-      "send_on_label": "Senden am (optional)",
-      "send_on_placeholder": "JJJJ-MM-TT"
+      "max_characters": "Maximal {{ max_characters }} Zeichen"
     }
   },
   "age_gate": {
@@ -344,11 +329,6 @@
       "no_shipping_required": "Der Inhalt dieses Warenkorbs muss nicht verschickt werden.",
       "shipment_too_heavy": "Tut uns leid, doch diese Lieferung kann aufgrund ihres hohen Gewichts nicht verschickt werden.",
       "error_general": "Tut uns leid, wir können derzeit Ihre Versandkosten nicht berechnen."
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "<strong>{{ amount }}<\/strong> entfernt von kostenlosem Versand!",
-      "free_shipping_eligible_html": "Sie sind für <strong>kostenlosen Versand<\/strong> berechtigt!",
-      "free_shipping_empty_html": "Kostenloser Versand für Bestellungen über <strong>{{ amount }}<\/strong>!"
     }
   },
   "contact": {
@@ -519,9 +499,6 @@
       "remove_filter": "Filter entfernen",
       "clear_all": "Alles löschen"
     },
-    "menus": {
-      "title": "Menüs"
-    },
     "sort_by": {
       "title": "Sortieren nach"
     },
@@ -579,8 +556,7 @@
       "posts_title": "Beiträge",
       "pages_and_posts_title": "Seiten und Beiträge",
       "view_all_results": "Suche nach \"{{ terms }}\"",
-      "no_results": "Keine passenden Ergebnisse gefunden.",
-      "products_title": "Produkte"
+      "no_results": "Keine passenden Ergebnisse gefunden."
     }
   },
   "onboarding": {
@@ -603,6 +579,12 @@
       "title": "Produkttitel",
       "vendor": "Produktanbieter",
       "by_vendor": "von Produktanbieter"
+    },
+    "twitter": {
+      "title": "Twitter-Feed",
+      "tweet_html": "Verknüpfen Sie Ihren Twitter-Account, um mit Ihren Kunden auf und abseits Ihrer Seite in Kontakt zu treten!",
+      "username": "Benutzername",
+      "time": "vor 8 Stunden"
     },
     "page": {
       "title": "Seitentitel"

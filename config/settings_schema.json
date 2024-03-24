@@ -3,7 +3,7 @@
     "name": "theme_info",
     "theme_name": "Empire",
     "theme_author": "Pixel Union",
-    "theme_version": "11.0.0",
+    "theme_version": "9.1.1",
     "theme_documentation_url": "http:\/\/support.pixelunion.net\/category\/385-empire",
     "theme_support_url": "https:\/\/support.pixelunion.net\/hc\/en-us\/requests\/new"
   },
@@ -40,21 +40,6 @@
         "label": "t:settings_schema.age_gate.show_logo.label",
         "default": true,
         "info": "t:settings_schema.age_gate.show_logo.info"
-      }
-    ]
-  },
-  {
-    "name": "t:settings_schema.performance.name",
-    "settings": [
-      {
-        "type": "header",
-        "content": "t:settings_schema.performance.header_1.content"
-      },
-      {
-        "type": "checkbox",
-        "id": "minify_scripts",
-        "label": "t:settings_schema.performance.minify_scripts.label",
-        "info": "t:settings_schema.performance.minify_scripts.info"
       }
     ]
   },
@@ -943,6 +928,12 @@
       },
       {
         "type": "text",
+        "id": "social_twitter",
+        "label": "Twitter",
+        "info": "https:\/\/twitter.com\/shopify"
+      },
+      {
+        "type": "text",
         "id": "social_vimeo",
         "label": "Vimeo",
         "info": "https:\/\/vimeo.com\/"
@@ -952,12 +943,6 @@
         "id": "social_whatsapp",
         "label": "WhatsApp",
         "info": "https:\/\/www.whatsapp.com\/"
-      },
-      {
-        "type": "text",
-        "id": "social_x",
-        "label": "X",
-        "info": "https:\/\/x.com\/shopify"
       },
       {
         "type": "text",
@@ -996,27 +981,6 @@
         "id": "enable_checkout_lock_icon",
         "label": "t:settings_schema.cart.enable_checkout_lock_icon.label",
         "default": false
-      },
-      {
-        "type": "header",
-        "content": "t:settings_schema.cart.header.content"
-      },
-      {
-        "type": "paragraph",
-        "content": "t:settings_schema.cart.paragraph.content"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_free_shipping_bar",
-        "label": "t:settings_schema.cart.enable_free_shipping_bar.label",
-        "default": false
-      },
-      {
-        "type": "text",
-        "id": "free_shipping_minimum_amount",
-        "label": "t:settings_schema.cart.free_shipping_minimum_amount.label",
-        "info": "t:settings_schema.cart.free_shipping_minimum_amount.info",
-        "default": "300"
       }
     ]
   },
@@ -1055,16 +1019,6 @@
       {
         "type": "header",
         "content": "t:settings_schema.advanced.header_1.content"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_back_to_top_button",
-        "label": "t:settings_schema.advanced.enable_back_to_top_button.label",
-        "default": false
-      },
-      {
-        "type": "header",
-        "content": "t:settings_schema.advanced.header_2.content"
       },
       {
         "id": "gift_card_logo",

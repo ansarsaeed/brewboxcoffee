@@ -5,6 +5,7 @@
 </script>
 
 <style>
+
   {% if section.settings.section_width == "content-width" %}
     .highlights-banner__{{- section.id }} .highlights-banner__content {
       background-color: {{ section.settings.background_color }};
@@ -46,13 +47,11 @@
   {{ section.settings.section_width }}
   {% if section.settings.section_spacing %}section-spacing{% endif %}"
 >
-  <div class="highlights-banner__content highlight-banner__count-{{ section.blocks.size }}"
+  <div class="highlights-banner__content highlight-banner__count-{{ section.blocks.size }}" 
   {% if section.settings.mobile_layout == 'slider' %} data-highlights-slider {% endif %}
   >
     {% for block in section.blocks %}
-      {% assign heading = block.settings.title | escape %}
-
-      {% if block.settings.text != blank or heading != blank %}
+      {% if block.settings.text != blank or block.settings.title != blank %}
         <div
           class="highlights-banner__block highlights-banner__align-{{ section.settings.icon_layout }}"
           {{ block.shopify_attributes }}
@@ -75,9 +74,9 @@
           {% endif %}
 
           <div class="highlights-banner__text">
-            {% if heading != blank %}
+            {% if block.settings.title != blank %}
               <span class="highlights-banner__heading">
-                {{ heading | escape }}
+                {{ block.settings.title | escape }}
               </span>
             {% endif %}
 
@@ -89,7 +88,6 @@
             <a
               class="highlights-banner__block-link"
               href="{{ block.settings.link }}"
-              aria-label="{{ heading }}"
               {{ block.shopify_attributes }}
             >
             </a>

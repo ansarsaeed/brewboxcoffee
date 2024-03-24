@@ -10,8 +10,7 @@
     "variants": {
       "choose_option": "Kies een {{ option }}",
       "chosen_option_html": "{{ option }}: <span>{{ value }}<\/span>",
-      "choose_variant": "Kies een variant",
-      "unavailable": "Niet beschikbaar"
+      "choose_variant": "Kies een variant"
     },
     "general": {
       "by_vendor": "door {{ vendor }}",
@@ -126,10 +125,6 @@
       "dropdown_label": "Land",
       "submit_button_label": "Update land"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "Boven",
-      "mobile_button_label": "Terug naar boven"
-    },
     "breadcrumbs": {
       "home": "Startpagina",
       "collections": "Collecties"
@@ -181,7 +176,7 @@
       "social_media_icon": "Vind ons op {{ platform }}",
       "share_on_facebook": "Delen via Facebook",
       "share_on_pinterest": "Pin op Pinterest",
-      "share_on_x": "Deel op X",
+      "share_on_twitter": "Tweet op Twitter",
       "share_on_linkedin": "Deel op LinkedIn",
       "no_matched_products": "{{ tag }} heeft geen productovereenkomsten",
       "total_reviews": "totaal aantal recensies",
@@ -217,14 +212,6 @@
         "tooltip_link": "Bekijk product"
       }
     },
-    "faq": {
-      "summary": "Wil je nog iets anders weten?",
-      "content": "Bespaar uzelf de tijd en moeite van het steeds opnieuw schrijven van dezelfde e-mail door hier uw meest gestelde vragen en antwoorden op te sommen. Een speciale pagina met veelgestelde vragen moet helpen om aan de basisbehoeften van uw klanten te voldoen, het aantal e-mails van de klantenservice te verminderen, het aantal conversies te verhogen en een meer bevredigende winkelervaring te creëren!",
-      "categories": {
-        "view_all": "Alles weergeven",
-        "view_less": "Minder weergeven"
-      }
-    },
     "countdown-timer": {
       "days": "dagen",
       "hours": "Uren",
@@ -248,9 +235,7 @@
       "name_placeholder": "Naam ontvanger (optioneel)",
       "message_label": "Bericht (optioneel)",
       "message_placeholder": "Bericht (optioneel)",
-      "max_characters": "Maximaal {{ max_characters }} tekens",
-      "send_on_label": "Verzenden op (optioneel)",
-      "send_on_placeholder": "JJJJ-MM-DD"
+      "max_characters": "Maximaal {{ max_characters }} tekens"
     }
   },
   "age_gate": {
@@ -344,11 +329,6 @@
       "no_shipping_required": "Uw winkelwagen vereist geen verzending. ",
       "shipment_too_heavy": "Sorry, deze zending is te zwaar om te verzenden.",
       "error_general": "Sorry, we konden op dit moment geen verzendkosten berekenen."
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "<strong>{{ amount }}<\/strong> verwijderd van gratis verzending!",
-      "free_shipping_eligible_html": "U komt in aanmerking voor <strong>gratis verzending<\/strong>!",
-      "free_shipping_empty_html": "Gratis verzending bij bestellingen van meer dan <strong>{{ amount }}<\/strong>!"
     }
   },
   "contact": {
@@ -519,9 +499,6 @@
       "remove_filter": "Filter verwijderen",
       "clear_all": "Wis alles"
     },
-    "menus": {
-      "title": "Menu's"
-    },
     "sort_by": {
       "title": "Sorteren op"
     },
@@ -602,6 +579,12 @@
       "title": "Productnaam",
       "vendor": "Productleverancier",
       "by_vendor": "door Productleverancier"
+    },
+    "twitter": {
+      "title": "Twitter-feed",
+      "tweet_html": "Koppel uw Twitter-account om betrokkenheid van klanten, zowel op de site als daarbuiten, te verhogen!",
+      "username": "gebruikersnaam",
+      "time": "8 uur geleden"
     },
     "page": {
       "title": "Pagina titel"

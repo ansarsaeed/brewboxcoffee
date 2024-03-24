@@ -36,16 +36,10 @@
         class="
           collection-filters__filter
           collection-filters__filter-list
-          {% if filter.presentation == 'swatch' %}
-            collection-filters__filter-list--{{ filter.presentation }}
-          {% endif %}
         "
         data-filter-group-list
         data-accordion-content
-      >
-        {% if filter.presentation == 'swatch' %}
-          <div class="collection-filters__filter-wrapper">
-        {% endif %}
+        >
         {%- for value in filter.values -%}
           <li
             class="
@@ -62,12 +56,10 @@
           >
             <a
               class="collection-filters__filter-link"
-              {% if filter.presentation == 'swatch' %}
-                aria-label="{{ value.label | escape }}"
-              {% endif %}
               data-name="{{ value.param_name }}"
               data-value="{{ value.value }}"
               data-handle="filter-{{ filter.label | escape | replace: ' ', '-'}}-{{ forloop.index0 }}"
+
               {% if value.active -%}
                 {% assign animation_state = 'checked' %}
                 data-filter-active
@@ -83,39 +75,18 @@
               {%- endif %}
               data-filter-input
             >
-              {% if filter.presentation == 'text' %}
-                <span class="filter-icon--checkbox" data-handle="filter-{{ filter.label | escape | replace: ' ', '-'}}-{{ forloop.index0 }}">
-                  {%- render 'icon-checkmark-animated', animation_state: animation_state -%}
-                </span>
-                <span class="collection-filters__filter-list-item-text">
-                  {{ value.label | escape }}
-                  {% if show_product_count %}
-                    ({{ value.count }})
-                  {% endif %}
-                </span>
-              {% else %}
-                <div class="collection-filters__swatch-wrapper" data-swatch-tooltip="{{ value.label | escape }}">
-                  <div class="collection-filters__swatch">
-                    <div
-                      class="collection-filters__swatch-inner"
-                      style="
-                        {% if value.display.type == 'colors' %}
-                          --swatch-color: {{ value.display.value }};
-                        {% else %}
-                          --swatch-image: url('{{ value.display.value | image_url: width: 100 }}');
-                        {% endif %}
-                      "
-                    >
-                    </div>
-                  </div>
-                </div>
-              {% endif %}
+              <span class="filter-icon--checkbox" data-handle="filter-{{ filter.label | escape | replace: ' ', '-'}}-{{ forloop.index0 }}">
+                {%- render 'icon-checkmark-animated', animation_state: animation_state -%}
+              </span>
+              <span class="collection-filters__filter-list-item-text">
+                {{ value.label | escape }}
+                {% if show_product_count %}
+                  ({{ value.count }})
+                {% endif %}
+              </span>
             </a>
           </li>
         {%- endfor -%}
-        {% if filter.presentation == 'swatch' %}
-          </div> {% comment %} Close swatch wrapper {% endcomment %}
-        {% endif %}
       </ul>
     {% when 'price_range' %}
       <form

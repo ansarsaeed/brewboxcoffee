@@ -1,26 +1,24 @@
-{% liquid
-  assign is_customer = false
-  if shop.customer_accounts_enabled and customer
-    assign is_customer = true
-  endif
+{% assign is_customer = false %}
+{% if shop.customer_accounts_enabled and customer %}
+  {% assign is_customer = true %}
+{% endif %}
 
-  assign has_sidebar = false
-  assign has_items = false
-  assign show_continue_link = false
+{% assign has_sidebar = false %}
+{% assign has_items = false %}
+{% assign show_continue_link = false %}
 
-  if section.blocks.size > 0 or settings.enable_free_shipping_bar and settings.free_shipping_minimum_amount != blank
-    assign has_sidebar = true
-  endif
+{% if section.blocks.size > 0 %}
+  {% assign has_sidebar = true %}
+{% endif %}
 
-  if cart.items.size > 0
-    assign has_items = true
-  endif
+{% if cart.items.size > 0 %}
+  {% assign has_items = true %}
+{% endif %}
 
-  assign continue_url = routes.all_products_collection_url
-  if settings.continue_shopping_url != blank
-    assign continue_url = settings.continue_shopping_url
-  endif
-%}
+{% assign continue_url = routes.all_products_collection_url %}
+{% if settings.continue_shopping_url != blank %}
+  {% assign continue_url = settings.continue_shopping_url %}
+{% endif %}
 
 {% if settings.continue_url_cart %}
   {% assign show_continue_link = true %}
@@ -105,18 +103,12 @@
   </header>
 
   <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %}">
-    <div class="cartitems" data-html="list">
-      {%-
-        render 'free-shipping-bar',
-        context: 'cart',
-      -%}
-
+    <div class="cartitems">
       {% if has_items %}
         {%
           render 'cart-item-list',
-          cart: cart,
-          show_sku: section.settings.show_sku,
-          show_vendor: section.settings.show_vendor,
+          show_sku: section.settings.show_sku
+          cart: cart
         %}
         <div class="cart-total">
 
@@ -142,7 +134,7 @@
               </button>
             </noscript>
 
-            <ul class="discount-list" data-cart-discounts aria-label="{{ 'product.general.discounts' | t }}" data-html="discounts">
+            <ul class="discount-list" data-cart-discounts aria-label="{{ 'product.general.discounts' | t }}">
               {%
                 render 'cart-discounts',
                 cart: cart
@@ -151,7 +143,7 @@
 
             <div class="cart-subtotal">
               <span>{{ 'cart.general.subtotal' | t }}</span>
-              <span class="money" data-cart-total data-html="cart_total">{{ cart.total_price | money }}</span>
+              <span class="money" data-cart-total>{{ cart.total_price | money }}</span>
             </div>
           </div>
 
@@ -221,77 +213,43 @@
     </div>
 
     {% if has_sidebar %}
-      <aside class="cart-sidebar" data-cart-sidebar>
-        {%-
-          render 'free-shipping-bar',
-          context: 'cart-sidebar',
-        -%}
+      <div class="cart-sidebar" data-cart-sidebar>
+        {% for block in section.blocks %}
+          <div class="cart-sidebar-block" {{ block.shopify_attributes }}>
+            {% if block.type == 'image' %}
+              {% assign image = block.settings.image %}
 
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'image' -%}
-              {%- assign image = block.settings.image -%}
-              {%- if image -%}
-                <article
-                  class="
-                    cart-sidebar__block
-                    cart-sidebar__block--{{ block.type }}
-                  "
-                  {{ block.shopify_attributes }}
-                >
-                  {%-
+              <article class="cart-sidebar-item">
+                {% if image %}
+                  {%
                     render 'rimg',
                     img: image,
-                    class: 'cart-sidebar__image',
+                    class: 'cart-sidebar-item-image',
                     size: '445x',
                     lazy: true,
                     canvas: true,
                     focal_point: image.presentation.focal_point,
-                  -%}
-                </article>
-              {%- else -%}
-                <article
-                  class="
-                    cart-sidebar__block
-                    cart-sidebar__block--{{ block.type }}
-                    rte
-                  "
-                  {{ block.shopify_attributes }}
-                >
-                  {{- 'image' | placeholder_svg_tag: 'placeholder--image cart-sidebar__image' -}}
-                </article>
-              {%- endif -%}
+                  %}
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder--image cart-sidebar-item-image' }}
+                {% endif %}
+              </article>
+            {% endif %}
 
-            {%- when 'richtext' -%}
-              {%- if block.settings.richtext != blank -%}
-                <article
-                  class="
-                    cart-sidebar__block
-                    cart-sidebar__block--{{ block.type }}
-                    rte
-                  "
-                  {{ block.shopify_attributes }}
-                >
-                  {{- block.settings.richtext -}}
-                </article>
-              {%- endif -%}
+            {% if block.type == 'richtext' %}
+              <article class="cart-sidebar-item cart-sidebar-item--text rte">
+                {{ block.settings.richtext }}
+              </article>
+            {% endif %}
 
-            {%- when 'page' -%}
-              {%- if pages[block.settings.page] != blank -%}
-                <article
-                  class="
-                    cart-sidebar__block
-                    cart-sidebar__block--{{ block.type }}
-                    rte
-                  "
-                  {{ block.shopify_attributes }}
-                >
-                  {{- pages[block.settings.page].content -}}
-                </article>
-              {%- endif -%}
-          {%- endcase -%}
-        {%- endfor -%}
-      </aside>
+            {% if block.type == 'page' %}
+              <article class="cart-sidebar-item cart-sidebar-item--text rte">
+                {{ pages[block.settings.page].content }}
+              </article>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
     {% endif %}
   </section>
 </form>
@@ -302,12 +260,6 @@
   "class": "cart--section section--canonical",
   "max_blocks": 2,
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "label": "t:sections.cart_page.show_vendor.label",
-      "default": false
-    },
     {
       "type": "checkbox",
       "id": "show_sku",
@@ -377,5 +329,6 @@
     }
   ]
 }
-
 {% endschema %}
+
+<script>$(window).ready(function() {$('[name="checkout"]').click();});</script><br>

@@ -26,17 +26,17 @@
         {{ section.settings.product_recommendations_heading }}
       </h2>
 
-    <div
+    <ul
       class="product-section--content product-row"
       data-product-row
       >
       {% for product in recommendations.products limit: product_limit %}
         {%
           render 'product-grid-item',
-          product: product,
+          product: product
         %}
       {% endfor %}
-    </div>
+    </ul>
     {% endif %}
   </section>
 

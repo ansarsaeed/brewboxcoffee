@@ -1,1 +1,23 @@
-{"sections":{"forms":{"type":"apps","blocks":{"719405f7-8976-4dfd-b912-4cd5732372a0":{"type":"shopify:\/\/apps\/forms\/blocks\/inline\/8744a304-fcb1-4347-b211-bb6b4759a76a","settings":{"form_id":"31187"}}},"block_order":["719405f7-8976-4dfd-b912-4cd5732372a0"],"settings":{}},"main":{"type":"page","settings":{}}},"order":["main","forms"]}
+{
+  "sections": {
+    "forms": {
+      "type": "apps",
+      "blocks": {
+        "719405f7-8976-4dfd-b912-4cd5732372a0": {
+          "type": "shopify:\/\/apps\/forms\/blocks\/inline\/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "31187"
+          }
+        }
+      },
+      "block_order": [
+        "719405f7-8976-4dfd-b912-4cd5732372a0"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "forms"
+  ]
+}

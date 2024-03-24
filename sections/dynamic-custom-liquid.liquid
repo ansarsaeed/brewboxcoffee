@@ -1,14 +1,12 @@
 <script
   type="application/json"
+  data-section-type="custom-liquid"
   data-section-id="{{ section.id }}"
-  data-section-type="dynamic-custom-liquid"
 >
 </script>
 
 <section class="custom-liquid--container">
-  <div class="rte" data-rte>
-    {{- section.settings.custom_liquid -}}
-  </div>
+  {{ section.settings.custom_liquid }}
 </section>
 
 {% schema %}

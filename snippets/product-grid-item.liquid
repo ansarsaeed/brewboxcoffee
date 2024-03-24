@@ -10,42 +10,24 @@
 
   @param product_compare {Boolean}
     Render card in product compare style
-
-  @param context {String}
-    The snippet context
-
-  @param index {Number}
-    The 1-based index of the current iteration
-
-  @param products_per_row {String}
-    The number of products per row
 {% endcomment %}
 
-{% liquid
-  assign recently_viewed = recently_viewed | default: nil
-  assign countdown_timer = countdown_timer | default: nil
-  assign product_compare = product_compare | default: nil
-  assign product_grid_show_second_image = settings.product_grid_show_second_image
-  assign emphasize_price = settings.product_grid_emphasize_price
-  assign quick_shop_display = settings.product_grid_quick_shop_display
-  assign enable_quickshop = settings.product_grid_enable_quickshop
-  assign atc_display = settings.product_grid_show_atc
-  assign atc_button = settings.product_grid_show_atc_button
-  assign money_format = shop.money_format | strip_html
+{% assign recently_viewed = recently_viewed | default: nil %}
+{% assign countdown_timer = countdown_timer | default: nil %}
+{% assign product_compare = product_compare | default: nil %}
 
-  if product_compare
-    assign enable_quickshop = false
-    assign atc_button = true
-  endif
+{% assign product_grid_show_second_image = settings.product_grid_show_second_image %}
+{% assign emphasize_price = settings.product_grid_emphasize_price %}
+{% assign quick_shop_display = settings.product_grid_quick_shop_display %}
+{% assign enable_quickshop = settings.product_grid_enable_quickshop %}
+{% assign atc_display = settings.product_grid_show_atc %}
+{% assign atc_button = settings.product_grid_show_atc_button %}
+{% assign money_format = shop.money_format | strip_html %}
 
-  assign performance_lazyload = true
-  if context == 'collection'
-    assign products_per_row = products_per_row | plus: 0
-    if index <= products_per_row
-      assign performance_lazyload = false
-    endif
-  endif
-%}
+{% if product_compare %}
+  {% assign enable_quickshop = false %}
+  {% assign atc_button = true %}
+{% endif %}
 
 {% if product %}
   {% assign compare_at_price = product.compare_at_price %}
@@ -237,18 +219,21 @@
             class="productitem--swatches-count-wrapper"
             tabindex="0"
             data-swatch-count-wrapper
+            aria-label="{{ 'general.accessibility.swatches_toggle' | t: swatch_trigger: settings.swatches_swatch_trigger }}"
           >
-            <span class="visually-hidden">
-              {{- 'general.accessibility.swatches_toggle' | t: swatch_trigger: settings.swatches_swatch_trigger -}}
-            </span>
-            <div class="productitem--swatches-count" aria-hidden="true" data-swatch-count>+</div>
+            <div class="productitem--swatches-count" data-swatch-count>+</div>
           </button>
         </div>
       {%- endif -%}
     {% endcapture %}
   {%- endif -%}
 
-<div
+{% assign element = 'li' %}
+{% if product_compare %}
+    {% assign element = 'div' %}
+{% endif %}
+
+<{{ element }}
   class="{{ classes | strip_newlines }}"
   data-product-item
   data-product-quickshop-url="{{ product_link }}"
@@ -331,17 +316,11 @@
     <div class="productitem__container">
       {{ recently_viewed_header }}
 
-      {%  assign composition = product.metafields.custom.product_composition.value %}
-
-
       <div class="productitem__image-container">
-        {%  if composition.size > 0 and template.suffix contains 'shopcoffee' %}
-          {% render 'product-composition', composition:composition %}
-        {%  endif %}
-
         <a
           class="productitem--image-link"
           href="{{ product.url | within: collection }}"
+          aria-label="{{ product.url }}"
           tabindex="-1"
           data-product-page-link
         >
@@ -368,9 +347,9 @@
                 render 'rimg',
                 img: initial_image
                 size: '512x',
-                lazy: performance_lazyload,
+                lazy: true,
                 class: 'productitem--image-primary',
-                canvas: performance_lazyload,
+                canvas: true
               %}
             {% else %}
               {% if product %}
@@ -396,10 +375,6 @@
               show_saved: consistent_saved,
               include_range: true,
             %}
-
-            <span class="visually-hidden">
-              {{- product_title -}}
-            </span>
           </figure>
         </a>
       </div>
@@ -623,4 +598,4 @@
       }
     </script>
   {% endif %}
-</div>
+</{{ element }}>

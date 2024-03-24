@@ -1,32 +1,7 @@
-{% liquid
-  assign enable_text_box = true
-  if section.settings.textbox_title == blank and section.settings.textbox_subheading == blank
-    assign enable_text_box = false
-  endif
-  assign title = section.settings.title
-  assign background_image = section.settings.image
-  assign tooltip_link_text = section.settings.link_text
-  assign x_axis_id = 'x_axis'
-  assign y_axis_id = 'y_axis'
-  assign hotspot_product_id = 'product'
-  assign show_tooltip_image = true
-  assign show_vendor = settings.product_show_vendor
-  assign show_compare_at_price = true
-  assign show_sale_badge = settings.product_sales_badge
-  assign include_range = true
-  assign show_range = true
-  assign sales_badge_style = settings.product_sales_badge_style
-
-  assign text_box_heading = section.settings.textbox_title
-  assign text_box_subheading = section.settings.textbox_subheading
-  assign text_box_button_label = section.settings.textbox_button_label
-  assign text_box_button_link = section.settings.textbox_button_link
-
-  if sales_badge_style == 'percentile'
-    assign sales_badge_style = 'percentage'
-  endif
-%}
-
+{% assign enable_text_box = true %}
+{% if section.settings.textbox_title == blank and section.settings.textbox_subheading == blank %}
+  {% assign enable_text_box = false %}
+{% endif %}
 {% capture root_class %}
   shoppable-image-section
   {% unless section.settings.image_width == 'full' %}
@@ -38,14 +13,34 @@
     shoppable-image--full-width-image
   {% endif %}
 {% endcapture %}
-
+{% assign title = section.settings.title %}
+{% assign background_image = section.settings.image %}
+{% assign tooltip_link_text = section.settings.link_text %}
+{% assign x_axis_id = 'x_axis' %}
+{% assign y_axis_id = 'y_axis' %}
+{% assign hotspot_product_id = 'product' %}
+{% assign show_tooltip_image = true %}
+{% assign show_vendor = settings.product_show_vendor %}
+{% assign show_compare_at_price = true %}
+{% assign show_sale_badge = settings.product_sales_badge %}
+{% assign include_range = true %}
+{% assign show_range = true %}
+{% assign sales_badge_style = settings.product_sales_badge_style %}
 {% capture text_box_root_class %}
   text-box--align-{{ section.settings.textbox_text_alignment }}
 {% endcapture %}
-
+{% assign text_box_heading = section.settings.textbox_title %}
+{% assign text_box_subheading = section.settings.textbox_subheading %}
+{% assign text_box_button_label = section.settings.textbox_button_label %}
+{% assign text_box_button_link = section.settings.textbox_button_link %}
 {% capture text_box_button_class %}
   button-{{ section.settings.textbox_button_style }}
 {% endcapture %}
+
+
+{% if sales_badge_style == 'percentile' %}
+  {% assign sales_badge_style = 'percentage' %}
+{% endif %}
 
 <script type="application/pxs-animation-mapping+json">
   {
@@ -117,16 +112,8 @@
 
   @param text_box_button_link {String}
     Link for button in text box component
-  
-  @param performance_lazyload
-    Determines rimg lazy setting
 {%- endcomment -%}
 
-{% liquid
-  if performance_lazyload == nil
-    assign performance_lazyload = true
-  endif
-%}
 <script
   type="application/json"
   data-section-type="pxs-shoppable-image"
@@ -149,8 +136,8 @@
         img: background_image,
         size: '1400x',
         class: 'shoppable-image__image',
-        lazy: performance_lazyload,
-        canvas: performance_lazyload,
+        lazy: true,
+        canvas: true,
         attr: 'data-shoppable-image-img',
         focal_point: background_image.presentation.focal_point,
       %}
@@ -826,9 +813,23 @@
       "default": "primary"
     },
     {
+      "type": "select",
       "id": "textbox_text_alignment",
-      "type": "text_alignment",
       "label": "t:sections.shoppable_image.textbox_text_alignment.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.shoppable_image.textbox_text_alignment.option_1"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.shoppable_image.textbox_text_alignment.option_2"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.shoppable_image.textbox_text_alignment.option_3"
+        }
+      ],
       "default": "left"
     },
     {
@@ -915,5 +916,4 @@
     "groups": ["*"]
   }
 }
-
 {% endschema %}

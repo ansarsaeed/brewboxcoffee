@@ -10,8 +10,7 @@
     "variants": {
       "choose_option": "Choisissez une {{ option }}",
       "chosen_option_html": "{{ option }}: <span>{{ value }}<\/span>",
-      "choose_variant": "Choisissez une variante",
-      "unavailable": "Indisponible"
+      "choose_variant": "Choisissez une variante"
     },
     "general": {
       "by_vendor": "par {{ vendor }}",
@@ -126,10 +125,6 @@
       "dropdown_label": "Pays",
       "submit_button_label": "Mettre à jour le pays"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "Haut",
-      "mobile_button_label": "Retour en haut"
-    },
     "breadcrumbs": {
       "home": "Accueil",
       "collections": "Collections"
@@ -181,7 +176,7 @@
       "social_media_icon": "Trouvez-nous sur {{ platform }}",
       "share_on_facebook": "Partager sur Facebook",
       "share_on_pinterest": "Épingler sur Pinterest",
-      "share_on_x": "Partager sur X",
+      "share_on_twitter": "Tweeter sur Twitter",
       "share_on_linkedin": "Partager sur LinkedIn",
       "no_matched_products": "{{ tag }} ne correspond à aucun produit",
       "total_reviews": "total des critiques",
@@ -217,14 +212,6 @@
         "tooltip_link": "Voir le produit"
       }
     },
-    "faq": {
-      "summary": "Vous voulez savoir autre chose?",
-      "content": "Épargnez-vous le temps et la peine d'écrire le même e-mail encore et encore en énumérant vos questions et réponses les plus fréquemment posées ici. Une page FAQ dédiée devrait aider à répondre aux besoins de base de vos clients, en réduisant les e-mails du service client, en augmentant les conversions et en créant une expérience d'achat plus satisfaisante!",
-      "categories": {
-        "view_all": "Voir tout",
-        "view_less": "Afficher moins"
-      }
-    },
     "countdown-timer": {
       "days": "Journées",
       "hours": "Heures",
@@ -248,9 +235,7 @@
       "name_placeholder": "Nom du destinataire (facultatif)",
       "message_label": "Message (facultatif)",
       "message_placeholder": "Message (facultatif)",
-      "max_characters": "Maximum de {{ max_characters }} caractères",
-      "send_on_label": "Envoyer le (facultatif)",
-      "send_on_placeholder": "AAAA-MM-JJ"
+      "max_characters": "Maximum de {{ max_characters }} caractères"
     }
   },
   "age_gate": {
@@ -344,11 +329,6 @@
       "no_shipping_required": "Votre panier ne nécessite pas d'envoi.",
       "shipment_too_heavy": "Navrés, mais cette cargaison est trop lourde à transporter.",
       "error_general": "Navrés, nous ne sommes pas en mesure de calculer vos frais d'expédition pour l'instant."
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "À <strong>{{ amount }}<\/strong> de la livraison gratuite!",
-      "free_shipping_eligible_html": "Vous êtes éligible pour la <strong>livraison gratuite<\/strong>!",
-      "free_shipping_empty_html": "Livraison gratuite pour les commandes de plus de <strong>{{ amount }}<\/strong>!"
     }
   },
   "contact": {
@@ -519,9 +499,6 @@
       "remove_filter": "Supprimer le filtre",
       "clear_all": "Tout effacer"
     },
-    "menus": {
-      "title": "Menus"
-    },
     "sort_by": {
       "title": "Trier par"
     },
@@ -579,8 +556,7 @@
       "posts_title": "Posts",
       "pages_and_posts_title": "Pages et Posts",
       "view_all_results": "Recherche \"{{ terms }}\"",
-      "no_results": "Aucun résultat correspondant trouvé.",
-      "products_title": "Des produits"
+      "no_results": "Aucun résultat correspondant trouvé."
     }
   },
   "onboarding": {
@@ -603,6 +579,12 @@
       "title": "Titre du produit",
       "vendor": "Fournisseur de produit",
       "by_vendor": "par fournisseur de produit"
+    },
+    "twitter": {
+      "title": "Fil Twitter",
+      "tweet_html": "Connectez votre compte Twitter pour attirer des clients sur et hors de votre site !",
+      "username": "identifiant",
+      "time": "Il y a 8 heures"
     },
     "page": {
       "title": "Titre de la page"

@@ -10,8 +10,7 @@
     "variants": {
       "choose_option": "{{ option }}を選択します",
       "chosen_option_html": "{{ option }}：<span> {{ value }} <\/span>",
-      "choose_variant": "バリアントを選択してください",
-      "unavailable": "利用不可"
+      "choose_variant": "バリアントを選択してください"
     },
     "general": {
       "by_vendor": "{{ vendor }}による",
@@ -126,10 +125,6 @@
       "dropdown_label": "国",
       "submit_button_label": "国を更新する"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "トップへ",
-      "mobile_button_label": "トップへ戻る"
-    },
     "breadcrumbs": {
       "home": "ホーム",
       "collections": "コレクション"
@@ -181,7 +176,7 @@
       "social_media_icon": "{{ platform }}で見つけてください",
       "share_on_facebook": "Facebookで共有",
       "share_on_pinterest": "Pinterestにピン留め",
-      "share_on_x": "Xで共有する",
+      "share_on_twitter": "Twitterでツイート",
       "share_on_linkedin": "LinkedInで共有",
       "no_matched_products": "{{ tag }}に一致する製品がありません",
       "total_reviews": "レビュー数の合計",
@@ -217,14 +212,6 @@
         "tooltip_link": "製品を見る"
       }
     },
-    "faq": {
-      "summary": "他に何か知りたいですか？",
-      "content": "ここに最もよくある質問と回答をリストすることで、同じメールを何度も書く時間と手間を省きます。専用のFAQページは、顧客の基本的なニーズに対応し、カスタマーサービスの電子メールを削減し、コンバージョンを増やし、より満足のいくショッピング体験を生み出すのに役立ちます。",
-      "categories": {
-        "view_all": "すべて表示",
-        "view_less": "もっと少なく表示"
-      }
-    },
     "countdown-timer": {
       "days": "日",
       "hours": "時間",
@@ -248,9 +235,7 @@
       "name_placeholder": "受信者の名前（任意）",
       "message_label": "メッセージ（任意）",
       "message_placeholder": "メッセージ（任意）",
-      "max_characters": "最大{{ max_characters }}文字",
-      "send_on_label": "送信日 (任意)",
-      "send_on_placeholder": "YYYY-MM-DD"
+      "max_characters": "最大{{ max_characters }}文字"
     }
   },
   "age_gate": {
@@ -345,11 +330,6 @@
       "no_shipping_required": "お客様のカートの品物は発送する必要がありません。",
       "shipment_too_heavy": "申し訳ありませんが、この荷物は重すぎて発送できません。",
       "error_general": "申し訳ありませんが、現時点では送料を計算できません。"
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "<strong>{{ amount }}<\/strong> で無料配送まで！",
-      "free_shipping_eligible_html": "無料配送の対象です！",
-      "free_shipping_empty_html": "<strong>{{ amount }}以上のご注文で送料無料<\/strong>!"
     }
   },
   "contact": {
@@ -520,9 +500,6 @@
       "remove_filter": "フィルターを削除",
       "clear_all": "すべてクリア"
     },
-    "menus": {
-      "title": "メニュー"
-    },
     "sort_by": {
       "title": "並び替え"
     },
@@ -603,6 +580,12 @@
       "title": "製品タイトル",
       "vendor": "製品ベンダー",
       "by_vendor": "製品ベンダー別"
+    },
+    "twitter": {
+      "title": "ツイッターフィード",
+      "tweet_html": "お客様のTwitterアカウントを接続して、サイトの内外で顧客を呼び込みましょう！",
+      "username": "ユーザー名",
+      "time": "8時間前"
     },
     "page": {
       "title": "ページタイトル"

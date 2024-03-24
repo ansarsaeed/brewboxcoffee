@@ -1,0 +1,323 @@
+{% if product.selling_plan_groups.size > 0 %}
+  {% comment %} SCRIPT {% endcomment %}
+  <script>
+  (() => {  
+    const selector = 'fieldset[chargezen-plan-picker]';
+    const levels = 2;
+    const goUp = ($el, levels) => {
+      if (levels > 0) return goUp($el.parentElement, levels - 1);
+      else return $el
+    }
+
+    // Only loads the script if a plan picker is on the page, and only once
+    // the main element is hovered over. doesn't load multiple times if there is are multiple plan pickers.
+    // Defer loading to reduce load impact
+    if (window.chargezen_plan_picker_script_load === undefined) {
+      window.chargezen_plan_picker_script_load = true;
+
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = '{{ 'chargezen-plan-picker.js' | asset_url }}';
+
+      window.chargezenLoadJSAddListeners = () => {
+        document.querySelectorAll(selector).forEach($el => {
+          const $broader = goUp($el, levels);
+          $broader.addEventListener('pointerdown', window.chargezenLoadJS);
+          $broader.addEventListener('pointermove', window.chargezenLoadJS);
+          $broader.addEventListener('focus', window.chargezenLoadJS, { capture: true });
+        });
+      }
+
+      window.chargezenLoadJSRemoveListeners = () => {
+        document.querySelectorAll(selector).forEach($el => {
+          const $broader = goUp($el, levels);
+          $broader.removeEventListener('pointerdown', window.chargezenLoadJS);
+          $broader.removeEventListener('pointermove', window.chargezenLoadJS);
+          $broader.removeEventListener('focus', window.chargezenLoadJS, { capture: true });
+        });
+      }
+
+      window.chargezenLoadJS = (e) => {
+        document.head.append(script);
+
+        window.chargezenLoadJSRemoveListeners();
+      }
+     
+      window.addEventListener('DOMContentLoaded', () => window.chargezenLoadJSAddListeners());
+    }
+
+    // Handling async load of chargezen-plan-picker.liquid
+    if (window.chargezenPlanPickerAutoInit) {
+      window.chargezenPlanPickerAutoInit();
+    } else {
+      window.chargezenLoadJSAddListeners();
+    }
+  })()
+  </script>
+
+  {{ 'chargezen-plan-picker.css' | asset_url | stylesheet_tag }}
+
+  {% comment %} lines 81 & 84 edited by Airbase: false > true {% endcomment %}
+
+  {% liquid
+    assign current_variant = product.selected_or_first_available_variant
+
+    assign is_main_product = false
+    if request.page_type == 'product'
+      assign path_handle = request.path | split: '/' | last
+      if path_handle == product.handle
+        assign is_main_product = true
+      endif
+    endif
+
+    unless key
+      assign key = product.id
+    endunless
+    if start_onetime == nil
+      assign start_onetime = true
+    endif
+    if product.requires_selling_plan
+      assign start_onetime = false
+    endif
+    if product.selected_selling_plan
+      assign start_onetime = false
+    endif
+    if onetime_first == nil
+      assign onetime_first = true
+    endif
+    if discount_format == nil
+      assign discount_format = 'percent'
+    endif
+    assign classes = classes
+    if hidden == true
+      assign hidden = 'chargezen-hidden'
+    endif
+  %}
+
+  <fieldset class="chargezen-plan-picker {{ classes }}{{ hidden }}" chargezen-plan-picker="{{ key }}" chargezen-auto-init 
+    chargezen-discount-format="{{ discount_format }}"
+    {% if is_main_product %} chargezen-main-product {% endif %}
+  >
+    {% comment %} PRODUCT JSON {% endcomment %}
+    <script type="text/json" chargezen-product-json>{{ product | json }}</script>
+
+    {% comment %} SELLING PLAN {% endcomment %}
+    {% liquid
+      if product.selected_selling_plan
+        assign selected_selling_plan = product.selected_selling_plan
+      else
+        assign selected_selling_plan = current_variant.selling_plan_allocations.first.selling_plan
+      endif
+    %}
+    <input name="selling_plan" type="hidden" value="{% unless start_onetime %}{{ selected_selling_plan.id }}{% endunless %}" 
+    />
+
+    {% liquid   
+      assign price_adjustment = selected_selling_plan.price_adjustments.first
+
+      assign group = product.selling_plan_groups | where: 'id', selected_selling_plan.group_id | first
+
+      if start_onetime == false 
+        case price_adjustment.value_type  
+          when 'percentage' 
+            assign discount_percent = price_adjustment.value | round
+            assign discount_absolute = current_variant.price | times: price_adjustment.value | divided_by: 100.0  
+          when 'fixed_amount' 
+            assign discount_percent = price_adjustment.value | times: 1.0 | divided_by: current_variant.price | times: 100.0 | round
+            assign discount_absolute = price_adjustment.value 
+          when 'price'  
+            assign discount_percent = current_variant.price | minus: price_adjustment.value | times: 1.0 | divided_by: current_variant.price | times: 100.0 | round
+            assign discount_absolute = current_variant.price | minus: price_adjustment.value  
+        endcase 
+        if discount_percent == 0  
+          assign discount_text = '' 
+        elsif discount_format == 'percent' or discount_format == blank  
+          assign discount_text = discount_percent | append: '%' 
+        else  
+          assign discount_text = discount_absolute | money  
+        endif 
+      endif 
+    %}
+
+    <input name="properties[Discount]" type="hidden" value="{{ discount_text }}" 
+      {% if start_onetime %}disabled{% endif %} 
+    />
+
+    {% comment %} Radio SVGs {% endcomment %}
+    {% capture radio_svg %}
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {% if radio_type == 'square' %}
+          <rect width="20" height="20" x="2" y="2" stroke="currentColor" stroke-width="3" />
+          <rect class="chargezen-radio" width="12" height="12" x="6" y="6" fill="currentColor" />
+        {% else %}
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+          <circle class="chargezen-radio" cx="12" cy="12" r="7" fill="currentColor"></circle>
+        {% endif %}
+      </svg>
+    {% endcapture %}
+    
+    {% comment %} ONE TIME {% endcomment %}
+    {% capture onetimeHTML %}
+      {% unless product.requires_selling_plan %}
+        <div class="chargezen-group-container chargezen-group-container--available{% if start_onetime %} chargezen-group-container--selected{% endif %}" chargezen-group-container>
+          <input id="chargezen-one-time-{{ key }}" class="chargezen-group-input" name="chargezen-group-{{ key }}" 
+            type="radio" value="" chargezen-one-time {% if start_onetime %}checked{% endif %}>
+          <label class="chargezen-group-label" for="chargezen-one-time-{{ key }}">
+            <div class="chargezen-group-topline">
+              <div class="chargezen-radio__container">
+                {{ radio_svg }}
+              </div>
+              One time purchase
+              <div class="chargezen-price">
+                <span class="money">{{ current_variant.price | money_with_currency }}</span>
+              </div>
+            </div>
+          </label>
+        </div>
+      {% endunless %}
+    {% endcapture %}
+
+    {% comment %} SUBSCRIPTIONS {% endcomment %}
+    {% capture subscriptionHTML %}
+      {% assign firstSelected = false %}
+      {% for group in product.selling_plan_groups %}
+        {% comment %} TODO: replace with check for app_id {% endcomment %}
+        {% if group.app_id != 'chargezen' %}
+          {% comment %} SELLING PLAN GROUP {% endcomment %}
+          {% liquid
+            assign group_available = false
+            for allocation in current_variant.selling_plan_allocations
+              if allocation.selling_plan_group_id == group.id
+                assign group_available = true
+              endif
+            endfor
+
+            assign group_selected = false
+            unless start_onetime
+              if product.selected_selling_plan
+                if group.selling_plan_selected
+                  assign group_selected = true
+                endif
+              elsif firstSelected == false and group_available == true
+                assign group_selected = true
+                assign firstSelected = true
+              endif
+            endunless
+          %}
+          <div class="chargezen-group-container{%- if group_available %} chargezen-group-container--available{% endif -%}
+            {%- if group_selected %} chargezen-group-container--selected{% endif %}" chargezen-group-container>
+            <input id="chargezen-selling-plan-group-{{ forloop.index }}-{{ key }}" class="chargezen-group-input"
+              name="chargezen-group-{{ key }}"
+              type="radio" value="{{ group.id }}" {% if group_selected %}checked{% endif %}
+              chargezen-selling-plan-group="{{ group.id }}">
+            <label class="chargezen-group-label" for="chargezen-selling-plan-group-{{ forloop.index }}-{{ key }}">
+              <div class="chargezen-group-topline">
+                <div class="chargezen-radio__container">
+                  {{ radio_svg }}
+                </div>
+                <div class="chargezen-group-title">
+                   {{ group.name }}
+  
+                  {% comment %} 
+                    Discount logic should match the logic in chargezen-plan-picker.js and probably 
+                    should match chargezen-cart-label.liquid
+                  {% endcomment %}
+                  {% liquid 
+                    for selling_plan in group.selling_plans
+                      assign selected = false
+                      if group.selling_plan_selected
+                        if product.selected_selling_plan.id == selling_plan.id
+                          assign selected = true
+                        endif
+                      elsif forloop.first
+                        assign selected = true
+                      endif
+      
+                      if selected
+                        assign price_adjustment = selling_plan.price_adjustments.first
+                        case price_adjustment.value_type
+                          when 'percentage'
+                            assign discount_percent = price_adjustment.value | round
+                            assign discount_absolute = current_variant.price | times: price_adjustment.value | divided_by: 100.0
+                          when 'fixed_amount'
+                            assign discount_percent = price_adjustment.value | times: 1.0 | divided_by: current_variant.price | times: 100.0 | round
+                            assign discount_absolute = price_adjustment.value
+                          when 'price'
+                            assign discount_percent = current_variant.price | minus: price_adjustment.value | times: 1.0 | divided_by: current_variant.price | times: 100.0 | round
+                            assign discount_absolute = current_variant.price | minus: price_adjustment.value
+                        endcase
+                        if discount_percent == 0
+                          assign discount_text = ''
+                        elsif discount_format == 'percent' or discount_format == blank
+                          assign discount_text = discount_percent | append: '%'
+                        else
+                          assign discount_text = discount_absolute | money
+                        endif
+      
+                        assign price = current_variant.price | minus: discount_absolute
+                      endif
+                    endfor
+                  %}
+                  {% comment %}
+                  {% if group_selected %}
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      let $externalPrice = document.querySelector('[chargezen-external-price]')
+                      if ($externalPrice) $externalPrice.innerHTML = '- {{ price | money }}'
+                    })
+                  </script>
+                  {% endif %}
+                  {% endcomment %}
+                  {% if discount_absolute > 0 %}
+                    <span class="chargezen-save">Save <span chargezen-discount>{{ discount_text }}</span></span>
+                  {% endif %}
+                </div>
+      
+                <div class="chargezen-price">
+                  <span class="money">{{ price | money_with_currency }}</span>
+                </div>
+              </div>
+              <div class="chargezen-group-content">
+                <select chargezen-selling-plans="{{ group.id }}" class="chargezen-frequency{% if group.selling_plans.size == 1 %} chargezen-frequency--one{% endif %}">
+                  {% for plan in group.selling_plans %}
+                    {% liquid 
+                      assign selected = false
+                      if product.selected_selling_plan
+                        if product.selected_selling_plan.id == plan.id
+                          assign selected = true
+                        endif
+                      elsif forloop.first
+                        assign selected = true
+                      endif
+                    %}
+                    <option value="{{ plan.id }}" {% if selected %}selected{% endif %}>
+                      {% if group.name != 'Surprise Box' %}
+                        {{ plan.name }}
+                      {% else %}
+                        {{ plan.options[0].value }}
+                      {% endif %}
+                    </option>
+                  {% endfor %}
+                </select>
+              </div>
+            </label>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endcapture %}
+
+    {% if onetime_first == true %}
+      {{ onetimeHTML }}
+      {{ subscriptionHTML }}
+    {% else %}
+      {{ subscriptionHTML }}
+      {{ onetimeHTML }}
+    {% endif %}
+
+    
+  </fieldset>
+{% else %}
+  <!-- chargezen Plan Picker: No selling plans groups on this product -->
+{% endif %}
+

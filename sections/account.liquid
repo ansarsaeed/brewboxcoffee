@@ -17,6 +17,9 @@
           {{ 'customers.account.order_history' | t }}
         </h2>
 
+
+
+
         {% if customer.orders.size > 0 %}
           {% paginate customer.orders by 20 %}
             <table class="account-table account-order-list">
@@ -68,6 +71,9 @@
           <h2 class="account-page-subtitle">
             {{ customer.name }}
           </h2>
+          {% render 'loop-subscriptions', type: 'customer-portal-link'%}
+
+
 
           <p class="account-info-item">
             <a href="mailto:{{ customer.email }}">

@@ -1,82 +1,42 @@
+{% assign filter_block = nil %}
+{% assign sidebar_blocks = false %}
+{% assign menu_block_count = 0 %}
 
-{%- liquid
-  assign filter_block = nil
-  assign sidebar_blocks = false
-  assign menu_block_count = 0
-  assign products_per_row = section.settings.products_per_row
+{% for block in section.blocks %}
+  {% if block.type == 'filter' %}
+    {% assign filter_block = block %}
+    {% assign sidebar_blocks = true %}
+  {% elsif block.type == 'menu' %}
+    {% assign sidebar_blocks = true %}
+    {% assign menu_block_count = menu_block_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
 
-  for block in section.blocks
-    if block.type == 'filter'
-      assign filter_block = block
-      assign sidebar_blocks = true
-    elsif block.type == 'menu'
-      assign sidebar_blocks = true
-      assign menu_block_count = menu_block_count | plus: 1
-    endif
-  endfor
+{% assign filter_type = 'tag' %}
+{% if filter_block and filter_block.settings.filter_option == 'faceted' %}
+  {% assign filter_type = 'faceted' %}
+{% endif %}
 
-  assign filter_type = 'tag'
-  if filter_block and filter_block.settings.filter_option == 'faceted'
-    assign filter_type = 'faceted'
-  endif
+{%- capture section_type -%}
+  {% if filter_type == 'faceted' %}
+    static-collection-faceted-filters
+  {% else %}
+    static-collection
+  {% endif %}
+{%- endcapture -%}
 
-  capture section_type
-    if filter_type == 'faceted'
-      echo 'static-collection-faceted-filters'
-    else
-      echo 'static-collection'
-    endif
-  endcapture
+{% assign current_tag_handles = '' %}
 
-  assign current_tag_handles = ''
+{% for tag in current_tags %}
+  {% assign current_tag = tag | handle %}
+  {% assign current_tag_handles = current_tag_handles | append: current_tag %}
+  {% unless forloop.last %}
+    {% assign current_tag_handles = current_tag_handles | append: '|' %}
+  {% endunless %}
+{% endfor %}
 
-  for tag in current_tags
-    assign current_tag = tag | handle
-    assign current_tag_handles = current_tag_handles | append: current_tag
-    unless forloop.last
-      assign current_tag_handles = current_tag_handles | append: '|'
-    endunless
-  endfor
+{% assign current_tag_array = current_tag_handles | split: '|' %}
 
-  assign current_tag_array = current_tag_handles | split: '|'
-
-  assign show_sidebar = false
-  assign show_filters = true
-  assign show_filter_trigger = false
-
-  if filter_block == nil or filter_block.settings.filter_option == 'tag' and collection.all_tags.size == 0
-    assign show_filters = false
-  endif
-
-  if sidebar_blocks
-    # Sidebar toggle is used on mobile only, and will only show Filters
-    if show_filters or menu_block_count > 0
-      assign show_filter_trigger = true
-    endif
-
-    # Sidebar to show only if there are tags in the collection, or there are menus
-    if sidebar_blocks or show_filters
-      assign show_sidebar = true
-    endif
-  endif
-
-  assign paginate_by = section.settings.products_per_page_range
-
-  capture collection_classes
-    # Add extra space after string to prevent string coercion in the result output
-    if show_sidebar
-      echo 'layout--has-sidebar '
-    else
-      echo 'layout--no-sidebar '
-    endif
-
-    if section.settings.default_view == 'grid-view'
-      echo 'productgrid-gridview'
-    else
-      echo 'productgrid-listview'
-    endif
-  endcapture
--%}
 
 <script
   type="application/json"
@@ -102,6 +62,11 @@
   }
 </script>
 
+
+{% assign show_sidebar = false %}
+{% assign show_filters = true %}
+{% assign show_filter_trigger = false %}
+
 {% style %}
   #shopify-section-{{ section.id }} .subcollections-list__content {
     grid-template-columns: repeat(7, minmax(auto, 1fr));
@@ -118,6 +83,43 @@
   }
 {% endstyle %}
 
+{% if filter_block == nil or filter_block.settings.filter_option == 'tag' and collection.all_tags.size == 0 %}
+  {% assign show_filters = false %}
+{% endif %}
+
+{% if sidebar_blocks %}
+  {% comment %}
+    Sidebar toggle is used on mobile only, and will only show Filters
+  {% endcomment %}
+
+  {% if show_filters %}
+    {% assign show_filter_trigger = true %}
+  {% endif %}
+
+  {% if sidebar_blocks or show_filters %}
+    {% comment %}
+      Sidebar to show only if there are tags in the collection, or there are menus
+    {% endcomment %}
+    {% assign show_sidebar = true %}
+  {% endif %}
+{% endif %}
+
+{% assign paginate_by = section.settings.products_per_page_range %}
+
+{%- capture collection_classes -%}
+  {% if show_sidebar %}
+    layout--has-sidebar
+  {% else %}
+    layout--no-sidebar
+  {% endif %}
+
+  {% if section.settings.default_view == 'grid-view' %}
+    productgrid-gridview
+  {% else %}
+    productgrid-listview
+  {% endif %}
+{%- endcapture -%}
+
 {% render 'breadcrumbs' %}
 
 {% paginate collection.products by paginate_by %}
@@ -130,9 +132,8 @@
             render 'rimg',
             img: collection.image,
             size: '1350x',
-            lazy: false,
-            canvas: false,
-            attr: 'fetchpriority="high"'
+            lazy: true,
+            canvas: true
           %}
         </figure>
       {% endif %}
@@ -205,27 +206,19 @@
                   assign filter_count = current_tags.size
                 endif
               endif
-
-              capture button_label
-                if show_filters
-                  echo 'product_grid.filters.title_count' | t: count: filter_count
-                else
-                  echo 'product_grid.menus.title' | t
-                endif
-              endcapture
             %}
             <div class="productgrid--utils utils-filter">
               <button
                 class="utils-filter-button"
                 type="button"
-                aria-label="{{ button_label }}"
+                aria-label="{{ 'product_grid.filters.title_count' | t: count: filter_count }}"
                 data-productgrid-trigger-filters
               >
                 <span class="utils-filter-icon">
                   {% render 'icon-library', id: 'icon-filters' %}
                 </span>
                 <span class="utils-filter-text">
-                  {{- button_label -}}
+                  {{- 'product_grid.filters.title_count' | t: count: filter_count -}}
                 </span>
               </button>
             </div>
@@ -334,10 +327,10 @@
       {% endif %}
 
       {% if collection.products.size > 0 %}
-        <div
+        <ul
           class="
             productgrid--items
-            products-per-row-{{- products_per_row -}}
+            products-per-row-{{- section.settings.products_per_row -}}
           "
           data-html="productgrid-items"
           data-productgrid-items
@@ -345,13 +338,10 @@
           {% for product in collection.products %}
             {%
               render 'product-grid-item',
-              product: product,
-              context: 'collection',
-              index: forloop.index,
-              products_per_row: products_per_row,
+              product: product
             %}
           {% endfor %}
-        </div>
+        </ul>
       {% else %}
         <div class="productgrid--no-results">
           <h2 class="productgrid--no-results-title">

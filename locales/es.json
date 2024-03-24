@@ -10,8 +10,7 @@
     "variants": {
       "choose_option": "Elija una {{ option }}",
       "chosen_option_html": "{{ option }}: <span>{{ value }}<\/span>",
-      "choose_variant": "Elige una variante",
-      "unavailable": "Indisponible"
+      "choose_variant": "Elige una variante"
     },
     "general": {
       "by_vendor": "por {{ vendor }}",
@@ -126,10 +125,6 @@
       "dropdown_label": "País",
       "submit_button_label": "País de actualización"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "Arriba",
-      "mobile_button_label": "Volver arriba"
-    },
     "breadcrumbs": {
       "home": "Inicio",
       "collections": "Colecciones"
@@ -181,7 +176,7 @@
       "social_media_icon": "Encuéntrenos en {{ platform }}",
       "share_on_facebook": "Compartir en Facebook",
       "share_on_pinterest": "Guardar en Pinterest",
-      "share_on_x": "Compartir en X",
+      "share_on_twitter": "Publicar en Twitter",
       "share_on_linkedin": "Compartir en LinkedIn",
       "no_matched_products": "{{ tag }} no tiene coincidencias de productos",
       "total_reviews": "reseñas totales",
@@ -217,14 +212,6 @@
         "tooltip_link": "Ver el producto"
       }
     },
-    "faq": {
-      "summary": "¿Quieres saber algo más?",
-      "content": "Ahórrese el tiempo y la molestia de escribir el mismo correo electrónico una y otra vez enumerando aquí sus preguntas y respuestas más frecuentes. Una página de preguntas frecuentes dedicada debería ayudar a abordar las necesidades básicas de sus clientes, reduciendo los correos electrónicos de servicio al cliente, aumentando las conversiones y creando una experiencia de compra más satisfactoria.",
-      "categories": {
-        "view_all": "Ver todo",
-        "view_less": "Ver menos"
-      }
-    },
     "countdown-timer": {
       "days": "Días",
       "hours": "Horas",
@@ -236,6 +223,13 @@
       "now": "Ahora",
       "price_per_unit_html": "{{ total_quantity }} | {{ unit_price }} \/ {{ unit_measure }}",
       "view_details": "Ver el producto"
+    },
+    "pxs-newsletter": {
+      "form": {
+        "placeholder": "Dirección de correo electrónico",
+        "submit": "Suscribir",
+        "success": "¡Gracias por suscribirte!"
+      }
     }
   },
   "recipient": {
@@ -248,9 +242,7 @@
       "name_placeholder": "Nombre del destinatario (opcional)",
       "message_label": "Mensaje (opcional)",
       "message_placeholder": "Mensaje (opcional)",
-      "max_characters": "Máximo de {{ max_characters }} caracteres",
-      "send_on_label": "Enviar el (opcional)",
-      "send_on_placeholder": "AAAA-MM-DD"
+      "max_characters": "Máximo de {{ max_characters }} caracteres"
     }
   },
   "age_gate": {
@@ -344,11 +336,6 @@
       "no_shipping_required": "Su carrito no necesita envío.",
       "shipment_too_heavy": "Lo sentimos, pero este envío es demasiado pesado para enviarse.",
       "error_general": "Lo sentimos, no podemos calcular su envío en este momento."
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "<strong>{{ amount }}<\/strong> de envío gratuito!",
-      "free_shipping_eligible_html": "¡Eres elegible para <strong>envío gratuito<\/strong>!",
-      "free_shipping_empty_html": "Envío gratuito en pedidos superiores a <strong>{{ amount }}<\/strong>!"
     }
   },
   "contact": {
@@ -519,9 +506,6 @@
       "remove_filter": "Eliminar filtro",
       "clear_all": "Limpiar todo"
     },
-    "menus": {
-      "title": "Menús"
-    },
     "sort_by": {
       "title": "Ordenar por"
     },
@@ -604,6 +588,12 @@
       "vendor": "Proveedor del producto",
       "by_vendor": "por Proveedor del producto"
     },
+    "twitter": {
+      "title": "Cuenta de Twitter",
+      "tweet_html": "¡Conecte su cuenta de Twitter para atraer clientes dentro y fuera de su sitio!",
+      "username": "nombre de usuario",
+      "time": "Hace 8 horas"
+    },
     "page": {
       "title": "Título de la página"
     }
@@ -632,5 +622,13 @@
     "breadcrumb": "Volver a {{ location }}",
     "breadcrumb_generic": "atrás",
     "remove": "Eliminar"
+  },
+  "customer_accounts": {
+    "order_details": {
+      "fees": {
+        "restocking_fee": "Tasa de reposición",
+        "return_shipping_fee": "Envío de devolución"
+      }
+    }
   }
 }

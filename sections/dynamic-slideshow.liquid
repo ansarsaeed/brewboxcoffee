@@ -14,12 +14,6 @@
     assign slide_height = 100 | divided_by: min_aspect_ratio_desktop
     assign slide_height_mobile = 100 | divided_by: min_aspect_ratio_mobile
   endif
-
-  assign performance_lazyload = false
-
-  if section.index > 3 or slideshow_height == 'original'
-    assign performance_lazyload = true
-  endif
 %}
 
 {% if enable_autoplay %}
@@ -111,21 +105,10 @@
 
   @param wrapper_classes {String}
     A space separated list of classnames to add to the slideshow internal wrapper element
-
-  @param performance_lazyload {Bool}
-    Specifies the 'lazy' property for rimg
 {%- endcomment -%}
 
 {% liquid
   assign treat_as_banner = treat_as_banner | default: false
-
-  # If the performance_lazyload variable does not exist, default to true
-
-  if performance_lazyload != nil
-    assign lazyload = performance_lazyload
-  else
-    assign lazyload = true
-  endif
 %}
 
 <script
@@ -171,7 +154,6 @@
       {%
         render 'slideshow-slide',
         section: section,
-        lazyload: lazyload,
         block: block,
         block_index: forloop.index0,
       %}
@@ -374,8 +356,22 @@
         },
         {
           "id": "text_alignment",
-          "type": "text_alignment",
+          "type": "select",
           "label": "t:sections.slideshow.blocks.slide.text_alignment.label",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:sections.slideshow.blocks.slide.text_alignment.option_1"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.slideshow.blocks.slide.text_alignment.option_2"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.slideshow.blocks.slide.text_alignment.option_3"
+            }
+          ],
           "default": "center"
         },
         {

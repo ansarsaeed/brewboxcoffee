@@ -10,8 +10,7 @@
     "variants": {
       "choose_variant": "Choose a variant",
       "choose_option": "Choose a {{ option }}",
-      "chosen_option_html": "{{ option }}: <span>{{ value }}<\/span>",
-      "unavailable": "Unavailable"
+      "chosen_option_html": "{{ option }}: <span>{{ value }}<\/span>"
     },
     "general": {
       "select_variant": "Please select a variant",
@@ -126,10 +125,6 @@
       "dropdown_label": "Language",
       "submit_button_label": "Update language"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "Top",
-      "mobile_button_label": "Back to top"
-    },
     "breadcrumbs": {
       "home": "Home",
       "collections": "Collections"
@@ -183,7 +178,7 @@
       "social_media_icon": "Find us on {{ platform }}",
       "share_on_facebook": "Share on Facebook",
       "share_on_pinterest": "Pin on Pinterest",
-      "share_on_x": "Share on X",
+      "share_on_twitter": "Tweet on Twitter",
       "share_on_linkedin": "Share on LinkedIn",
       "no_matched_products": "{{ tag }} has no product matches",
       "star_review_text": "Review",
@@ -216,14 +211,6 @@
         "tooltip_link": "View product"
       }
     },
-    "faq": {
-      "summary": "Want to know anything else?",
-      "content": "Save yourself the time and trouble of writing the same email over and over again by listing your most commonly asked questions and answers here. A dedicated FAQ page should help address the basic needs of your customers, cutting down on customer service emails, increasing conversions, and creating a more satisfying shopping experience!",
-      "categories": {
-        "view_all": "View all",
-        "view_less": "View less"
-      }
-    },
     "countdown-timer": {
       "days": "Days",
       "hours": "Hours",
@@ -235,11 +222,18 @@
       "now": "now",
       "view_details": "View product",
       "price_per_unit_html": "{{ total_quantity }} | {{ unit_price }} \/ {{ unit_measure }}"
+    },
+    "pxs-newsletter": {
+      "form": {
+        "placeholder": "Email address",
+        "submit": "Subscribe",
+        "success": "Thanks for subscribing!"
+      }
     }
   },
   "recipient": {
     "form": {
-      "checkbox_label": "I want to send this as a gift",
+      "checkbox_label": "If this a gift?",
       "email_label": "Recipient email",
       "email_placeholder": "Recipient email *",
       "error_message": "Email is not valid",
@@ -247,9 +241,7 @@
       "name_placeholder": "Recipient name (optional)",
       "message_label": "Message (optional)",
       "message_placeholder": "Message (optional)",
-      "max_characters": "{{ max_characters }} characters max",
-      "send_on_label": "Send on (optional)",
-      "send_on_placeholder": "YYYY-MM-DD"
+      "max_characters": "{{ max_characters }} characters max"
     }
   },
   "age_gate": {
@@ -342,11 +334,6 @@
       "no_shipping_required": "Your cart does not require shipping.",
       "shipment_too_heavy": "Sorry, but this shipment is too heavy to ship.",
       "error_general": "Sorry, we're not able to calculate your shipping at this time."
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "<strong>{{ amount }}<\/strong> away from free shipping!",
-      "free_shipping_eligible_html": "You are eligible for <strong>free shipping<\/strong>!",
-      "free_shipping_empty_html": "Free shipping on orders over <strong>{{ amount }}<\/strong>!"
     }
   },
   "contact": {
@@ -517,9 +504,6 @@
       "remove_filter": "Remove filter",
       "clear_all": "Clear all"
     },
-    "menus": {
-      "title": "Menus"
-    },
     "sort_by": {
       "title": "Sort by"
     },
@@ -626,8 +610,19 @@
       "vendor": "Product vendor",
       "by_vendor": "by Product vendor"
     },
+    "twitter": {
+      "title": "Twitter feed",
+      "tweet_html": "Connect your Twitter account to engage customers on and off your site!",
+      "username": "username",
+      "time": "8 hours ago"
+    },
     "page": {
       "title": "Page title"
+    }
+  },
+  "customer_accounts": {
+    "order_details": {
+      "marketing_checkbox_label": "Email me with updates about my subscription and unique discounts for subscribers"
     }
   }
 }

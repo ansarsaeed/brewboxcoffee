@@ -73,7 +73,7 @@
     {% comment %}Inject theme-object begin{% endcomment %}
     <script>
       window.Theme = window.Theme || {};
-      window.Theme.version = '11.0.0';
+      window.Theme.version = '9.1.1';
       window.Theme.name = 'Empire';
       window.Theme.routes = {
         "root_url": "{{ routes.root_url }}",
@@ -211,17 +211,11 @@
                 <span class="atc-subtotal--price money" data-atc-banner-cart-subtotal></span>
               </div>
       
-              {%-
-                render 'free-shipping-bar',
-                context: 'atc-banner',
-              -%}
-      
               <footer class="atc-banner--cart-footer">
                 <a class="button-secondary atc-button--viewcart" href="{{ routes.cart_url }}" data-atc-banner-cart-button>
                   {{ 'add_to_cart_banner.general.view_cart_html' | t: count: '<span></span>' }}
                 </a>
                 <form
-                  class="atc-banner__form"
                   action="{{ routes.cart_url }}"
                   method="post"
                   aria-label="cart checkout"

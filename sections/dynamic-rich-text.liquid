@@ -2,8 +2,7 @@
   type="application/json"
   data-section-id="{{ section.id }}"
   data-section-type="dynamic-rich-text"
->
-</script>
+></script>
 
 <script type="application/pxs-animation-mapping+json">
   {
@@ -14,34 +13,34 @@
 
 <section
   class="
-    rich-text
-    rich-text--{{ section.settings.width }}
+    rich-text--container
+    rich-text-{{ section.settings.width }}
   "
 >
-  <div
-    class="
-      rich-text-block
-      rich-text-alignment-{{ section.settings.text_alignment }}
-    "
-    {{ section.shopify_attributes }}
-  >
-    {%- if section.settings.title != blank -%}
-      <h2
-        class="
-          rich-text-heading
-          rich-text-heading-{{ section.settings.heading_size }}
-        "
-      >
-        {{- section.settings.title | escape -}}
-      </h2>
-    {%- endif -%}
+    <div
+      class="
+        rich-text-block
+        rich-text-alignment-{{ section.settings.text_alignment }}
+      "
+      {{ section.shopify_attributes }}
+    >
+        {% if section.settings.title != blank %}
+          <h2
+            class="
+              rich-text-heading
+              rich-text-heading-{{ section.settings.heading_size }}
+            "
+          >
+            {{ section.settings.title | escape }}
+          </h2>
+        {% endif %}
 
-    {%- if section.settings.text != blank -%}
-      <div class="rich-text-content rte" data-rte>
-        {{- section.settings.text -}}
-      </div>
-    {%- endif -%}
-  </div>
+        {% if section.settings.text != blank %}
+          <div class="rich-text-content rte" data-rte>
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+    </div>
 </section>
 
 {% schema %}
@@ -103,8 +102,22 @@
     },
     {
       "id": "text_alignment",
-      "type": "text_alignment",
+      "type": "select",
       "label": "t:sections.rich_text.text_alignment.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.rich_text.text_alignment.option_1"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.rich_text.text_alignment.option_2"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.rich_text.text_alignment.option_3"
+        }
+      ],
       "default": "left"
     }
   ],
@@ -119,5 +132,4 @@
     "groups": ["*"]
   }
 }
-
 {% endschema %}

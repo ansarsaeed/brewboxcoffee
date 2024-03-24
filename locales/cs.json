@@ -10,8 +10,7 @@
     "variants": {
       "choose_option": "Vyberte {{ option }}",
       "chosen_option_html": "{{ option }}: <span> {{ value }} <\/span>",
-      "choose_variant": "Vyberte variantu",
-      "unavailable": "Není k dispozici"
+      "choose_variant": "Vyberte variantu"
     },
     "general": {
       "by_vendor": "podle {{ vendor }}",
@@ -126,10 +125,6 @@
       "dropdown_label": "Země",
       "submit_button_label": "Aktualizovat zemi"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "Nahoru",
-      "mobile_button_label": "Zpět nahoru"
-    },
     "breadcrumbs": {
       "home": "Domů",
       "collections": "Kolekce"
@@ -181,7 +176,7 @@
       "social_media_icon": "Navštivte nás na {{ platform }}",
       "share_on_facebook": "Sdílet na Facebooku",
       "share_on_pinterest": "Připnout na Pinterest",
-      "share_on_x": "Sdílet na X",
+      "share_on_twitter": "Tweetnout na Twitter",
       "share_on_linkedin": "Sdílet na LinkedIn",
       "no_matched_products": "{{ tag }} nemá žádné shody produktů",
       "total_reviews": "celkový počet recenzí",
@@ -217,14 +212,6 @@
         "tooltip_link": "Zobrazit produkt"
       }
     },
-    "faq": {
-      "summary": "Chcete vědět něco jiného?",
-      "content": "Ušetřete si čas a potíže s opakovaným psaním stejných e-mailů uvedením zde nejčastěji kladených otázek a odpovědí. Specializovaná stránka s často kladenými dotazy by měla pomoci řešit základní potřeby vašich zákazníků, omezit emaily zákaznických služeb, zvýšit počet konverzí a vytvořit uspokojivější zážitek z nakupování!",
-      "categories": {
-        "view_all": "Zobrazit vše",
-        "view_less": "Zobrazit méně"
-      }
-    },
     "countdown-timer": {
       "days": "Dny",
       "hours": "hodiny",
@@ -248,9 +235,7 @@
       "name_placeholder": "Jméno příjemce (volitelné)",
       "message_label": "Zpráva (volitelné)",
       "message_placeholder": "Zpráva (volitelné)",
-      "max_characters": "Maximálně {{ max_characters }} znaků",
-      "send_on_label": "Datum odeslání (volitelné)",
-      "send_on_placeholder": "RRRR-MM-DD"
+      "max_characters": "Maximálně {{ max_characters }} znaků"
     }
   },
   "age_gate": {
@@ -344,11 +329,6 @@
       "no_shipping_required": "Váš košík nevyžaduje dopravu. ",
       "shipment_too_heavy": "Omlouváme se, ale tato dodávka je pro zaslání příliš těžká. ",
       "error_general": "Omlouváme se, momentálně se nám nepodařilo vypočítat vaši dopravu. "
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "<strong>{{ amount }}<\/strong> od dopravy zdarma!",
-      "free_shipping_eligible_html": "Máte nárok na <strong>dopravu zdarma<\/strong>!",
-      "free_shipping_empty_html": "Doprava zdarma při objednávce nad <strong>{{ amount }}<\/strong>!"
     }
   },
   "contact": {
@@ -519,9 +499,6 @@
       "remove_filter": "Odstranit filtr",
       "clear_all": "Vymazat vše"
     },
-    "menus": {
-      "title": "Menu"
-    },
     "sort_by": {
       "title": "Seřadit podle"
     },
@@ -602,6 +579,12 @@
       "title": "Název produktu",
       "vendor": "Prodejce produktu",
       "by_vendor": "od Prodejce produktu"
+    },
+    "twitter": {
+      "title": "Hlavní stránka Twitter",
+      "tweet_html": "Připojte svůj účet na Twitteru a oslovte zákazníky na vaší stránce i mimo ni!",
+      "username": "uživatelské jméno",
+      "time": "před 8 hodinami"
     },
     "page": {
       "title": "Název stránky"

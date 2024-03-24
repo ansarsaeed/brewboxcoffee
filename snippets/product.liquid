@@ -38,7 +38,7 @@
 
 {% liquid
   assign onboarding = onboarding | default: false
-  assign layout = layout | default: null
+  assign layout = layout | default: nil
   assign is_featured_product = is_featured_product | default: false
 
   if layout == 'layout--three-col'
@@ -104,10 +104,11 @@
     social_title: product.title,
     social_url: social_url
   -%}
-{%- endcapture -%}
+{%- endcapture  -%}
 
 <article class="product--outer">
-  {% render 'product-gallery',
+  {%
+    render 'product-gallery',
     product: product,
     select_first_available_variant: select_first_available_variant,
     aspect_ratio: gallery_aspect_ratio,
@@ -132,37 +133,34 @@
         >
           {% case block.type %}
             {% when 'complementary_products' %}
-              {% render 'complementary-products', product: product, block: block %}
+              {%
+                render 'complementary-products',
+                product: product,
+                block: block,
+              %}
 
             {% when 'title' %}
-              {%- assign product_title = product.title | escape -%}
-
-              {%- if is_product_modal or is_featured_product -%}
+              {% if is_product_modal %}
                 <h2 class="product-title">
-                  <a
-                    {% unless onboarding %}
-                      href="{{ product.url | within: collection }}"
-                    {% endunless %}
-                  >
-                    {%- if onboarding -%}
-                      {{- 'onboarding.product.title' | t -}}
-                    {%- else -%}
-                      {{- product_title -}}
-                    {%- endif -%}
-                  </a>
+                  <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
                 </h2>
-              {%- else -%}
-                {%- case template -%}
-                  {%- when 'product' -%}
-                    <h1 class="product-title">
-                      {{- product_title -}}
-                    </h1>
-                  {%- else -%}
-                    <h2 class="product-title">
-                      {{- product_title -}}
-                    </h2>
-                {%- endcase -%}
-              {%- endif -%}
+              {% else %}
+                {% if template == 'index' %}
+                  <h2 class="product-title">
+                {% else %}
+                  <h1 class="product-title">
+                {% endif %}
+                  {% unless onboarding %}
+                    {{ product.title }}
+                  {% else %}
+                    {{ 'onboarding.product.title' | t }}
+                  {% endunless %}
+                {% if template == 'index' %}
+                  </h2>
+                {% else %}
+                  </h1>
+                {% endif %}
+              {% endif %}
 
             {% when 'vendor' %}
               {% if product.vendor != blank or onboarding %}
@@ -186,27 +184,28 @@
                   data-stock-variant-selected="{% if variant == selected_variant %}true{% else %}false{% endif %}"
                 {% endcapture %}
 
-                {% render 'product-stock-level',
+                {%
+                  render 'product-stock-level',
                   attr: stock_attributes,
                   inventory_display: block.settings.inventory_display,
                   inventory_transfer: block.settings.inventory_transfer_notice,
                   variant: variant,
-                  verbose: true
+                  verbose: true,
                 %}
               {% endfor %}
 
             {% when 'rating' %}
               {% if product.metafields.reviews.rating.value != blank %}
                 <div class="product__rating rating">
-                  {% render 'rating-stars',
+                  {%
+                    render 'rating-stars',
                     value: product.metafields.reviews.rating.value.rating,
-                    scale_max: product.metafields.reviews.rating.value.scale_max
+                    scale_max: product.metafields.reviews.rating.value.scale_max,
                   %}
 
                   <p class="rating__text">
                     <span aria-hidden="true">
-                      {{ product.metafields.reviews.rating.value }} /
-                      {{ product.metafields.reviews.rating.value.scale_max }}
+                      {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}
                     </span>
                   </p>
 
@@ -214,9 +213,9 @@
                     <span aria-hidden="true">
                       {{ product.metafields.reviews.rating_count }}
                       {% if product.metafields.reviews.rating_count > 1 %}
-                        {{ 'general.accessibility.star_reviews_text' | t }}
+                        {{ "general.accessibility.star_reviews_text" | t }}
                       {% else %}
-                        {{ 'general.accessibility.star_review_text' | t }}
+                        {{ "general.accessibility.star_review_text" | t }}
                       {% endif %}
                     </span>
                   </p>
@@ -234,15 +233,20 @@
                   "
                 >
                   {% if block.settings.image %}
-                    {% render 'rimg',
+                    {%
+                      render 'rimg',
                       img: block.settings.image,
                       class: 'key-details__image',
                       size: '50x50',
                       lazy: true,
-                      focal_point: block.settings.image.presentation.focal_point
+                      focal_point: block.settings.image.presentation.focal_point,
                     %}
                   {% else %}
-                    {% render 'icon-library', id: block.settings.icon, icon_class: 'key-details__icon' %}
+                    {%
+                      render 'icon-library',
+                      id: block.settings.icon,
+                      icon_class: 'key-details__icon',
+                    %}
                   {% endif %}
 
                   <div class="key-details__wrapper">
@@ -265,7 +269,8 @@
                 aria-live="polite"
                 data-product-pricing
               >
-                {% render 'product-badge',
+                {%
+                  render 'product-badge',
                   product: product,
                   class_root: 'product',
                   product_available: product_available,
@@ -276,10 +281,11 @@
                   on_sale: on_sale,
                   show_saved: true,
                   include_range: false,
-                  selected_variant: selected_variant
+                  selected_variant: selected_variant,
                 %}
 
-                {% render 'product-price',
+                {%
+                  render 'product-price',
                   product: product,
                   class_root: 'product',
                   price: price,
@@ -316,9 +322,6 @@
                   {{ readmore_split[0] }}
                 </div>
               {% endif %}
-            {% when 'short-description' %}
-              {% assign short_description = product.metafields.custom.product_short_description %}
-              {{ short_description | metafield_tag  }}
 
             {% when 'form' %}
               <div
@@ -343,13 +346,14 @@
                   %}
 
                   {% unless onboarding %}
-                    {% render 'product-form',
+                    {%
+                      render 'product-form',
                       product: product,
                       enable_local_pickup: enable_local_pickup,
                       show_recipient_form: show_recipient_form,
                       show_dynamic_checkout_button: show_dynamic_checkout_button,
                       selected_variant: selected_variant,
-                      is_product_modal: is_product_modal
+                      is_product_modal: is_product_modal,
                     %}
                   {% endunless %}
                 </div>
@@ -477,13 +481,14 @@
               </a>
 
             {% when 'request_quote' %}
-              {% render 'product-request-form',
+              {%
+                render 'product-request-form',
                 product: product,
                 heading: block.settings.title,
                 show_quantity: block.settings.show_quantity,
                 show_message: block.settings.show_message,
                 selected_variant: selected_variant,
-                sku: sku
+                sku: sku,
               %}
           {% endcase %}
         </div>
@@ -509,13 +514,14 @@
             %}
 
             {% unless onboarding %}
-              {% render 'product-form',
+              {%
+                render 'product-form',
                 product: product,
                 enable_local_pickup: enable_local_pickup,
                 show_recipient_form: show_recipient_form,
                 show_dynamic_checkout_button: show_dynamic_checkout_button,
                 selected_variant: selected_variant,
-                is_product_modal: is_product_modal
+                is_product_modal: is_product_modal,
               %}
             {% endunless %}
 

@@ -219,15 +219,15 @@
 
       {% if product_count > 0 %}
         <h2 class="visually-hidden">{{ 'general.accessibility.search_products' | t }}</h2>
-        <div class="productgrid--items products-per-row-{{- section.settings.products_per_row -}}">
-          {% for item in search.results %}
-            {% if item.object_type != 'product' %}{% continue %}{% endif %}
+        <ul class="productgrid--items products-per-row-{{- section.settings.products_per_row -}}">
+            {% for item in search.results %}
+              {% if item.object_type != 'product' %}{% continue %}{% endif %}
               {%
                 render 'product-grid-item',
-                product: item,
+                product: item
               %}
-          {% endfor %}
-          </div>
+            {% endfor %}
+          </ul>
         {% else %}
           <div class="productgrid--no-results">
             {% assign title = 'search.general.no_search_performed' | t %}

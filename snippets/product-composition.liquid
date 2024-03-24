@@ -1,8 +1,0 @@
-<div class="compostions">
-    {%  for compos in composition %}
-      <div class="compostion">
-        <h3>{{ compos | split:':' | first }}</h3>
-        <p>{{ compos | split:':' | last }}</p>
-      </div>
-    {%  endfor %}
-  </div>

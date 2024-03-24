@@ -10,8 +10,7 @@
     "variants": {
       "choose_option": "选择一个{{ option }}",
       "chosen_option_html": "{{ option }}：<span>{{ value }}<\/span>",
-      "choose_variant": "选择一个变体",
-      "unavailable": "不可用"
+      "choose_variant": "选择一个变体"
     },
     "general": {
       "by_vendor": "来自 {{ vendor }}",
@@ -126,10 +125,6 @@
       "dropdown_label": "国家",
       "submit_button_label": "更新国家"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "顶部",
-      "mobile_button_label": "返回顶部"
-    },
     "breadcrumbs": {
       "home": "首页",
       "collections": "产品集合"
@@ -181,7 +176,7 @@
       "social_media_icon": "在{{ platform }}找到我们",
       "share_on_facebook": "分享至 Facebook",
       "share_on_pinterest": "收藏至 Pinterest",
-      "share_on_x": "分享到 X",
+      "share_on_twitter": "发推文至 Twitter",
       "share_on_linkedin": "分享至 LinkedIn",
       "no_matched_products": "{{ tag }}没有产品匹配项",
       "total_reviews": "总评论数",
@@ -217,14 +212,6 @@
         "tooltip_link": "查看商品"
       }
     },
-    "faq": {
-      "summary": "想知道其他吗？",
-      "content": "通过在此处列出最常见的问题和答案，节省您一次又一次写同一封电子邮件的时间和麻烦。专用的常见问题页面应有助于满足客户的基本需求，减少客户服务电子邮件，增加转化次数，并创造更令人满意的购物体验！",
-      "categories": {
-        "view_all": "查看全部",
-        "view_less": "查看更少"
-      }
-    },
     "countdown-timer": {
       "days": "天",
       "hours": "小时",
@@ -248,9 +235,7 @@
       "name_placeholder": "收件人姓名（可选）",
       "message_label": "留言（可选）",
       "message_placeholder": "留言（可选）",
-      "max_characters": "最多{{ max_characters }}个字符",
-      "send_on_label": "发送日期（可选）",
-      "send_on_placeholder": "YYYY-MM-DD"
+      "max_characters": "最多{{ max_characters }}个字符"
     }
   },
   "header": {
@@ -323,11 +308,6 @@
       "no_shipping_required": "您的购物车不需要送货。",
       "shipment_too_heavy": "抱歉，此单货品超重，无法运送。",
       "error_general": "抱歉，我们暂时无法计算您的运费。"
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "离免费送货还有 <strong>{{ amount }}<\/strong>！",
-      "free_shipping_eligible_html": "您有资格获得 <strong>免费送货<\/strong>！",
-      "free_shipping_empty_html": "订单满<strong>{{ amount }}以上免运费<\/strong>!"
     }
   },
   "contact": {
@@ -498,9 +478,6 @@
       "remove_filter": "移除筛选条件",
       "clear_all": "清除所有"
     },
-    "menus": {
-      "title": "菜单"
-    },
     "sort_by": {
       "title": "排序方式"
     },
@@ -558,8 +535,7 @@
       "posts_title": "帖子",
       "pages_and_posts_title": "页面和帖子",
       "view_all_results": "搜索 \"{{ terms }}\"",
-      "no_results": "找不到匹配结果。",
-      "products_title": "产品"
+      "no_results": "找不到匹配结果。"
     }
   },
   "onboarding": {
@@ -582,6 +558,12 @@
       "title": "产品标题",
       "vendor": "产品供应商",
       "by_vendor": "来自产品供应商"
+    },
+    "twitter": {
+      "title": "Twitter 信息流",
+      "tweet_html": "连接您的 Twitter 帐户，在站点内外与客户交流！",
+      "username": "用户名",
+      "time": "8 小时前"
     },
     "page": {
       "title": "页面标题"

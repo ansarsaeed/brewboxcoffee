@@ -89,9 +89,6 @@
 
   @param block_button_2_class
     Any classes to be added to the second button on the slide
-
-  @param lazyload
-    Based on section index, whether we should lazy load images
 {%- endcomment -%}
 
 {%- assign placeholder_number = block_index | modulo: 2 | plus: 1 -%}
@@ -133,8 +130,8 @@
           img: block_slide_image,
           class: 'slideshow-slide__image slideshow-slide__image--desktop',
           size: '2000x',
-          lazy: lazyload,
-          canvas: lazyload,
+          lazy: true,
+          canvas: true,
           focal_point: block_slide_image.presentation.focal_point,
         %}
       {%- else -%}
@@ -147,8 +144,8 @@
           img: block_slide_image_mobile,
           class: 'slideshow-slide__image slideshow-slide__image--mobile',
           size: '800x',
-          lazy: lazyload,
-          canvas: lazyload,
+          lazy: true,
+          canvas: true,
           focal_point: block_slide_image_mobile.presentation.focal_point,
         %}
       {%- endif -%}

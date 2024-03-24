@@ -35,17 +35,14 @@
     </a>
 
     <a
-      class="
-        share-buttons--button
-        share-buttons--x
-      "
+      class="share-buttons--button share-buttons--twitter"
       target="_blank"
-      href="//x.com/intent/tweet?url={{ share_url }}">
+      href="//twitter.com/share?url={{ share_url }}">
       {%-
         render 'social-icon',
-        id: 'x',
+        id: 'twitter'
       -%}
-      <span class="visually-hidden">{{ 'general.accessibility.share_on_x' | t }}</span>
+      <span class="visually-hidden">{{ 'general.accessibility.share_on_twitter' | t }}</span>
     </a>
 
     <a

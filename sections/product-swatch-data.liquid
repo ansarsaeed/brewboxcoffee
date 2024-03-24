@@ -1,7 +1,3 @@
-<head>
-  <meta name="format-detection" content="telephone=no">
-</head>
-
 {% for option in product.options_with_values %}
   {%- assign swatch_trigger = settings.swatches_swatch_trigger | strip | downcase -%}
   {% assign option_name = option.name | downcase %}

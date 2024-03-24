@@ -92,26 +92,13 @@
         {%- endcase -%}
 
         <span class="form-field-select-wrapper live-search-filter-wrapper">
-          <select
-            class="live-search-filter"
-            id="live-search-filter"
-            data-live-search-filter
-            data-filter-all="{{ 'search.form.filter_all' | t }}"
-          >
+          <select class="live-search-filter" data-live-search-filter data-filter-all="{{ 'search.form.filter_all' | t }}">
             {{ search_filter_content_first }}
             <option value="" {% if search_filter_selected == blank %}selected{% endif %}>{{ 'search.form.filter_all' | t }}</option>
             <option value="" disabled>------</option>
             {{ search_filter_content_rest }}
           </select>
-
-          <label
-            class="
-              live-search-filter-label
-              form-field-select
-            "
-            for="live-search-filter"
-            data-live-search-filter-label
-          >
+          <label class="live-search-filter-label form-field-select" data-live-search-filter-label>
             {%- if search_filter_selected != blank -%}
               {{ search_filter_selected }}
             {%- else -%}

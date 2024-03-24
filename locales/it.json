@@ -57,10 +57,6 @@
       "dropdown_label": "Nazione",
       "submit_button_label": "Aggiornamento paese"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "Su",
-      "mobile_button_label": "Torna su"
-    },
     "breadcrumbs": {
       "home": "Home",
       "collections": "Collezioni"
@@ -112,7 +108,7 @@
       "social_media_icon": "Trovaci su {{ platform }}",
       "share_on_facebook": "Condividi su Facebook",
       "share_on_pinterest": "Condividi su Pinterest",
-      "share_on_x": "Condividi su X",
+      "share_on_twitter": "Condividi su  Twitter",
       "share_on_linkedin": "Condividi su LinkedIn",
       "no_matched_products": "{{ tag }} non ha corrispondenze di prodotto",
       "total_reviews": "Recensioni totali",
@@ -144,19 +140,7 @@
       "name_placeholder": "Nome del destinatario (opzionale)",
       "message_label": "Messaggio (opzionale)",
       "message_placeholder": "Messaggio (opzionale)",
-      "max_characters": "Massimo {{ max_characters }} caratteri",
-      "send_on_label": "Spedisci il giorno (opzionale)",
-      "send_on_placeholder": "AAAA-MM-GG"
-    }
-  },
-  "sections": {
-    "faq": {
-      "summary": "Vuoi sapere qualcos'altro?",
-      "content": "Risparmia tempo e fatica a scrivere sempre la stessa email elencando qui le domande e le risposte più frequenti. Una pagina delle domande frequenti dedicata dovrebbe aiutarti a soddisfare le esigenze di base dei tuoi clienti, ridurre le e-mail del servizio clienti, aumentare le conversioni e creare un'esperienza di acquisto più soddisfacente!",
-      "categories": {
-        "view_all": "Visualizza tutto",
-        "view_less": "Mostra meno"
-      }
+      "max_characters": "Massimo {{ max_characters }} caratteri"
     }
   },
   "age_gate": {
@@ -250,11 +234,6 @@
       "no_shipping_required": "Il tuo carrello non richiede spedizione.",
       "shipment_too_heavy": "Siamo spiacenti, ma questa spedizione è troppo pesante per essere spedita.",
       "error_general": "Siamo spiacenti, al momento non siamo in grado di calcolare la tua spedizione."
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "<strong>{{ amount }}<\/strong> dall'invio gratuito!",
-      "free_shipping_eligible_html": "Sei idoneo per <strong>spedizione gratuita<\/strong>!",
-      "free_shipping_empty_html": "Spedizione gratuita per ordini superiori a <strong>{{ amount }}<\/strong>!"
     }
   },
   "contact": {
@@ -425,9 +404,6 @@
       "remove_filter": "Rimuovu filtri",
       "clear_all": "Cancella tutto"
     },
-    "menus": {
-      "title": "Menu"
-    },
     "sort_by": {
       "title": "Ordina per"
     },
@@ -571,6 +547,12 @@
       "title": "Titolo prodotto",
       "vendor": "Fornitore del prodotto",
       "by_vendor": "dal fornitore del prodotto"
+    },
+    "twitter": {
+      "title": "Twitter",
+      "tweet_html": "Collega il tuo account Twitter per coinvolgere i clienti dentro e fuori il tuo sito!",
+      "username": "username",
+      "time": "8 ore fa"
     },
     "page": {
       "title": "Titolo della pagina"

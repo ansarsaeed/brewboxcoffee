@@ -10,8 +10,7 @@
     "variants": {
       "choose_option": "एक {{ option }} चुनें",
       "chosen_option_html": "{{ option }}: <span>{{ value }}<\/span>",
-      "choose_variant": "एक संस्करण चुनें",
-      "unavailable": "अनुपलब्ध"
+      "choose_variant": "एक संस्करण चुनें"
     },
     "general": {
       "by_vendor": "{{ vendor }} द्वारा\n",
@@ -126,10 +125,6 @@
       "dropdown_label": "देश",
       "submit_button_label": "अद्यतन देश"
     },
-    "back_to_top_button": {
-      "desktop_button_label": "ऊपर",
-      "mobile_button_label": "वापस ऊपर"
-    },
     "breadcrumbs": {
       "home": "होम",
       "collections": "संग्रह"
@@ -181,7 +176,7 @@
       "social_media_icon": "हमें {{ platform }} पर ढूंढें",
       "share_on_facebook": "Facebook पर शेयर करें",
       "share_on_pinterest": "Pinterest पर पिन करें",
-      "share_on_x": "एक्स पर साझा करें",
+      "share_on_twitter": "Twitter पर ट्वीट",
       "share_on_linkedin": "LinkedIn पर शेयर कर",
       "no_matched_products": "{{ tag }} का कोई उत्पाद मिलान नहीं है",
       "total_reviews": "कुल समीक्षा",
@@ -217,14 +212,6 @@
         "tooltip_link": "उत्पाद देखें"
       }
     },
-    "faq": {
-      "summary": "कुछ और जानना चाहते हैं?",
-      "content": "अपने सबसे अधिक पूछे जाने वाले प्रश्नों और उत्तरों को यहां सूचीबद्ध करके एक ही ईमेल को बार-बार लिखने का समय और परेशानी बचाएं। एक समर्पित अक्सर पूछे जाने वाले प्रश्न पृष्ठ को आपके ग्राहकों की बुनियादी जरूरतों को पूरा करने, ग्राहक सेवा ईमेल में कटौती करने, रूपांतरण बढ़ाने और अधिक संतोषजनक खरीदारी अनुभव बनाने में मदद करनी चाहिए!",
-      "categories": {
-        "view_all": "सभी देखें",
-        "view_less": "कम देखें"
-      }
-    },
     "countdown-timer": {
       "days": "दिन",
       "hours": "घंटे",
@@ -248,9 +235,7 @@
       "name_placeholder": "प्राप्तकर्ता का नाम (वैकल्पिक)",
       "message_label": "संदेश (वैकल्पिक)",
       "message_placeholder": "संदेश (वैकल्पिक)",
-      "max_characters": "{{ max_characters }} वर्णों की अधिकतम सीमा",
-      "send_on_label": "भेजें (वैकल्पिक) तिथि पर",
-      "send_on_placeholder": "YYYY-MM-DD"
+      "max_characters": "{{ max_characters }} वर्णों की अधिकतम सीमा"
     }
   },
   "age_gate": {
@@ -344,11 +329,6 @@
       "no_shipping_required": "आपके कार्ट को शिपिंग की आवश्यकता नहीं है।\n",
       "shipment_too_heavy": "क्षमा करें, लेकिन यह शिपमेंट शिप करने के लिए बहुत भारी है\n",
       "error_general": "क्षमा करें, हम इस समय आपकी शिपिंग की गणना करने में सक्षम नहीं हैं"
-    },
-    "free_shipping_bar": {
-      "free_shipping_ineligible_html": "नि:शुल्क शिपिंग से <strong>{{ amount }}<\/strong> दूर हैं!",
-      "free_shipping_eligible_html": "आप <strong>नि:शुल्क शिपिंग<\/strong> के लिए योग्य हैं!",
-      "free_shipping_empty_html": "ऑर्डर्स पर <strong>{{ amount }}<\/strong>! से ऊपर मुफ्त शिपिंग"
     }
   },
   "contact": {
@@ -519,9 +499,6 @@
       "remove_filter": "फ़िल्टर निकालें\n",
       "clear_all": "सभी साफ करें"
     },
-    "menus": {
-      "title": "मेनू"
-    },
     "sort_by": {
       "title": "इसके अनुसार क्रमबद्ध करें\n"
     },
@@ -602,6 +579,12 @@
       "title": "उत्पाद का शीर्षक\n",
       "vendor": "उत्पाद विक्रेता\n",
       "by_vendor": "उत्पाद विक्रेता द्वारा\n"
+    },
+    "twitter": {
+      "title": "Twitter फीड\n",
+      "tweet_html": "अपनी साइट पर ग्राहकों को जोड़ने  के लिए अपने Twitter अकाउंट से कनेक्ट करें!\n",
+      "username": "उपयोगकर्ता नाम\n",
+      "time": "8 घंटे पहले"
     },
     "page": {
       "title": "पृष्ठ का शीर्षक"

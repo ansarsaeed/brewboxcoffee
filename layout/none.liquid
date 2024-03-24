@@ -25,10 +25,10 @@
       <meta name="format-detection" content="telephone=no">
     {% endif %}
 
-    {% assign x_handle = settings.social_x | split: 'x.com/' | last | split: 'twitter.com/' | last %}
+    {% assign twitter_handle = settings.social_twitter | split: 'twitter.com/' | last %}
     {%
       render 'social-meta-tags',
-      twitter_handle: x_handle,
+      twitter_handle: settings.twitter_handle
     %}
 
     {{ content_for_header }}
@@ -44,7 +44,7 @@
     {% comment %}Inject theme-object begin{% endcomment %}
     <script>
       window.Theme = window.Theme || {};
-      window.Theme.version = '11.0.0';
+      window.Theme.version = '9.1.1';
       window.Theme.name = 'Empire';
       window.Theme.routes = {
         "root_url": "{{ routes.root_url }}",

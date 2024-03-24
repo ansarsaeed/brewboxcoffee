@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "17103605350f699d00": {
+      "type": "apps",
+      "blocks": {
+        "chargezen_revenueos_headless_master_ekbqYf": {
+          "type": "shopify:\/\/apps\/chargezen-revenueos\/blocks\/headless-master\/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
+          "settings": {
+            "selected_page_handle": "portal"
+          }
+        }
+      },
+      "block_order": [
+        "chargezen_revenueos_headless_master_ekbqYf"
+      ],
+      "settings": {
+        "include_padding": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17103605350f699d00"
+  ]
+}

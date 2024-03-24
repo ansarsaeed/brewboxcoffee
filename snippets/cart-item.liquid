@@ -42,28 +42,14 @@
         </a>
       </h2>
 
-      {%- if show_vendor -%}
-        <div class="cart-item-vendor">
-          {{- item.vendor | link_to_vendor -}}
-        </div>
-      {%- endif -%}
-
-      {%- if show_sku and item.sku != blank -%}
-        <div class="cart-item-sku">
-          {{- 'product.general.sku_html' | t: sku: item.sku | strip_newlines -}}
-        </div>
-      {%- endif -%}
-
-      {%- unless item.product.has_only_default_variant -%}
-        <div class="cart-item-product-options">
-          {%- for option in item.product.options -%}
-            <dl class="cart-item-product-options__option">
-              <dt class="cart-item-product-options__option-key">{{- option -}}:</dt>
-              <dd class="cart-item-product-options__option-value">{{- item.variant.options[forloop.index0] -}}</dd>
-            </dl>
-          {%- endfor -%}
-        </div>
-      {%- endunless -%}
+      {% unless item.product.has_only_default_variant %}
+        {% for option in item.product.options %}
+          <div class="cart-item--product-options">
+            <span class="cart-item--option-name">{{ option }}</span>
+            {{ item.variant.options[forloop.index0] }}
+          </div>
+        {% endfor %}
+      {% endunless %}
 
       {% if item.selling_plan_allocation.selling_plan %}
         <span class="cart-item--line-item-subscriptions">{{ item.selling_plan_allocation.selling_plan.name }}</span>
@@ -115,6 +101,17 @@
             </li>
           {% endfor %}
         </ul>
+      {% endif %}
+
+      {% if show_sku %}
+        <div
+          class="
+            cart-item--sku
+            {% if item.sku == empty %}cart-item--sku-empty{% endif %}
+          "
+        >
+          {{ 'product.general.sku_html' | t: sku: item.sku | strip_newlines }}
+        </div>
       {% endif %}
 
       {% if settings.inventory_status %}

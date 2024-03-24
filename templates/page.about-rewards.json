@@ -1,0 +1,226 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "pxs_image_with_text_overlay_3QYMDj": {
+      "type": "pxs-image-with-text-overlay",
+      "settings": {
+        "section_height": "original",
+        "image": "shopify:\/\/shop_images\/68314103-6450-4ABD-8541-533B03CDE18B.png",
+        "title": "Join the Brew Crew",
+        "text": "<p>Earn merchandise, free products and exclusive coffees. <\/p>",
+        "content_position": "center-left",
+        "color": "#e8993c",
+        "overlay_background": "#000000",
+        "overlay_opacity": 0,
+        "link": "",
+        "button_text": "Join the Brew Crew"
+      }
+    },
+    "dynamic_rich_text_aEdFkw": {
+      "type": "dynamic-rich-text",
+      "settings": {
+        "width": "regular",
+        "title": "How does it work?",
+        "text": "",
+        "heading_size": "large",
+        "text_alignment": "center"
+      }
+    },
+    "dynamic_highlights_banner_yxQKx9": {
+      "type": "dynamic-highlights-banner",
+      "blocks": {
+        "highlight_fyzKd3": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery",
+            "image": "shopify:\/\/shop_images\/1_bb2f53ce-d6c9-4ef8-98ba-179b52271fb3.png",
+            "title": "Sign Up",
+            "text": "<p>Sign up for a coffee subscription and get 250 points. <\/p>",
+            "link": ""
+          }
+        },
+        "highlight_hQgeeT": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-cell-phone",
+            "image": "shopify:\/\/shop_images\/2_45a49aa8-656f-4ab8-9210-a60f1d224302.png",
+            "title": "Receive Points",
+            "text": "<p>Earn points with every purchase and through special actions.<\/p>",
+            "link": ""
+          }
+        },
+        "highlight_8JEa6B": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-chat-alternate",
+            "image": "shopify:\/\/shop_images\/3_50dfcc68-85f8-403d-ab9b-f549e0df31c2.png",
+            "title": "Earn Rewards",
+            "text": "<p>Spend your points on rewards, including gift products, money off vouchers, and more...<\/p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight_fyzKd3",
+        "highlight_hQgeeT",
+        "highlight_8JEa6B"
+      ],
+      "settings": {
+        "section_spacing": false,
+        "section_width": "full-width",
+        "icon_layout": "left",
+        "color": "#4d4d4d",
+        "icon_color": "#4d4d4d",
+        "background_color": "#f6e8d6",
+        "mobile_layout": "grid"
+      }
+    },
+    "dynamic_rich_text_cMCGAw": {
+      "type": "dynamic-rich-text",
+      "settings": {
+        "width": "regular",
+        "title": "How does it work?",
+        "text": "",
+        "heading_size": "large",
+        "text_alignment": "center"
+      }
+    },
+    "dynamic_highlights_banner_CKygDK": {
+      "type": "dynamic-highlights-banner",
+      "blocks": {
+        "highlight_WQBNYw": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery",
+            "title": "Free Shipping",
+            "text": "<p>When you spend $100+<\/p>",
+            "link": ""
+          }
+        },
+        "highlight_wBQWVw": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-cell-phone",
+            "title": "Give Us A Call",
+            "text": "<p>+1 (201) 555-5555<\/p>",
+            "link": ""
+          }
+        },
+        "highlight_7KdcQz": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-chat-alternate",
+            "title": "Chat With Us",
+            "text": "<p>We offer 24-hour chat support<\/p>",
+            "link": ""
+          }
+        },
+        "highlight_Myb9xw": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-pin",
+            "title": "Locations",
+            "text": "<p>Find a store near you<\/p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight_WQBNYw",
+        "highlight_wBQWVw",
+        "highlight_7KdcQz",
+        "highlight_Myb9xw"
+      ],
+      "settings": {
+        "section_spacing": false,
+        "section_width": "full-width",
+        "icon_layout": "left",
+        "color": "#4d4d4d",
+        "icon_color": "#4d4d4d",
+        "background_color": "#f6e8d6",
+        "mobile_layout": "slider"
+      }
+    },
+    "dynamic_rich_text_bTDtYK": {
+      "type": "dynamic-rich-text",
+      "settings": {
+        "width": "regular",
+        "title": "How does it work?",
+        "text": "",
+        "heading_size": "large",
+        "text_alignment": "center"
+      }
+    },
+    "dynamic_highlights_banner_36ca7b": {
+      "type": "dynamic-highlights-banner",
+      "blocks": {
+        "highlight_UfTBTX": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery",
+            "title": "Free Shipping",
+            "text": "<p>When you spend $100+<\/p>",
+            "link": ""
+          }
+        },
+        "highlight_4w74ih": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-cell-phone",
+            "title": "Give Us A Call",
+            "text": "<p>+1 (201) 555-5555<\/p>",
+            "link": ""
+          }
+        },
+        "highlight_87iRFN": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-chat-alternate",
+            "title": "Chat With Us",
+            "text": "<p>We offer 24-hour chat support<\/p>",
+            "link": ""
+          }
+        },
+        "highlight_U6JeJf": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-pin",
+            "title": "Locations",
+            "text": "<p>Find a store near you<\/p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight_UfTBTX",
+        "highlight_4w74ih",
+        "highlight_87iRFN",
+        "highlight_U6JeJf"
+      ],
+      "settings": {
+        "section_spacing": false,
+        "section_width": "full-width",
+        "icon_layout": "left",
+        "color": "#4d4d4d",
+        "icon_color": "#4d4d4d",
+        "background_color": "#f6e8d6",
+        "mobile_layout": "slider"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "pxs_image_with_text_overlay_3QYMDj",
+    "dynamic_rich_text_aEdFkw",
+    "dynamic_highlights_banner_yxQKx9",
+    "dynamic_rich_text_cMCGAw",
+    "dynamic_highlights_banner_CKygDK",
+    "dynamic_rich_text_bTDtYK",
+    "dynamic_highlights_banner_36ca7b"
+  ]
+}

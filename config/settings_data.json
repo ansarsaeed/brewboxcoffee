@@ -1,11 +1,10 @@
 {
   "current": {
-    "minify_scripts": true,
     "color_background": "#ffffff",
     "color_headings": "#1d1d1d",
     "color_text": "#1d1d1d",
     "color_text_light": "#949494",
-    "color_links": "#e8993c",
+    "color_links": "#046e82",
     "color_button_background": "#e8993c",
     "color_button_text": "#ffffff",
     "color_button_secondary_background": "#ffffff",
@@ -37,7 +36,6 @@
     "type_section": "poppins_n8",
     "type_section_capitalize": false,
     "type_section_spacing": 0,
-    "reduce_animations": false,
     "layout_max_width": 1400,
     "product_sales_badge": true,
     "product_sales_badge_style": "percent",
@@ -61,16 +59,13 @@
     "product_grid_enable_quickshop": false,
     "social_instagram": "https:\/\/www.instagram.com\/brewboxcoffee_\/",
     "social_linkedin": "",
-    "social_tiktok": "https:\/\/www.tiktok.com\/@brewboxcoffee",
     "social_tumblr": "",
     "social_vimeo": "",
     "social_youtube": "",
-    "favicon": "shopify:\/\/shop_images\/variation.png",
     "enable_checkout_lock_icon": false,
     "continue_shopping_url": "shopify:\/\/collections\/all",
     "continue_url_cart": true,
     "continue_url_404": true,
-    "enable_back_to_top_button": true,
     "product_show_sku": false,
     "product_social_sharing": false,
     "product_grid_show_quickshop": "always",
@@ -101,6 +96,12 @@
 
     ],
     "blocks": {
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      },
       "15683396631634586217": {
         "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": true,
@@ -113,16 +114,23 @@
           "greeting_message": "👋 Hello! Let me know if you have a specific question, or give me an idea of what you're looking for or unsure about any of our subscriptions let me know! "
         }
       },
-      "11945366711752539959": {
-        "type": "shopify:\/\/apps\/zendesk\/blocks\/zendesk_web_widget\/c0b417b1-b90b-4754-baaf-f55627e6acd4",
+      "5731007805957778167": {
+        "type": "shopify:\/\/apps\/chargezen-revenueos\/blocks\/rewards-launcher-2\/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
         "disabled": true,
         "settings": {
         }
       },
-      "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+      "4057343242738546134": {
+        "type": "shopify:\/\/apps\/chargezen-revenueos\/blocks\/affiliates-head\/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
         "disabled": true,
         "settings": {
+        }
+      },
+      "3107421121686535598": {
+        "type": "shopify:\/\/apps\/chargezen-revenueos\/blocks\/chargezen-main\/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
+        "disabled": false,
+        "settings": {
+          "widget_design": "bundle21"
         }
       }
     }

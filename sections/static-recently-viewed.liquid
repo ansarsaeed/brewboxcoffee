@@ -34,18 +34,18 @@
       </button>
     </div>
 
-    <div
+    <ul
       class="
         product-section--content
         product-recently-viewed__content
         imagestyle--{% if settings.product_grid_image_crop and settings.product_grid_image_style != 'natural' %}cropped-{% endif %}{{ settings.product_grid_image_style }}
       "
       data-recently-viewed-container
-    >
-    </div>
+    ></ul>
   </div>
 </aside>
 {% endif %}
+
 
 {% schema %}
 {

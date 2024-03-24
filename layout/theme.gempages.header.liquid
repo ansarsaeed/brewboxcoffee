@@ -1,10 +1,20 @@
 <!doctype html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
   <head>
-    <script>
-      window.Store = window.Store || {};
-      window.Store.id = {{ shop.id }};
-    </script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11337839367">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11337839367');
+</script>
+  <script>
+    window.Store = window.Store || {};
+    window.Store.id = {{ shop.id }};
+  </script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
 
@@ -55,53 +65,31 @@
     {% render 'favicon' %}
 
     {% if template contains 'collection' and current_tags %}
-      <meta name="robots" content="noindex">
-      <link rel="canonical" href="{{ shop.url }}{{ collection.url }}">
+      <meta name="robots" content="noindex" />
+      <link rel="canonical" href="{{ shop.url }}{{ collection.url }}" />
     {% else %}
-      <link rel="canonical" href="{{ canonical_url }}">
+      <link rel="canonical" href="{{ canonical_url }}" />
     {% endif %}
 
     <meta name="viewport" content="width=device-width">
 
-    {% assign x_handle = settings.social_x | split: 'x.com/' | last | split: 'twitter.com/' | last %}
+    {% assign twitter_handle = settings.social_twitter | split: 'twitter.com/' | last %}
     {%
       render 'social-meta-tags',
-      twitter_handle: x_handle,
+      twitter_handle: twitter_handle
     %}
 
     <link rel="preload" href="{{ settings.type_menu | font_url }}" as="font" crossorigin="anonymous">
     <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
 
-    {% comment %}{{ content_for_header }}{% endcomment %}
-    {% capture modified_content_for_header %}{{ content_for_header }}{% endcapture %}
-    {% assign modified_content_for_header = modified_content_for_header
-      | remove: 'https:\/\/cdn.shopify.com\/s\/files\/1\/0071\/7114\/5831\/t\/11\/assets\/zendesk-embeddable.js?v=1602613287\u0026shop=brew-box-coffee.myshopify.com'
-    %}
-    {% assign modified_content_for_header = modified_content_for_header
-      | remove: 'https:\/\/geolocation-recommendations.shopifyapps.com\/locale_bar\/script.js?shop=brew-box-coffee.myshopify.com'
-    %}
-    {% assign modified_content_for_header = modified_content_for_header
-      | remove: 'https:\/\/d217z8zw4dqir.cloudfront.net\/script_tags\/loop_snippets?shop=brew-box-coffee.myshopify.com'
-    %}
-    {% assign modified_content_for_header = modified_content_for_header
-      | remove: 'https:\/\/static.klaviyo.com\/onsite\/js\/klaviyo.js?company_id=LFCj4C\u0026shop=brew-box-coffee.myshopify.com'
-    %}
-    {% assign modified_content_for_header = modified_content_for_header
-      | remove: 'https:\/\/js.convertflow.co\/production\/websites\/59300.js?shop=brew-box-coffee.myshopify.com'
-    %}
-
-    {{ modified_content_for_header }}
+    {{ content_for_header }}
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
 
-    {% unless settings.reduce_animations %}
-      {{ 'ripple.css' | asset_url | stylesheet_tag }}
-    {% endunless %}
-
     {% comment %}Inject theme-object begin{% endcomment %}
-    <script async>
+    <script>
       window.Theme = window.Theme || {};
-      window.Theme.version = '11.0.0';
+      window.Theme.version = '9.1.1';
       window.Theme.name = 'Empire';
       window.Theme.routes = {
         "root_url": "{{ routes.root_url }}",
@@ -122,16 +110,29 @@
       };
     </script>
     {% comment %}Inject theme-object end{% endcomment %}
-  {% render 'gp-head' %}
+
+  <!--Gem_Page_Header_Script-->
+{% render 'gem-app-header-scripts' %}
+<!--End_Gem_Page_Header_Script-->
+
+  <script type="text/javascript" id="loop-subscription-script" src="{{ 'loop-widget.js' | asset_url }}"></script>
+{% render 'gp-head' %}
 </head>
 
-  <body
-    class="template-{{ template.name }}"
-    data-instant-allow-query-string
-    {% if settings.reduce_animations %}
-      data-reduce-animations
-    {% endif %}
-  >
+  <style class="loop-style"> 
+    {% render 'loop-widget.css' %} 
+button.Rise__widget-launcher.Rise__widget-launcher__Type__icon-text {
+    display: none;
+}
+ #chargezenSectionBundleProductHeader > header > div.JroCDI8aEmtnqt5diaUu > ul > li:nth-child(2) > div > img, #chargezenSectionBundleProductHeader > header > div.JroCDI8aEmtnqt5diaUu > ul > li:nth-child(1) > div > img,  .chargezen_purchaseBtnCollectionBlock {
+      display: none !important;
+}
+    button.wrapper-AtBcr.u-isActionable.u-textLeft.u-inlineBlock.u-borderNone.u-textBold.u-textNoWrap.Arrange.Arrange--middle.u-userLauncherColor {
+    display: none !important;
+}
+  </style>
+  
+  <body class="template-{{ template.name }}" data-instant-allow-query-string {% if settings.reduce_animations %}data-reduce-animations{% endif %}>
     <script>
       document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'js');
       if(window.Shopify&&window.Shopify.designMode)document.documentElement.className+=' in-theme-editor';
@@ -144,11 +145,7 @@
       aria-hidden="true"
       focusable="false"
       role="presentation"
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="3 3 17 17"
-      fill="none"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="3 3 17 17" fill="none"
     >
       <symbol id="icon-star">
         <rect class="icon-star-background" width="20" height="20" fill="currentColor"/>
@@ -160,14 +157,15 @@
     </svg>
     
 
+
     <a class="skip-to-main" href="#site-main">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
     {% sections 'header-group' %}
 
     <div style="--background-color: {{ settings.color_background }}">
-      {%
-        render 'age-gate',
-        id: 'page',
+      {% 
+        render 'age-gate', 
+        id: 'page', 
         sections: content_for_layout,
       %}
     </div>
@@ -177,10 +175,6 @@
     <main id="site-main" class="site-main" aria-label="Main content" tabindex="-1">
       {{ content_for_layout }}
     </main>
-
-    {%- if settings.enable_back_to_top_button -%}
-      
-    {%- endif -%}
 
     
 
@@ -194,7 +188,7 @@
       >
         <div class="message-banner--outer">
           <div class="message-banner--inner" data-message-banner-content></div>
-
+      
           <button
             class="message-banner--close"
             type="button"
@@ -218,7 +212,7 @@
                 </span>
                 {{ 'add_to_cart_banner.general.product_added' | t }}
               </h2>
-
+      
               <div class="atc--product">
                 <div class="atc--product-image" data-atc-banner-product-image>
                   {{ 'image' | placeholder_svg_tag: 'placeholder--image' }}
@@ -229,18 +223,9 @@
                   <span class="atc--product-details--price">
                     <span class="atc--product-details--price-quantity" data-atc-banner-product-price-quantity></span>
                     <span class="atc--product-details--price-value money" data-atc-banner-product-price-value></span>
-                    <span
-                      class="atc--product-details--price-discounted money"
-                      data-atc-banner-product-price-discounted
-                    ></span>
+                    <span class="atc--product-details--price-discounted money" data-atc-banner-product-price-discounted></span>
                     <span class="atc--product-details--unit-price hidden" data-atc-banner-unit-price>
-                      {{
-                        'product.general.price_per_unit_html'
-                        | t:
-                          total_quantity: '** total_quantity **',
-                          unit_price: '** unit_price **',
-                          unit_measure: '** unit_measure **'
-                      }}
+                      {{ 'product.general.price_per_unit_html' | t: total_quantity: '** total_quantity **', unit_price: '** unit_price **', unit_measure: '** unit_measure **' }}
                     </span>
                   </span>
                   <ul class="discount-list" data-atc-banner-product-discounts>
@@ -254,7 +239,7 @@
                 </div>
               </div>
             </div>
-
+      
             <div class="atc-banner--cart">
               <div class="atc-banner--cart-subtotal">
                 <span class="atc-subtotal--label">
@@ -262,19 +247,12 @@
                 </span>
                 <span class="atc-subtotal--price money" data-atc-banner-cart-subtotal></span>
               </div>
-
-              
-
+      
               <footer class="atc-banner--cart-footer">
-                <a
-                  class="button-secondary atc-button--viewcart"
-                  href="{{ routes.cart_url }}"
-                  data-atc-banner-cart-button
-                >
+                <a class="button-secondary atc-button--viewcart" href="{{ routes.cart_url }}" data-atc-banner-cart-button>
                   {{ 'add_to_cart_banner.general.view_cart_html' | t: count: '<span></span>' }}
                 </a>
                 <form
-                  class="atc-banner__form"
                   action="{{ routes.cart_url }}"
                   method="post"
                   aria-label="cart checkout"
@@ -289,7 +267,7 @@
               </footer>
             </div>
           </div>
-
+      
           <button
             class="atc-banner--close"
             type="button"
@@ -301,6 +279,7 @@
         </div>
       </section>
       
+
     </div>
 
     
@@ -318,7 +297,7 @@
         <div class="modal-content" data-modal-content></div>
       </div>
     </div>
-
+    
     <div class="modal-1" data-modal-container-1 aria-label="modal window">
       <div class="modal-inner" data-modal-inner>
         <button
@@ -334,6 +313,7 @@
     </div>
     
 
+
     
     
     
@@ -345,54 +325,57 @@
       aria-label="{{ 'general.accessibility.product_zoom_dialog' | t }}"
       data-photoswipe
     >
+    
       
       <div class="pswp__bg"></div>
-
+    
       
       <div class="pswp__scroll-wrap">
-        
-        <div class="pswp__container" aria-hidden="true">
-          <div class="pswp__item"></div>
-          <div class="pswp__item"></div>
-          <div class="pswp__item"></div>
-        </div>
-
-        
-        <div class="pswp__ui pswp__ui--hidden">
-          <div class="pswp__top-bar">
-            
-            <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="{{ 'general.accessibility.close' | t }}">
-              <span tabindex="-1">
-                
-              </span>
-            </button>
-            <button class="pswp__button pswp__button--share" title="Share"></button>
-            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-            
-            
-            <div class="pswp__preloader">
-              <div class="pswp__preloader__icn">
-                <div class="pswp__preloader__cut">
-                  <div class="pswp__preloader__donut"></div>
-                </div>
+          
+          <div class="pswp__container" aria-hidden="true">
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+          </div>
+    
+          
+          <div class="pswp__ui pswp__ui--hidden">
+              <div class="pswp__top-bar">
+                  
+                  <div class="pswp__counter"></div>
+                  <button class="pswp__button pswp__button--close" title="{{ 'general.accessibility.close' | t }}">
+                    <span tabindex="-1">
+                      
+                    </span>
+                  </button>
+                  <button class="pswp__button pswp__button--share" title="Share"></button>
+                  <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                  <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+    
+                  
+                  
+                  <div class="pswp__preloader">
+                      <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                          <div class="pswp__preloader__donut"></div>
+                        </div>
+                      </div>
+                  </div>
               </div>
-            </div>
+    
+              <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                  <div class="pswp__share-tooltip"></div>
+              </div>
+    
+              <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+              </button>
+              <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+              </button>
+    
+              <div class="pswp__caption">
+                  <div class="pswp__caption__center"></div>
+              </div>
           </div>
-
-          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-            <div class="pswp__share-tooltip"></div>
-          </div>
-
-          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-
-          <div class="pswp__caption">
-            <div class="pswp__caption__center"></div>
-          </div>
-        </div>
       </div>
       <div class="product-zoom--thumbnails" data-photoswipe-thumbs>
         <button
@@ -414,6 +397,7 @@
     </div>
     
 
+
     
     
     {% assign template_allows_compare = settings.enable_product_compare %}
@@ -431,7 +415,7 @@
           <h2 class="product-compare-drawer__title" data-product-compare-drawer-title>
             {{ 'product_compare.drawer_title' | t }}
           </h2>
-
+      
           <p
             class="product-compare-drawer__notification"
             data-product-count-one="{{ 'product_compare.drawer_notification.one' | t }}"
@@ -440,12 +424,12 @@
           >
             {{ 'product_compare.drawer_notification' | t: count }}
           </p>
-
+      
           <span class="product-compare-drawer__trigger">
             
           </span>
         </div>
-
+      
         <div class="product-compare-drawer__container">
           <div class="product-compare-drawer__items" data-compare-drawer-items-container>
             <template data-product-compare-drawer-item-template>
@@ -464,7 +448,7 @@
                 </button>
               </div>
             </template>
-
+      
             {% for i in (1..3) %}
               <div class="product-compare-drawer__item-placeholder" data-product-compare-drawer-item-placeholder>
                 <p class="product-compare-drawer__item-placeholder-text">
@@ -479,7 +463,7 @@
               </div>
             {% endfor %}
           </div>
-
+      
           <div class="product-compare-drawer__actions">
             <a
               class="
@@ -493,7 +477,7 @@
             >
               {{ 'product_compare.compare' | t }}
             </a>
-
+      
             <button class="product-compare-drawer__clear-all" data-product-compare-clear-all>
               {{ 'product_compare.drawer_clear_all' | t }}
             </button>
@@ -501,12 +485,13 @@
         </div>
       </div>
       
+
     {% endif %}
 
     {% if settings.enable_product_compare %}
       
-      {% assign compare_breadcrumb_title = null %}
-
+      {% assign compare_breadcrumb_title = nil %}
+      
       {% case request.page_type %}
         {% when 'product' %}
           {% assign compare_breadcrumb_title = product.title %}
@@ -517,13 +502,13 @@
         {% when 'search' %}
           {% assign compare_breadcrumb_title = 'general.accessibility.search' | t %}
       {% endcase %}
-
+      
       {% assign compare_breadcrumb_update = true %}
-
+      
       {% if template.name == 'product' and template.suffix contains 'compare' %}
         {% assign compare_breadcrumb_update = false %}
       {% endif %}
-
+      
       <script type="application/json" data-product-compare-breadcrumb-data>
         {
           "title": {{ compare_breadcrumb_title | json }},
@@ -531,6 +516,7 @@
         }
       </script>
       
+
     {% endif %}
 
     {%- if template contains 'customer' -%}
@@ -573,87 +559,70 @@
       </script>
     {% endunless %}
 
-    {%- if settings.minify_scripts -%}
-      <script
-        src="{{ 'empire.min.js' | asset_url }}"
-        data-scripts
-        data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
-        data-shopify-countries="/services/javascripts/countries.js"
-        data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
-        data-shopify-cart="{{ 'jquery.cart.js' | asset_url }}"
-        data-pxu-polyfills="{{ 'polyfills.min.js' | asset_url }}"
-        async
-      ></script>
-    {%- else -%}
-      <script
-        src="{{ 'empire.js' | asset_url }}"
-        data-scripts
-        data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
-        data-shopify-countries="/services/javascripts/countries.js"
-        data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
-        data-shopify-cart="{{ 'jquery.cart.js' | asset_url }}"
-        data-pxu-polyfills="{{ 'polyfills.min.js' | asset_url }}"
-        async
-      ></script>
-    {%- endif -%}
+    <script
+      src="{{ 'empire.js' | asset_url }}"
+      data-scripts
+      data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
+      data-shopify-countries="/services/javascripts/countries.js"
+      data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
+      data-shopify-cart="{{ 'jquery.cart.js' | asset_url }}"
+      data-pxu-polyfills="{{ 'polyfills.min.js' | asset_url }}"
+    >
+    </script>
 
     
 
     <script>
-      (function () {
-        function handleFirstTab(e) {
-          if (e.keyCode === 9) { // the "I am a keyboard user" key
-            document.body.classList.add('user-is-tabbing');
-            window.removeEventListener('keydown', handleFirstTab);
-          }
+    (function () {
+      function handleFirstTab(e) {
+        if (e.keyCode === 9) { // the "I am a keyboard user" key
+          document.body.classList.add('user-is-tabbing');
+          window.removeEventListener('keydown', handleFirstTab);
         }
-        window.addEventListener('keydown', handleFirstTab);
-      })();
+      }
+      window.addEventListener('keydown', handleFirstTab);
+    })();
     </script>
+
+    {% unless settings.reduce_animations %}
+      {{ 'ripple.css' | asset_url | stylesheet_tag }}
+    {% endunless %}
 
     <script
       src="{{ 'instantPage.min.js' | asset_url }}"
       type="module"
       defer
-    ></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-           let scriptLoaded = false;
-           let interactionTimeout;
-           function humanInteraction() {
-             if (!scriptLoaded) {
-               console.log('Custom interaction script load.');
-               let customScript = document.createElement("script");
-               customScript.src = 'https:\/\/cdn.shopify.com\/s\/files\/1\/0071\/7114\/5831\/t\/11\/assets\/zendesk-embeddable.js?v=1602613287\u0026shop=brew-box-coffee.myshopify.com';
-               document.head.appendChild(customScript);
-               let customScript2 = document.createElement("script");
-               customScript2.src = 'https:\/\/geolocation-recommendations.shopifyapps.com\/locale_bar\/script.js?shop=brew-box-coffee.myshopify.com';
-               document.head.appendChild(customScript2);
-               let customScript2 = document.createElement("script");
-               customScript2.src = 'https:\/\/d217z8zw4dqir.cloudfront.net\/script_tags\/loop_snippets?shop=brew-box-coffee.myshopify.com';
-               document.head.appendChild(customScript2);
-               let customScript2 = document.createElement("script");
-               customScript2.src = 'https:\/\/static.klaviyo.com\/onsite\/js\/klaviyo.js?company_id=LFCj4C\u0026shop=brew-box-coffee.myshopify.com';
-               document.head.appendChild(customScript2);
-               let customScript2 = document.createElement("script");
-               customScript2.src = 'https:\/\/js.convertflow.co\/production\/websites\/59300.js?shop=brew-box-coffee.myshopify.com';
-               document.head.appendChild(customScript2);
-               scriptLoaded = true;
-               clearTimeout(interactionTimeout);
-             }
-           }
-           document.addEventListener('click', humanInteraction);
-           document.addEventListener('scroll', humanInteraction);
-           document.addEventListener('touchstart', humanInteraction);
-           document.addEventListener('mousemove', humanInteraction);
-           document.addEventListener('keydown', humanInteraction);
-           setTimeout(function() {
-             if (!scriptLoaded) {
-               humanInteraction();
-             }
-           }, 16000); 
-         });
+    >
     </script>
-  </body>
+  <!--Gem_Page_Footer_Script-->
+  {%- liquid
+    assign gpTemplateSuffix = template.suffix
+    assign arrSplitSuffix = gpTemplateSuffix | split: '-'
+    if gpTemplateSuffix contains 'gem-' and gpTemplateSuffix contains '-template' and arrSplitSuffix.size == 3
+      assign isV6GpTemplate = true
+    endif
+    assign gpShopMeta = shop.metafields.gempages
+    if gpShopMeta
+      if gpShopMeta['productV6-default'] == 'true' and request.page_type == 'product'
+        assign isProductDefault = true
+      endif
+      if gpShopMeta['collectionV6-default'] == 'true' and request.page_type == 'collection'
+        assign isCollectionDefault = true
+      endif
+      if gpShopMeta['indexV6-default'] == 'true' and request.page_type == 'index'
+        assign isIndexDefault = true
+      endif
+      if isProductDefault or isCollectionDefault or isIndexDefault or isPreviewV6
+        assign isV6GpTemplate = true
+      endif
+    endif
+  %}
+  {% if isV6GpTemplate %}
+    
+  {% endif %}
+<!--End_Gem_Page_Footer_Script-->
+
+
+
+</body>
 </html>
