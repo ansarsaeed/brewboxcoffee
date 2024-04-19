@@ -1,23 +1,53 @@
 {% style %}
-   .section_{{ section.id }} > img{
+   .section_{{ section.id }} .section_image > img{
      width:100%;
      height:85vh;
      object-fit:cover;
    }
+   .section_{{ section.id }} .section_image{
+     position:relative;
+     width:100%;
+   }
+   .section_{{ section.id }} .section_image .page-content{
+    position: absolute;
+    width: 100%;
+    margin: 0px auto;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+   }
+   .section_{{ section.id }} .section_image h3{
+    font-size:50px;
+    color:#ffffff;
+    text-transform:uppercase;
+    border-top:10px solid #e8993c;
+    width:max-content;
+    margin:0px;
+   }
+   
    .section_{{ section.id }}_content h1{
     text-align:center;
    }
    .section_{{ section.id }}_content p{
     text-align:center;
    }
+   .section_{{ section.id }}_product .product__container{
+        max-width:1200px;
+        display:flex;
+        align-items:stretch;
+        gap:15px;
+        flex-wrap:wrap;
+        margin-bottom:50px;
+
+   }
    .section_{{ section.id }}_product .product__wrapper{
     display:flex;
-    align-items:center;
-    gap:30px;
-    max-width:1200px;
-    margin:auto;
-    padding:3rem 4rem;
+    flex-direction:column;
+    gap:20px;
+    margin:0px auto;
     border-radius:5px;
+    width:calc(33.33% - 15px);
     box-shadow:2px 2px 5px rgba(0, 0, 0, .5);
    }
    .section_{{ section.id }}_product .product__wrapper > div{
@@ -25,12 +55,15 @@
    }
    .section_{{ section.id }}_product .product__wrapper .product_media{
     overflow:hidden;
-    height:463px;
+    display:block;
+    width:100%;
+    height:300px;
 
    }
    .section_{{ section.id }}_product .product__wrapper .product_media img{
-    width:100%!important;
-    height:auto!important;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
    }
    .section_{{ section.id }}_product .product__wrapper > div .compostions{
         display:flex;
@@ -40,10 +73,11 @@
    .section_{{ section.id }}_product .product__wrapper > div .compostions > div{
     display:flex;
     align-items:center;
+    flex-wrap:wrap;
     gap:10px;
    }
    .section_{{ section.id }}_product .product__wrapper > div .compostions > div h3{
-    font-weight:300;
+    font-weight:600;
     margin:0px;
     font-size:18px;
    }
@@ -53,34 +87,73 @@
    }
    .section_{{ section.id }}_product .product__wrapper > div .compostions > div p{
     margin:0px;
+    font-size:14px;
    }
 
-   .section_{{ section.id }}_product .product__wrapper > div a{
-    background-color:#000000;
+   .section_{{ section.id }}_product .product__wrapper > div .buy__btn{
+    /* background-color:#000000; */
+    background-color:#e8993c;
     color:#ffffff;
     text-decoration:none;
     display:inline-block;
     padding:10px 30px;
     margin-top:50px;
     font-size:25px;
+    transition:all .3s linear;
+   }
+   .section_{{ section.id }}_product .product__wrapper > div .buy__btn:hover{
+    background-color:#000000;
+   }
+   .section_{{ section.id }}_product .product__wrapper .product_details{
+    padding:0px 20px 20px;
    }
    .section_{{ section.id }}_product .product__wrapper .product_details h2{
     margin-bottom:40px;
-    font-size:40px;
+    margin-top:0px;
+    font-size:25px;
+    line-height:30px;
+    color:#e8993c;
+   }
+   .section_{{ section.id }}_product .product__wrapper .product_details h2 a{
+    color:inherit;
+    text-decoration:none;
    }
    .section_{{ section.id }}_product .page-content p{
     text-align:center;
+   }
+   @media(max-width:967px){
+    .section_{{ section.id }}_product .product__wrapper{
+        width:calc(50% - 15px);
+    }
+   }
+   @media(max-width:967px){
+    .section_{{ section.id }}_product .product__wrapper{
+        width:100%;
+    }
+    .section_{{ section.id }}_product .product__container{
+        padding-left:15px;
+        padding-right:15px;
+    }
+    .section_{{ section.id }} .section_image > img{
+        height:60vh;
+    }
    }
 {%  endstyle %}
 
 
 <div class="section_{{ section.id }}">
-    <img src="{{ section.settings.img | img_url:'master' }}"
-        loading="lazy"
-        alt="{{  section.settings.img.alt }}"
-        width="{{  section.settings.img.width }}"
-        height="{{  section.settings.img.height }}"
-    >
+    <div class="section_image">
+        <img 
+            src="{{ section.settings.img | img_url:'master' }}"
+            loading="lazy"
+            alt="{{  section.settings.img.alt }}"
+            width="{{  section.settings.img.width }}"
+            height="{{  section.settings.img.height }}"
+        >
+        <div class="page-content">
+            <h3>{{ section.settings.label }}</h3>
+        </div>
+    </div>
     <div class="section_{{ section.id }}_content">
         <div class="page-content">
             <h1>{{ section.settings.title }}</h1>
@@ -88,23 +161,58 @@
         </div>
     <div>
     <div class="section_{{ section.id }}_product">
-        <div class="product__wrapper">
-            <div class="product_media">
-                <img src="{{ section.settings.product.featured_image.src | img_url:'master' }}" 
-                    loading="lazy"
-                    width="{{ section.settings.product.featured_image.width }}"
-                    height="{{ section.settings.product.featured_image.height }}"
-                    alt="{{ section.settings.product.featured_image.alt }}">
+        <div class="product__container">
+            <div class="product__wrapper">
+                <a href="{{ section.settings.product.url }}" class="product_media">
+                    <img src="{{ section.settings.product.featured_image.src | img_url:'master' }}" 
+                        loading="lazy"
+                        width="{{ section.settings.product.featured_image.width }}"
+                        height="{{ section.settings.product.featured_image.height }}"
+                        alt="{{ section.settings.product.featured_image.alt }}">
+                </a>
+                <div class="product_details">
+                    {%  assign composition = section.settings.product.metafields.custom.product_composition.value %}
+                    <h2><a href="{{ section.settings.product.url }}" 
+                        aria-label="{{ section.settings.product.title }}"
+                    title="{{  section.settings.product.title}}">{{ section.settings.product.title | truncate:20, '..'}}</a></h2>
+                    {% render 'product-composition', composition:composition %}
+                    <a href="{{ section.settings.product.handle }}" class="buy__btn">Buy Now</a>
+                </div>
             </div>
-            <div class="product_details">
-                {%  assign composition = section.settings.product.metafields.custom.product_composition.value %}
-                <h2>{{ section.settings.product.title }}</h2>
-                {% render 'product-composition', composition:composition %}
-                <a href="{{ section.settings.product.handle }}">Buy Now</a>
+            <div class="product__wrapper">
+                <div class="product_media">
+                    <img src="{{ section.settings.product2.featured_image.src | img_url:'master' }}" 
+                        loading="lazy"
+                        width="{{ section.settings.product2.featured_image.width }}"
+                        height="{{ section.settings.product2.featured_image.height }}"
+                        alt="{{ section.settings.product2.featured_image.alt }}">
+                </div>
+                <div class="product_details">
+                    {%  assign composition = section.settings.product2.metafields.custom.product_composition.value %}
+                    <h2><a href="{{ section.settings.product2.url }}" 
+                        aria-label="{{ section.settings.product2.title }}"
+                    title="{{  section.settings.product2.title}}">{{ section.settings.product2.title | truncate:20, '..'}}</a></h2>
+                    {% render 'product-composition', composition:composition %}
+                    <a href="{{ section.settings.product2.handle }}" class="buy__btn">Buy Now</a>
+                </div>
             </div>
-        </div>
-        <div class="page-content">
-            <p>{{ section.settings.product.content }}</p>
+            <div class="product__wrapper">
+                <div class="product_media">
+                    <img src="{{ section.settings.product3.featured_image.src | img_url:'master' }}" 
+                        loading="lazy"
+                        width="{{ section.settings.product3.featured_image.width }}"
+                        height="{{ section.settings.product3.featured_image.height }}"
+                        alt="{{ section.settings.product3.featured_image.alt }}">
+                </div>
+                <div class="product_details">
+                    {%  assign composition = section.settings.product3.metafields.custom.product_composition.value %}
+                    <h2><a href="{{ section.settings.product3.url }}" 
+                        aria-label="{{ section.settings.product3.title }}"
+                    title="{{  section.settings.product3.title}}">{{ section.settings.product3.title | truncate:20, '..' }}</a></h2>
+                    {% render 'product-composition', composition:composition %}
+                    <a href="{{ section.settings.product3.handle }}" class="buy__btn">Buy Now</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -146,10 +254,18 @@
         {
             "type":"product",
             "id": "product",
-            "label": "Product"
+            "label": "Product 1"
+        },
+        {
+            "type":"product",
+            "id": "product2",
+            "label": "Product 2"
+        },
+        {
+            "type":"product",
+            "id": "product3",
+            "label": "Product 3"
         }
-
-
     ],
     "presets": [
         {

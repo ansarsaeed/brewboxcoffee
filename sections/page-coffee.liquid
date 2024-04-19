@@ -30,8 +30,13 @@
         text-decoration:none;
         transition: all .2s linear;
     }
+    .section_{{ section.id }} .section--banner .btn-group a:first-child{
+        background-color:#e8993c;
+        color:#ffffff;
+    }
     .section_{{ section.id }} .section--banner .btn-group a:hover{
-        background-color:#d3d0d0;
+        background-color:#000000;
+        color:#ffffff;
     }
     .content_{{ section.id }} h1{
         text-align:center;
@@ -39,6 +44,15 @@
     }
     .content_{{ section.id }} p{
         text-align:center;
+    }
+
+    @media(max-width:768px){
+        .section_{{ section.id }} .section--banner h1{
+            font-size:30px;
+        }
+        .section_{{ section.id }} .section--banner{
+            height:60vh;
+        }
     }
 {%  endstyle %}
 
