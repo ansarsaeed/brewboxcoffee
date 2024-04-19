@@ -1,0 +1,125 @@
+{%  style %}
+    .section_{{ section.id }} .section--banner{
+        height:90vh;
+        background-image:url({{ section.settings.banner-img | img_url:'master' }});
+        background-position:center;
+        background-size:cover;
+        background-repeat:no-repeat;
+        margin-top:-50px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .section_{{ section.id }} .section--banner h1{
+        color:#ffffff;
+        font-size:40px;
+        margin-bottom:10px;
+    }
+    .section_{{ section.id }} .section--banner .btn-group{
+        display:flex;
+        align-items:center;
+        gap:10px;
+    }
+    .section_{{ section.id }} .section--banner .btn-group a{
+        width:100%;
+        height:48px;
+        line-height:48px;
+        background-color:#ffffff;
+        color:#000006;
+        text-align:center;
+        text-decoration:none;
+        transition: all .2s linear;
+    }
+    .section_{{ section.id }} .section--banner .btn-group a:hover{
+        background-color:#d3d0d0;
+    }
+    .content_{{ section.id }} h1{
+        text-align:center;
+        font-size:27px;
+    }
+    .content_{{ section.id }} p{
+        text-align:center;
+    }
+{%  endstyle %}
+
+<div class="section_{{ section.id }}">
+    <div class="section--banner">
+        <div class="page-content">
+            <h1>{{ section.settings.banner_title }}</h1>
+           <div class="btn-group">
+                {% if section.settings.btn-link != blank %}
+                    <a href="{{ section.settings.btn-link }}">{{ section.settings.btn-text }}</a>
+                {%  endif %}
+                {% if section.settings.btn1-link != blank %}
+                    <a href="{{ section.settings.btn1-link }}">{{ section.settings.btn1-text }}</a>
+                {%  endif %}
+           </div>
+        </div>
+    </div>
+</div>
+
+<div class="content_{{ section.id }}">
+    <div class="page-content">
+        <h1>{{ section.settings.title }}</h1>
+        <p>{{ section.settings.text }}</p>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name":"Page Coffee",
+    "tag":"section",
+    "class": "section section--page_coffee",
+    "settings":[
+        {
+         "type": "header",
+         "content": "Banner"
+        },
+        {
+            "type": "image_picker",
+            "id": "banner-img",
+            "label": "Image for Banner"
+        },
+        {
+            "type":"inline_richtext",
+            "id": "banner_title",
+            "label": "Banner Title"
+        },
+        {
+            "type":"text",
+            "id":"btn-text",
+            "label": "Button 1 Text"
+        },
+        {
+            "type": "url",
+            "id": "btn-link",
+            "label": "Link to Button 1"
+        },
+        {
+            "type":"text",
+            "id":"btn1-text",
+            "label": "Button 2  Text"
+        },
+        {
+            "type": "url",
+            "id": "btn1-link",
+            "label": "Link to Button 2"
+        },
+        {
+            "type": "header",
+            "content":"Content"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Content"
+        }
+        
+    ]
+}
+{% endschema %}

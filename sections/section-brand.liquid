@@ -1,0 +1,160 @@
+{% style %}
+   .section_{{ section.id }} > img{
+     width:100%;
+     height:85vh;
+     object-fit:cover;
+   }
+   .section_{{ section.id }}_content h1{
+    text-align:center;
+   }
+   .section_{{ section.id }}_content p{
+    text-align:center;
+   }
+   .section_{{ section.id }}_product .product__wrapper{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+    padding:3rem 4rem;
+    border-radius:5px;
+    box-shadow:2px 2px 5px rgba(0, 0, 0, .5);
+   }
+   .section_{{ section.id }}_product .product__wrapper > div{
+    width:100%;
+   }
+   .section_{{ section.id }}_product .product__wrapper .product_media{
+    overflow:hidden;
+    height:463px;
+
+   }
+   .section_{{ section.id }}_product .product__wrapper .product_media img{
+    width:100%!important;
+    height:auto!important;
+   }
+   .section_{{ section.id }}_product .product__wrapper > div .compostions{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+   }
+   .section_{{ section.id }}_product .product__wrapper > div .compostions > div{
+    display:flex;
+    align-items:center;
+    gap:10px;
+   }
+   .section_{{ section.id }}_product .product__wrapper > div .compostions > div h3{
+    font-weight:300;
+    margin:0px;
+    font-size:18px;
+   }
+   .section_{{ section.id }}_product .product__wrapper > div .compostions > div h3:after{
+    content:":";
+    padding-left:2px;
+   }
+   .section_{{ section.id }}_product .product__wrapper > div .compostions > div p{
+    margin:0px;
+   }
+
+   .section_{{ section.id }}_product .product__wrapper > div a{
+    background-color:#000000;
+    color:#ffffff;
+    text-decoration:none;
+    display:inline-block;
+    padding:10px 30px;
+    margin-top:50px;
+    font-size:25px;
+   }
+   .section_{{ section.id }}_product .product__wrapper .product_details h2{
+    margin-bottom:40px;
+    font-size:40px;
+   }
+   .section_{{ section.id }}_product .page-content p{
+    text-align:center;
+   }
+{%  endstyle %}
+
+
+<div class="section_{{ section.id }}">
+    <img src="{{ section.settings.img | img_url:'master' }}"
+        loading="lazy"
+        alt="{{  section.settings.img.alt }}"
+        width="{{  section.settings.img.width }}"
+        height="{{  section.settings.img.height }}"
+    >
+    <div class="section_{{ section.id }}_content">
+        <div class="page-content">
+            <h1>{{ section.settings.title }}</h1>
+            <p>{{ section.settings.content }}</p>
+        </div>
+    <div>
+    <div class="section_{{ section.id }}_product">
+        <div class="product__wrapper">
+            <div class="product_media">
+                <img src="{{ section.settings.product.featured_image.src | img_url:'master' }}" 
+                    loading="lazy"
+                    width="{{ section.settings.product.featured_image.width }}"
+                    height="{{ section.settings.product.featured_image.height }}"
+                    alt="{{ section.settings.product.featured_image.alt }}">
+            </div>
+            <div class="product_details">
+                {%  assign composition = section.settings.product.metafields.custom.product_composition.value %}
+                <h2>{{ section.settings.product.title }}</h2>
+                {% render 'product-composition', composition:composition %}
+                <a href="{{ section.settings.product.handle }}">Buy Now</a>
+            </div>
+        </div>
+        <div class="page-content">
+            <p>{{ section.settings.product.content }}</p>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Brand",
+    "tag":"section",
+    "class": "section section_brand",
+    "settings": [
+        {
+            "type": "header",
+            "content":"Image"
+        },
+        {
+            "type":"image_picker",
+            "id": "img",
+            "label": "Image"
+        },
+        {
+            "type":"text",
+            "id": "label",
+            "label":"Image Label"
+        },
+        {
+            "type": "header",
+            "content":"Content"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Descripition"
+        },
+        {
+            "type":"product",
+            "id": "product",
+            "label": "Product"
+        }
+
+
+    ],
+    "presets": [
+        {
+          "name": "Brand"
+        }
+    ]
+}
+{% endschema %}
