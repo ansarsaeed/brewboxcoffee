@@ -95,7 +95,7 @@
     {{ 'theme.css' | asset_url | stylesheet_tag }}
 
     {% unless settings.reduce_animations %}
-      {{ 'ripple.css' | asset_url | stylesheet_tag }}
+      {{ 'ripple.css' | asset_url | stylesheet_tag: preload: true }}
     {% endunless %}
 
     {% comment %}Inject theme-object begin{% endcomment %}
@@ -122,8 +122,42 @@
       };
     </script>
     {% comment %}Inject theme-object end{% endcomment %}
-  {% render 'gp-head' %}
+  <!--Gem_Page_Header_Script-->
+{% render 'gem-app-header-scripts' %}
+<!--End_Gem_Page_Header_Script-->
+{% render 'gp-head' %}
 </head>
+
+
+
+  <style class="chargezen"> 
+
+    .chargezen_purchaseBtnRadio.--selected, button.chargezen_atc {
+    background-color: #e8993c !important;}
+
+    .accordion .accordion_content:not(.no_height) {
+    padding: 15px 7% !important;
+    }
+
+    .sub_banner_wrapper .right_section {
+        max-width: 50% !important;
+    }
+    .logged_out_state a.login_button { 
+        background: #e8993c !important;
+    }
+    .chargezen_purchaseBtnCollectionBlock {
+        display: none !important;
+    }
+    button.Rise__widget-launcher.Rise__widget-launcher__Type__icon-text {
+        display: none;
+    }
+     #chargezenSectionBundleProductHeader > header > div.JroCDI8aEmtnqt5diaUu > ul > li:nth-child(2) > div > img, #chargezenSectionBundleProductHeader > header > div.JroCDI8aEmtnqt5diaUu > ul > li:nth-child(1) > div > img,  .chargezen_purchaseBtnCollectionBlock {
+        display: none !important;
+    }
+    button.wrapper-AtBcr.u-isActionable.u-textLeft.u-inlineBlock.u-borderNone.u-textBold.u-textNoWrap.Arrange.Arrange--middle.u-userLauncherColor {
+        display: none !important;
+    }
+  </style>
 
   <body
     class="template-{{ template.name }}"

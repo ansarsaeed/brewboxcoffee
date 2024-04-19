@@ -124,6 +124,10 @@
   ._collapse._active ._collapse__content{
     display:block;
   }
+     ._collapse ._collapse__content pre{
+          text-wrap: wrap;
+        font-family: 'Poppins';
+     }
   .section--compostion--container{
     background-color:#ffffff;
     padding:50px 30px;
@@ -307,12 +311,13 @@
     <div class="_collapse">
       <div class="_collapse__title">About The Farmer</div>
       <div class="_collapse__content">
-      {{ product.metafields.custom.about_farmer |  metafield_tag }}
+        <pre>{{  product.metafields.custom.about_farmer | metafield_tag }}</pre>
       </div>
     </div>
   </section>
   
   <script>
+
   (function(){
     let _collapse = document.querySelectorAll('.section--collapse ._collapse');
     _collapse.forEach((_col)=>{

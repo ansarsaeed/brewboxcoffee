@@ -95,7 +95,7 @@
     {{ 'theme.css' | asset_url | stylesheet_tag }}
 
     {% unless settings.reduce_animations %}
-      {{ 'ripple.css' | asset_url | stylesheet_tag }}
+      {{ 'ripple.css' | asset_url | stylesheet_tag: preload: true }}
     {% endunless %}
 
     {% comment %}Inject theme-object begin{% endcomment %}
@@ -122,8 +122,42 @@
       };
     </script>
     {% comment %}Inject theme-object end{% endcomment %}
-  {% render 'gp-head' %}
+  <!--Gem_Page_Header_Script-->
+{% render 'gem-app-header-scripts' %}
+<!--End_Gem_Page_Header_Script-->
+{% render 'gp-head' %}
 </head>
+
+
+
+  <style class="chargezen"> 
+
+    .chargezen_purchaseBtnRadio.--selected, button.chargezen_atc {
+    background-color: #e8993c !important;}
+
+    .accordion .accordion_content:not(.no_height) {
+    padding: 15px 7% !important;
+    }
+
+    .sub_banner_wrapper .right_section {
+        max-width: 50% !important;
+    }
+    .logged_out_state a.login_button { 
+        background: #e8993c !important;
+    }
+    .chargezen_purchaseBtnCollectionBlock {
+        display: none !important;
+    }
+    button.Rise__widget-launcher.Rise__widget-launcher__Type__icon-text {
+        display: none;
+    }
+     #chargezenSectionBundleProductHeader > header > div.JroCDI8aEmtnqt5diaUu > ul > li:nth-child(2) > div > img, #chargezenSectionBundleProductHeader > header > div.JroCDI8aEmtnqt5diaUu > ul > li:nth-child(1) > div > img,  .chargezen_purchaseBtnCollectionBlock {
+        display: none !important;
+    }
+    button.wrapper-AtBcr.u-isActionable.u-textLeft.u-inlineBlock.u-borderNone.u-textBold.u-textNoWrap.Arrange.Arrange--middle.u-userLauncherColor {
+        display: none !important;
+    }
+  </style>
 
   <body
     class="template-{{ template.name }}"
@@ -578,31 +612,6 @@
         )()
       </script>
     {% endunless %}
-
-    {%- if settings.minify_scripts -%}
-      <script
-        src="{{ 'empire.min.js' | asset_url }}"
-        data-scripts
-        data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
-        data-shopify-countries="/services/javascripts/countries.js"
-        data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
-        data-shopify-cart="{{ 'jquery.cart.js' | asset_url }}"
-        data-pxu-polyfills="{{ 'polyfills.min.js' | asset_url }}"
-        async
-      ></script>
-    {%- else -%}
-      <script
-        src="{{ 'empire.js' | asset_url }}"
-        data-scripts
-        data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
-        data-shopify-countries="/services/javascripts/countries.js"
-        data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
-        data-shopify-cart="{{ 'jquery.cart.js' | asset_url }}"
-        data-pxu-polyfills="{{ 'polyfills.min.js' | asset_url }}"
-        async
-      ></script>
-    {%- endif -%}
-
     {% render 'structured-data' %}
 
     <script>
@@ -636,15 +645,15 @@
                let customScript2 = document.createElement("script");
                customScript2.src = 'https:\/\/geolocation-recommendations.shopifyapps.com\/locale_bar\/script.js?shop=brew-box-coffee.myshopify.com';
                document.head.appendChild(customScript2);
-               let customScript2 = document.createElement("script");
-               customScript2.src = 'https:\/\/d217z8zw4dqir.cloudfront.net\/script_tags\/loop_snippets?shop=brew-box-coffee.myshopify.com';
-               document.head.appendChild(customScript2);
-               let customScript2 = document.createElement("script");
-               customScript2.src = 'https:\/\/static.klaviyo.com\/onsite\/js\/klaviyo.js?company_id=LFCj4C\u0026shop=brew-box-coffee.myshopify.com';
-               document.head.appendChild(customScript2);
-               let customScript2 = document.createElement("script");
-               customScript2.src = 'https:\/\/js.convertflow.co\/production\/websites\/59300.js?shop=brew-box-coffee.myshopify.com';
-               document.head.appendChild(customScript2);
+               let customScript3 = document.createElement("script");
+               customScript3.src = 'https:\/\/d217z8zw4dqir.cloudfront.net\/script_tags\/loop_snippets?shop=brew-box-coffee.myshopify.com';
+               document.head.appendChild(customScript3);
+               let customScript4 = document.createElement("script");
+               customScript4.src = 'https:\/\/static.klaviyo.com\/onsite\/js\/klaviyo.js?company_id=LFCj4C\u0026shop=brew-box-coffee.myshopify.com';
+               document.head.appendChild(customScript4);
+               let customScript5 = document.createElement("script");
+               customScript5.src = 'https:\/\/js.convertflow.co\/production\/websites\/59300.js?shop=brew-box-coffee.myshopify.com';
+               document.head.appendChild(customScript5);
                scriptLoaded = true;
                clearTimeout(interactionTimeout);
              }
@@ -661,5 +670,57 @@
            }, 16000); 
          });
     </script>
-  </body>
+  <!--Gem_Page_Footer_Script-->
+  {%- liquid
+    assign gpTemplateSuffix = template.suffix
+    assign arrSplitSuffix = gpTemplateSuffix | split: '-'
+    if gpTemplateSuffix contains 'gem-' and gpTemplateSuffix contains '-template' and arrSplitSuffix.size == 3
+      assign isV6GpTemplate = true
+    endif
+    assign gpShopMeta = shop.metafields.gempages
+    if gpShopMeta
+      if gpShopMeta['productV6-default'] == 'true' and request.page_type == 'product'
+        assign isProductDefault = true
+      endif
+      if gpShopMeta['collectionV6-default'] == 'true' and request.page_type == 'collection'
+        assign isCollectionDefault = true
+      endif
+      if gpShopMeta['indexV6-default'] == 'true' and request.page_type == 'index'
+        assign isIndexDefault = true
+      endif
+      if isProductDefault or isCollectionDefault or isIndexDefault or isPreviewV6
+        assign isV6GpTemplate = true
+      endif
+    endif
+  %}
+  {% if isV6GpTemplate %}
+    {% render 'gem-app-footer-scripts', GEM_FOOTER_SCRIPT: GEM_FOOTER_SCRIPT %}
+  {% endif %}
+<!--End_Gem_Page_Footer_Script-->
+          
+    {%- if settings.minify_scripts -%}
+        <script defer  
+        src="{{ 'empire.min.js' | asset_url }}"
+        data-scripts
+        data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
+        data-shopify-countries="/services/javascripts/countries.js"
+        data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
+        data-shopify-cart="{{ 'jquery.cart.js' | asset_url }}"
+        data-pxu-polyfills="{{ 'polyfills.min.js' | asset_url }}"
+        
+      ></script>
+    {%- else -%}
+      <script
+        src="{{ 'empire.js' | asset_url }}"
+        data-scripts
+        data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
+        data-shopify-countries="/services/javascripts/countries.js"
+        data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
+        data-shopify-cart="{{ 'jquery.cart.js' | asset_url }}"
+        data-pxu-polyfills="{{ 'polyfills.min.js' | asset_url }}"
+        async
+      ></script>
+    {%- endif -%}
+
+</body>
 </html>

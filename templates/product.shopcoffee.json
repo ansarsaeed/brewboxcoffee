@@ -23,8 +23,15 @@
           "settings": {
           }
         },
+        "chargezen_revenueos_purchase_widgets_kJFmfW": {
+          "type": "shopify://apps/chargezen-revenueos/blocks/purchase-widgets/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
+          "settings": {
+            "widget_design": "default"
+          }
+        },
         "form": {
           "type": "form",
+          "disabled": true,
           "settings": {
             "enable_local_pickup": true,
             "show_gift_card_recipient_form": false
@@ -41,6 +48,7 @@
         "vendor",
         "short_description_ey4pnJ",
         "rating",
+        "chargezen_revenueos_purchase_widgets_kJFmfW",
         "form",
         "share"
       ],

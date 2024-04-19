@@ -59,15 +59,15 @@
     "product_grid_show_second_image": true,
     "product_grid_image_style": "natural",
     "product_grid_enable_quickshop": false,
-    "social_instagram": "https:\/\/www.instagram.com\/brewboxcoffee_\/",
+    "social_instagram": "https://www.instagram.com/brewboxcoffee_/",
     "social_linkedin": "",
-    "social_tiktok": "https:\/\/www.tiktok.com\/@brewboxcoffee",
+    "social_tiktok": "https://www.tiktok.com/@brewboxcoffee",
     "social_tumblr": "",
     "social_vimeo": "",
     "social_youtube": "",
-    "favicon": "shopify:\/\/shop_images\/variation.png",
+    "favicon": "shopify://shop_images/variation.png",
     "enable_checkout_lock_icon": false,
-    "continue_shopping_url": "shopify:\/\/collections\/all",
+    "continue_shopping_url": "shopify://collections/all",
     "continue_url_cart": true,
     "continue_url_404": true,
     "enable_back_to_top_button": true,
@@ -102,7 +102,7 @@
     ],
     "blocks": {
       "15683396631634586217": {
-        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": true,
         "settings": {
           "button_color": "#e8993c",
@@ -114,15 +114,22 @@
         }
       },
       "11945366711752539959": {
-        "type": "shopify:\/\/apps\/zendesk\/blocks\/zendesk_web_widget\/c0b417b1-b90b-4754-baaf-f55627e6acd4",
+        "type": "shopify://apps/zendesk/blocks/zendesk_web_widget/c0b417b1-b90b-4754-baaf-f55627e6acd4",
         "disabled": true,
         "settings": {
         }
       },
       "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": true,
         "settings": {
+        }
+      },
+      "3107421121686535598": {
+        "type": "shopify://apps/chargezen-revenueos/blocks/chargezen-main/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
+        "disabled": false,
+        "settings": {
+          "widget_design": "bundle21"
         }
       }
     }
@@ -192,7 +199,7 @@
       "social_youtube": "",
       "social_linkedin": "",
       "enable_checkout_lock_icon": false,
-      "continue_shopping_url": "shopify:\/\/collections\/all",
+      "continue_shopping_url": "shopify://collections/all",
       "continue_url_cart": true,
       "continue_url_404": true,
       "product_enable_recently_viewed_products": true,
@@ -276,7 +283,7 @@
       "swatches_product_page_size": 64,
       "swatches_option_style": "color_swatch",
       "enable_checkout_lock_icon": false,
-      "continue_shopping_url": "shopify:\/\/collections\/all",
+      "continue_shopping_url": "shopify://collections/all",
       "continue_url_cart": true,
       "continue_url_404": true,
       "product_enable_recently_viewed_products": true,
@@ -448,7 +455,7 @@
       "swatches_option_style": "color_swatch",
       "swatches_custom_colors": "",
       "enable_checkout_lock_icon": false,
-      "continue_shopping_url": "shopify:\/\/collections\/all",
+      "continue_shopping_url": "shopify://collections/all",
       "continue_url_cart": true,
       "continue_url_404": true,
       "product_enable_recently_viewed_products": true,

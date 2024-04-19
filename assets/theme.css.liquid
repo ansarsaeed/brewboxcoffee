@@ -7326,7 +7326,11 @@ body .mdc-ripple-surface:hover:before {
 }
 .collection-list__content[data-layout=grid].collection--image-crop-round .collection__item-image {
   height: auto;
+  min-height: 303px;
+  display: flex;
+  justify-content: center;
   border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 @media screen and (min-width: 1024px) {
   .collection-list__content[data-layout=grid] {

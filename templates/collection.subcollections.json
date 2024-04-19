@@ -1,1 +1,117 @@
-{"sections":{"main":{"type":"static-subcollections-featured-collection","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "static-subcollections-featured-collection",
+      "disabled": true,
+      "settings": {
+        "show_breadcrumbs": true,
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "show_subcollection_menu": true,
+        "layout": "slideshow",
+        "mobile_layout": "slideshow",
+        "product_count": 4,
+        "cta_label": "Shop all",
+        "shop_all_card_enable": true,
+        "shop_all_card_text_color": "#ffffff",
+        "shop_all_card_background_color": "#047084",
+        "enable_full_width_on_mobile": false
+      }
+    },
+    "dynamic_collection_list_9JG3t8": {
+      "type": "dynamic-collection-list",
+      "blocks": {
+        "collection_nDiH7d": {
+          "type": "collection",
+          "settings": {
+            "collection": "espresso-machines",
+            "title": ""
+          }
+        },
+        "collection_tPmELY": {
+          "type": "collection",
+          "settings": {
+            "collection": "brew-equipment-brew-equipment",
+            "title": ""
+          }
+        },
+        "collection_BfMgpV": {
+          "type": "collection",
+          "settings": {
+            "collection": "coffee-grinders",
+            "title": ""
+          }
+        },
+        "collection_yda8xx": {
+          "type": "collection",
+          "settings": {
+            "collection": "coffee-brewers-filters",
+            "title": ""
+          }
+        },
+        "collection_hnBy7R": {
+          "type": "collection",
+          "settings": {
+            "collection": "filter-papers",
+            "title": ""
+          }
+        },
+        "collection_ankwJQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "scales",
+            "title": ""
+          }
+        },
+        "collection_dciCJD": {
+          "type": "collection",
+          "settings": {
+            "collection": "espresso-accessories",
+            "title": ""
+          }
+        },
+        "collection_FgD9Qa": {
+          "type": "collection",
+          "settings": {
+            "collection": "pouring-kettles-and-decanters",
+            "title": ""
+          }
+        },
+        "collection_Qetz9k": {
+          "type": "collection",
+          "settings": {
+            "collection": "merchandise",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_nDiH7d",
+        "collection_tPmELY",
+        "collection_BfMgpV",
+        "collection_yda8xx",
+        "collection_hnBy7R",
+        "collection_ankwJQ",
+        "collection_dciCJD",
+        "collection_FgD9Qa",
+        "collection_Qetz9k"
+      ],
+      "custom_css": [
+        ".button-primary{display: none; }"
+      ],
+      "settings": {
+        "title": "Coffee Equipment",
+        "thumbnail_columns_desktop": 5,
+        "thumbnail_columns_mobile": 2,
+        "image-crop": "round",
+        "cta_label": "View All",
+        "cta_link": "",
+        "cta_button_style": "primary"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dynamic_collection_list_9JG3t8"
+  ]
+}

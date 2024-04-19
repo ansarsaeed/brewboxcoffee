@@ -15,6 +15,7 @@
         },
         "price_rwHWkm": {
           "type": "price",
+          "disabled": true,
           "settings": {
           }
         },
@@ -30,9 +31,16 @@
         },
         "form": {
           "type": "form",
+          "disabled": true,
           "settings": {
             "enable_local_pickup": true,
             "show_gift_card_recipient_form": false
+          }
+        },
+        "chargezen_revenueos_purchase_widgets_ihijKV": {
+          "type": "shopify://apps/chargezen-revenueos/blocks/purchase-widgets/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
+          "settings": {
+            "widget_design": "gift12"
           }
         },
         "share": {
@@ -48,6 +56,7 @@
         "description_QTPxna",
         "rating",
         "form",
+        "chargezen_revenueos_purchase_widgets_ihijKV",
         "share"
       ],
       "settings": {
