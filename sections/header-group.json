@@ -1,1 +1,80 @@
-{"type":"header","name":"Header","sections":{"announcement-bar":{"type":"static-announcement","settings":{"show_announcement":true,"homepage_announcement":false,"announcement_text":"Next Brew Box Shipment Date -> 20th March 2024 🗓","announcement_text_mobile":"Next Brew Box Shipment Date -> 20th March 2024 🗓","announcement_link":"","announcement_color":"#000000","announcement_background":"#f5f3ed"}},"utility-bar":{"type":"static-utility-bar","settings":{"use_full_width":false,"background_color":"#e8993c","link_color":"#ffffff","link_hover_color":"#ffffff","border_color":"rgba(0,0,0,0)","menu":"","show_menu_mobile":true,"mobile_layout":"below","show_locale_selector":true,"show_currency_selector":true,"show_social_icons":true}},"header":{"type":"static-header","blocks":{"d172b3cb-cc31-4a5c-9075-42a19cee0074":{"type":"multi_column_menu","settings":{"menu_trigger":"Shop Equipment"}},"fb490afd-192f-476b-a011-c9aaac38f1e5":{"type":"multi_column_menu","settings":{"menu_trigger":"Learn"}}},"block_order":["d172b3cb-cc31-4a5c-9075-42a19cee0074","fb490afd-192f-476b-a011-c9aaac38f1e5"],"settings":{"sticky_header":true,"full_width_header":true,"logo":"shopify:\/\/shop_images\/submark_orange.png","logo_height":63,"logo_width":190,"filter_search_by":"product_type","enable_live_search":true,"show_mobile_search_bar":true,"enable_live_search_images":true,"quick_links":"main-menu","menu":"main-menu","secondary_menu":"get-started","small_promo_heading":"Manage Subscription","small_promo_text":"","small_promo_text_mobile":"","small_promo_link":"https:\/\/www.brewboxcoffee.ie\/a\/loop_subscriptions\/get-subscription-link","small_promo_icon":"icon-lock","cart_icon":"icon-cart"}}},"order":["announcement-bar","utility-bar","header"]}
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement-bar": {
+      "type": "static-announcement",
+      "settings": {
+        "show_announcement": true,
+        "homepage_announcement": false,
+        "announcement_text": "Next Brew Box Shipment Date -> 1st May 2024 🗓",
+        "announcement_text_mobile": "Next Brew Box Shipment Date -> 1st May 2024 🗓",
+        "announcement_link": "",
+        "announcement_color": "#000000",
+        "announcement_background": "#f5f3ed"
+      }
+    },
+    "utility-bar": {
+      "type": "static-utility-bar",
+      "settings": {
+        "use_full_width": false,
+        "background_color": "#e8993c",
+        "link_color": "#ffffff",
+        "link_hover_color": "#ffffff",
+        "border_color": "rgba(0,0,0,0)",
+        "menu": "",
+        "show_menu_mobile": true,
+        "mobile_layout": "below",
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "show_social_icons": true
+      }
+    },
+    "header": {
+      "type": "static-header",
+      "blocks": {
+        "d172b3cb-cc31-4a5c-9075-42a19cee0074": {
+          "type": "multi_column_menu",
+          "settings": {
+            "menu_trigger": "Shop Equipment"
+          }
+        },
+        "fb490afd-192f-476b-a011-c9aaac38f1e5": {
+          "type": "multi_column_menu",
+          "settings": {
+            "menu_trigger": "Learn"
+          }
+        }
+      },
+      "block_order": [
+        "d172b3cb-cc31-4a5c-9075-42a19cee0074",
+        "fb490afd-192f-476b-a011-c9aaac38f1e5"
+      ],
+      "settings": {
+        "sticky_header": true,
+        "full_width_header": true,
+        "logo": "shopify://shop_images/submark_orange.png",
+        "logo_height": 63,
+        "logo_width": 190,
+        "filter_search_by": "product_type",
+        "enable_live_search": true,
+        "show_mobile_search_bar": false,
+        "enable_live_search_images": true,
+        "quick_links": "",
+        "menu": "main-menu-2",
+        "secondary_menu": "main-menu",
+        "small_promo_heading": "Manage Subscription",
+        "small_promo_text": "",
+        "small_promo_text_mobile": "",
+        "small_promo_link": "https://www.brewboxcoffee.ie/pages/portal",
+        "small_promo_icon": "icon-lock",
+        "cart_icon": "icon-cart"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "utility-bar",
+    "header"
+  ]
+}

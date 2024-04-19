@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1711452656eeca69fd": {
+      "type": "apps",
+      "blocks": {
+        "chargezen_revenueos_headless_passwordless_login_n88aMG": {
+          "type": "shopify://apps/chargezen-revenueos/blocks/headless-passwordless-login/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
+          "settings": {
+            "selected_page_handle": "passwordless-login"
+          }
+        },
+        "chargezen_revenueos_referrals2_6Hx6AV": {
+          "type": "shopify://apps/chargezen-revenueos/blocks/referrals2/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
+          "settings": {
+            "selected_page_handle": "referrals"
+          }
+        },
+        "chargezen_revenueos_headless_master_DMaL4e": {
+          "type": "shopify://apps/chargezen-revenueos/blocks/headless-master/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
+          "settings": {
+            "selected_page_handle": "portal"
+          }
+        },
+        "chargezen_revenueos_rewards_qgiHz8": {
+          "type": "shopify://apps/chargezen-revenueos/blocks/rewards/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
+          "settings": {
+            "selected_page_handle": "rewards"
+          }
+        }
+      },
+      "block_order": [
+        "chargezen_revenueos_headless_passwordless_login_n88aMG",
+        "chargezen_revenueos_referrals2_6Hx6AV",
+        "chargezen_revenueos_headless_master_DMaL4e",
+        "chargezen_revenueos_rewards_qgiHz8"
+      ],
+      "settings": {
+        "include_padding": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1711452656eeca69fd"
+  ]
+}

@@ -1,76 +1,84 @@
 {
-    "sections": {
-      "main": {
-        "type": "update-static-product",
-        "blocks": {
-          "title": {
-            "type": "title",
-            "settings": {
-            }
-          },
-          "vendor": {
-            "type": "vendor",
-            "settings": {
-            }
-          },
-          "short_description_ey4pnJ": {
-            "type": "short-description",
-            "settings": {
-            }
-          },
-          "rating": {
-            "type": "rating",
-            "settings": {
-            }
-          },
-          "form": {
-            "type": "form",
-            "settings": {
-              "enable_local_pickup": true,
-              "show_gift_card_recipient_form": false
-            }
-          },
-          "share": {
-            "type": "share",
-            "settings": {
-            }
+  "sections": {
+    "main": {
+      "type": "update-static-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
           }
         },
-        "block_order": [
-          "title",
-          "vendor",
-          "short_description_ey4pnJ",
-          "rating",
-          "form",
-          "share"
-        ],
-        "settings": {
-          "gallery_aspect_ratio": "natural",
-          "gallery_image_crop": false,
-          "gallery_thumbnail_position": "below",
-          "gallery_video_autoplay": true,
-          "gallery_video_looping": true,
-          "gallery_hover_zoom": "disabled",
-          "gallery_click_to_zoom": "always"
+        "vendor": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "short_description_ey4pnJ": {
+          "type": "short-description",
+          "settings": {
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+          }
+        },
+        "chargezen_revenueos_purchase_widgets_kJFmfW": {
+          "type": "shopify://apps/chargezen-revenueos/blocks/purchase-widgets/f1ee8f54-2fff-44b7-86f2-22e5d6e9aa88",
+          "settings": {
+            "widget_design": "default"
+          }
+        },
+        "form": {
+          "type": "form",
+          "disabled": true,
+          "settings": {
+            "enable_local_pickup": true,
+            "show_gift_card_recipient_form": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+          }
         }
       },
-      "recommendations": {
-        "type": "static-product-recommendations",
-        "settings": {
-          "show_product_recommendations": true,
-          "product_recommendations_heading": "You may also like"
-        }
-      },
-      "recently-viewed": {
-        "type": "static-recently-viewed",
-        "settings": {
-          "enable_recently_viewed_products": true
-        }
+      "block_order": [
+        "title",
+        "vendor",
+        "short_description_ey4pnJ",
+        "rating",
+        "chargezen_revenueos_purchase_widgets_kJFmfW",
+        "form",
+        "share"
+      ],
+      "settings": {
+        "gallery_aspect_ratio": "natural",
+        "gallery_image_crop": false,
+        "gallery_thumbnail_position": "below",
+        "gallery_video_autoplay": true,
+        "gallery_video_looping": true,
+        "gallery_hover_zoom": "disabled",
+        "gallery_click_to_zoom": "always"
       }
     },
-    "order": [
-      "main",
-      "recommendations",
-      "recently-viewed"
-    ]
-  }
+    "recommendations": {
+      "type": "static-product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like"
+      }
+    },
+    "recently-viewed": {
+      "type": "static-recently-viewed",
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations",
+    "recently-viewed"
+  ]
+}

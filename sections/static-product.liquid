@@ -12,7 +12,6 @@ span.atc-button--text .product__price {
   display:none;
 }
 {%  endstyle %}
-
 <script
   type="application/json"
   data-section-type="static-product"
@@ -50,7 +49,7 @@ span.atc-button--text .product__price {
 <section
   class="
     product__container
-    product__container--two-columns
+      product__container--two-columns
   "
   data-product-wrapper
 >
@@ -66,6 +65,7 @@ span.atc-button--text .product__price {
     gallery_hover_zoom: section.settings.gallery_hover_zoom
   %}
 </section>
+
 
 {% schema %}
 {
@@ -194,6 +194,12 @@ span.atc-button--text .product__price {
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type":"short-description",
+      "name":"Short Description",
+      "limit":1,
+      "settings": []
     },
     {
       "type": "collapsible-tab",

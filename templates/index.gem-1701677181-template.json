@@ -1,1 +1,397 @@
-{"sections":{"dynamic_promo_grid-2":{"type":"dynamic-promo-grid","blocks":{"promotion-1":{"type":"promotion","settings":{"image":"shopify:\/\/shop_images\/25-DSC07364_3bd5f6f5-87a0-45c4-9e2f-448c3a855e8a.jpg","title":"Selection Box","text":"12 x 50g bags of wholebean filter coffee all from Irish Roasters","color":"#ffffff","block_link":"shopify:\/\/products\/brew-box-christmas-coffee-selection-box","button_text":"Shop Now","button_style":"secondary","show_overlay":false,"background":"rgba(0,0,0,0)","opacity":50}},"promotion-2":{"type":"promotion","settings":{"image":"shopify:\/\/shop_images\/70-DSC07412_aaf8bd11-dade-4164-9fad-0fc116bf6405.jpg","title":"Advent Calendar","text":"24 x 50g bags of wholebean filter coffee all from Irish and International Roasters","color":"#ffffff","block_link":"shopify:\/\/products\/brew-box-christmas-coffee-advent-calender","button_text":"Shop Now","button_style":"primary","show_overlay":false,"background":"rgba(0,0,0,0)","opacity":50}}},"block_order":["promotion-1","promotion-2"],"disabled":true,"settings":{"title":"Give the Coffee Lover the Perfect Gift this Christmas!","section_height":"large","section_columns":2,"text_alignment":"center-left"}},"dynamic_slideshow":{"type":"dynamic-slideshow","blocks":{"slide-1":{"type":"slide","settings":{"background_image":"shopify:\/\/shop_images\/Website_Banner_3.png","mobile_background_image":"shopify:\/\/shop_images\/Website_Banner_Instagram_Post_64045eff-197d-4867-b200-ce4d9544a73b.png","title":"Free Bag of Coffee with Every New Subscription!","text":"The best coffee is made at home.","color":"#e8993c","link":"https:\/\/brew-box-coffee.myshopify.com\/a\/loop_subscriptions\/bundle\/e057b154181a497689ebca271807abca","text_alignment":"left","button_one_label":"Our Coffee","button_one_link":"https:\/\/brew-box-coffee.myshopify.com\/a\/loop_subscriptions\/bundle\/e057b154181a497689ebca271807abca","button_one_style":"primary","button_two_label":"Give a Gift of Coffee","button_two_link":"shopify:\/\/products\/gift-subscription-test-product","button_two_style":"secondary","show_overlay":false,"overlay_color":"#000000","overlay_opacity":1}},"slide-2":{"type":"slide","disabled":true,"settings":{"background_image":"shopify:\/\/shop_images\/BrewBox-1.jpg","mobile_background_image":"shopify:\/\/shop_images\/DSCF7743copy.jpg","title":"Slide","text":"Introduce customers to your shop with lifestyle and product imagery","color":"#1d1d1d","link":"","text_alignment":"left","button_one_label":"Button","button_one_link":"","button_one_style":"primary","button_two_label":"","button_two_link":"","button_two_style":"primary","show_overlay":true,"overlay_color":"#000000","overlay_opacity":4}},"slide-3":{"type":"slide","disabled":true,"settings":{"background_image":"shopify:\/\/shop_images\/BrewBox-11.jpg","title":"Slide","text":"Introduce customers to your shop with lifestyle and product imagery","color":"#ffffff","link":"","text_alignment":"center","button_one_label":"Button","button_one_link":"","button_one_style":"primary","button_two_label":"","button_two_link":"","button_two_style":"secondary","show_overlay":true,"overlay_color":"#000000","overlay_opacity":20}},"slide-4":{"type":"slide","disabled":true,"settings":{"background_image":"shopify:\/\/shop_images\/BrewBox-18.jpg","title":"Slide","text":"Introduce customers to your shop with lifestyle and product imagery","color":"#1d1d1d","link":"","text_alignment":"left","button_one_label":"Button","button_one_link":"","button_one_style":"primary","button_two_label":"","button_two_link":"","button_two_style":"secondary","show_overlay":true,"overlay_color":"#000000","overlay_opacity":5}}},"block_order":["slide-1","slide-2","slide-3","slide-4"],"settings":{"enable_autoplay":true,"autoplay_duration":9,"slideshow_width":"full","slideshow_height":"medium","slideshow_height_mobile":"x-large","slideshow_text_below_image":false}},"dynamic_highlights_banner":{"type":"dynamic-highlights-banner","blocks":{"highlight-1":{"type":"highlight","settings":{"icon":"icon-delivery","image":"shopify:\/\/shop_images\/Box_original.png","title":"Next Day Shipping","text":"<p>We ship fresh coffee every 2 weeks or immediately if you are a new sign up!<\/p>","link":""}},"highlight-2":{"type":"highlight","settings":{"icon":"icon-chat","image":"shopify:\/\/shop_images\/Moka_Pot_original.png","title":"Subscription Perks","text":"<p>We reward loyalty. Receive gifts every three months with your subscription through our Brew Crew Loyalty program!<\/p>","link":""}},"highlight-3":{"type":"highlight","settings":{"icon":"icon-delivery-door","image":"shopify:\/\/shop_images\/Coffee_Pot_original.png","title":"Roasted Fresh to Order","text":"<p>All coffee in our subscription is roasted just for you. <\/p>","link":""}}},"block_order":["highlight-1","highlight-2","highlight-3"],"settings":{"section_spacing":true,"section_width":"full-width","icon_layout":"center","color":"#1d1d1d","icon_color":"#ef54a7","background_color":"#ffffff","mobile_layout":"slider"}},"30d26274-370d-4eaa-bbfd-8895b6dc3b41":{"type":"dynamic-featured-product","blocks":{"template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-title-1":{"type":"title","settings":{}},"template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-price-1":{"type":"price","settings":{}},"template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-view-product-link-1":{"type":"view-product-link","settings":{"text":"Shop Now"}},"4c688a2d-b596-44e5-80d5-5989c34554cb":{"type":"key_details","settings":{"icon":"none","title":"","text":"<p>The Brew Box Selection Box contains:<\/p><ul><li>12 x 50g bags of <strong>wholebean<\/strong> filter coffee all from Irish Roasters<\/li><li>Free Brew Box Coffee Subscription (one delivery!)<\/li><li>Brew Recipes<\/li><li>Interactive QR codes for each coffee <\/li><\/ul>","text_color":"#1D1D1D","icon_color":"#1D1D1D","background_color":"#f5f3ed"}}},"block_order":["template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-title-1","template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-price-1","template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-view-product-link-1","4c688a2d-b596-44e5-80d5-5989c34554cb"],"settings":{"product":"brew-box-christmas-coffee-selection-box","gallery_aspect_ratio":"square","gallery_image_crop":true,"gallery_thumbnail_position":"below","gallery_video_autoplay":true,"gallery_video_looping":true,"gallery_hover_zoom":"disabled"}},"dynamic_promo_grid-3":{"type":"dynamic-promo-grid","blocks":{"promotion-1":{"type":"promotion","settings":{"image":"shopify:\/\/shop_images\/Green_Watercolor_Aesthetic_Linkedin_Banner.png","title":"","text":"","color":"#1e1e1e","block_link":"","button_text":"","button_style":"primary","show_overlay":false,"background":"","opacity":1}}},"block_order":["promotion-1"],"settings":{"title":"","section_height":"natural","section_columns":1,"text_alignment":"center-center"}},"dynamic_shoppable_image":{"type":"dynamic-shoppable-image","settings":{"title":"","image":"shopify:\/\/shop_images\/Screenshot_2023-11-18_at_09.51.01.png","image_width":"half","link_text":"View product","textbox_title":"Europe's Best Roasters 🤝","textbox_subheading":"<p>Discover 100+ unique speciality coffees from Europe's top coffee roasters every month. Coffee is roasted and shipped fresh. <\/p>","textbox_button_label":"Get started","textbox_button_link":"https:\/\/brew-box-coffee.myshopify.com\/a\/loop_subscriptions\/bundle\/e057b154181a497689ebca271807abca","textbox_button_style":"primary","textbox_text_alignment":"center","textbox_text_position":"left"}},"dynamic_testimonials":{"type":"dynamic-testimonials","blocks":{"testimonial-1":{"type":"testimonial","settings":{"star_rating":"5","text":"<p>I am delighted with our new Sage Bambino Plus espresso machine. It brews great coffee, its a high quality machine, it runs smoothly, and isn’t loud!<br\/><\/p>","author":""}},"testimonial-2":{"type":"testimonial","settings":{"star_rating":"5","text":"<p>Thank you to Brew Box for the fast shipping and the great online price!<\/p>","author":""}},"testimonial-3":{"type":"testimonial","settings":{"star_rating":"4.5","text":"<p>Brilliant coffee subscription company and I've only had good experiences with Brew Box!<br\/>Absolutely loved the coffees that I've tried of theirs.<\/p>","author":""}},"testimonial-4":{"type":"testimonial","settings":{"star_rating":"4.5","text":"<p>I absolutely love this subscription service - its a great way to try new coffee brands and the guys in brew box have been so helpful in recommending products! Great gift idea also.<\/p>","author":""}},"85839b59-f23e-495d-b4c8-371e17f6f138":{"type":"testimonial","settings":{"star_rating":"4.5","text":"<p> \"I've never tasted coffee this good. The subscription is a game-changer!\" <\/p>","author":""}},"testimonial-5":{"type":"testimonial","disabled":true,"settings":{"star_rating":"4.5","text":"<p>Add customer reviews and testimonials to showcase your store's happy customers.<\/p>","author":"<p>Author's name<\/p>"}},"testimonial-6":{"type":"testimonial","disabled":true,"settings":{"star_rating":"4.5","text":"<p>Add customer reviews and testimonials to showcase your store's happy customers.<\/p>","author":"<p>Author's name<\/p>"}}},"block_order":["testimonial-1","testimonial-2","testimonial-3","testimonial-4","85839b59-f23e-495d-b4c8-371e17f6f138","testimonial-5","testimonial-6"],"settings":{"title":"Testimonials","image_crop":"rounded","text_size":"large"}},"dynamic_search":{"type":"dynamic-search","disabled":true,"settings":{"title":"Search","placeholder":"What are you looking for?","filter_search_by":"disabled","enable_live_search":true,"enable_live_search_images":false,"show-overlay":false,"color":"#ffffff","background":"#000000","opacity":50}}},"order":["dynamic_promo_grid-2","dynamic_slideshow","dynamic_highlights_banner","30d26274-370d-4eaa-bbfd-8895b6dc3b41","dynamic_promo_grid-3","dynamic_shoppable_image","dynamic_testimonials","dynamic_search"]}
+{
+  "sections": {
+    "dynamic_promo_grid-2": {
+      "type": "dynamic-promo-grid",
+      "blocks": {
+        "promotion-1": {
+          "type": "promotion",
+          "settings": {
+            "image": "shopify://shop_images/25-DSC07364_3bd5f6f5-87a0-45c4-9e2f-448c3a855e8a.jpg",
+            "title": "Selection Box",
+            "text": "12 x 50g bags of wholebean filter coffee all from Irish Roasters",
+            "color": "#ffffff",
+            "block_link": "shopify://products/brew-box-christmas-coffee-selection-box",
+            "button_text": "Shop Now",
+            "button_style": "secondary",
+            "show_overlay": false,
+            "background": "rgba(0,0,0,0)",
+            "opacity": 50
+          }
+        },
+        "promotion-2": {
+          "type": "promotion",
+          "settings": {
+            "image": "shopify://shop_images/70-DSC07412_aaf8bd11-dade-4164-9fad-0fc116bf6405.jpg",
+            "title": "Advent Calendar",
+            "text": "24 x 50g bags of wholebean filter coffee all from Irish and International Roasters",
+            "color": "#ffffff",
+            "block_link": "shopify://products/brew-box-christmas-coffee-advent-calender",
+            "button_text": "Shop Now",
+            "button_style": "primary",
+            "show_overlay": false,
+            "background": "rgba(0,0,0,0)",
+            "opacity": 50
+          }
+        }
+      },
+      "block_order": [
+        "promotion-1",
+        "promotion-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Give the Coffee Lover the Perfect Gift this Christmas!",
+        "section_height": "large",
+        "section_columns": 2,
+        "text_alignment": "center-left"
+      }
+    },
+    "dynamic_slideshow": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "slide-1": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/Website_Banner_3.png",
+            "mobile_background_image": "shopify://shop_images/Website_Banner_Instagram_Post_64045eff-197d-4867-b200-ce4d9544a73b.png",
+            "title": "Free Bag of Coffee with Every New Subscription!",
+            "text": "The best coffee is made at home.",
+            "color": "#e8993c",
+            "link": "https://brew-box-coffee.myshopify.com/a/loop_subscriptions/bundle/e057b154181a497689ebca271807abca",
+            "text_alignment": "left",
+            "button_one_label": "Our Coffee",
+            "button_one_link": "https://brew-box-coffee.myshopify.com/a/loop_subscriptions/bundle/e057b154181a497689ebca271807abca",
+            "button_one_style": "primary",
+            "button_two_label": "Give a Gift of Coffee",
+            "button_two_link": "shopify://products/gift-coffee-subscription",
+            "button_two_style": "secondary",
+            "show_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 1
+          }
+        },
+        "slide-2": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "background_image": "shopify://shop_images/BrewBox-1.jpg",
+            "mobile_background_image": "shopify://shop_images/DSCF7743copy.jpg",
+            "title": "Slide",
+            "text": "Introduce customers to your shop with lifestyle and product imagery",
+            "color": "#1d1d1d",
+            "link": "",
+            "text_alignment": "left",
+            "button_one_label": "Button",
+            "button_one_link": "",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 4
+          }
+        },
+        "slide-3": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "background_image": "shopify://shop_images/BrewBox-11.jpg",
+            "title": "Slide",
+            "text": "Introduce customers to your shop with lifestyle and product imagery",
+            "color": "#ffffff",
+            "link": "",
+            "text_alignment": "center",
+            "button_one_label": "Button",
+            "button_one_link": "",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "secondary",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        },
+        "slide-4": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "background_image": "shopify://shop_images/BrewBox-18.jpg",
+            "title": "Slide",
+            "text": "Introduce customers to your shop with lifestyle and product imagery",
+            "color": "#1d1d1d",
+            "link": "",
+            "text_alignment": "left",
+            "button_one_label": "Button",
+            "button_one_link": "",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "secondary",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 5
+          }
+        }
+      },
+      "block_order": [
+        "slide-1",
+        "slide-2",
+        "slide-3",
+        "slide-4"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 9,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": false
+      }
+    },
+    "dynamic_highlights_banner": {
+      "type": "dynamic-highlights-banner",
+      "blocks": {
+        "highlight-1": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery",
+            "image": "shopify://shop_images/Box_original.png",
+            "title": "Next Day Shipping",
+            "text": "<p>We ship fresh coffee every 2 weeks or immediately if you are a new sign up!</p>",
+            "link": ""
+          }
+        },
+        "highlight-2": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-chat",
+            "image": "shopify://shop_images/Moka_Pot_original.png",
+            "title": "Subscription Perks",
+            "text": "<p>We reward loyalty. Receive gifts every three months with your subscription through our Brew Crew Loyalty program!</p>",
+            "link": ""
+          }
+        },
+        "highlight-3": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery-door",
+            "image": "shopify://shop_images/Coffee_Pot_original.png",
+            "title": "Roasted Fresh to Order",
+            "text": "<p>All coffee in our subscription is roasted just for you. </p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight-1",
+        "highlight-2",
+        "highlight-3"
+      ],
+      "settings": {
+        "section_spacing": true,
+        "section_width": "full-width",
+        "icon_layout": "center",
+        "color": "#1d1d1d",
+        "icon_color": "#ef54a7",
+        "background_color": "#ffffff",
+        "mobile_layout": "slider"
+      }
+    },
+    "30d26274-370d-4eaa-bbfd-8895b6dc3b41": {
+      "type": "dynamic-featured-product",
+      "blocks": {
+        "template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-title-1": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-price-1": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-view-product-link-1": {
+          "type": "view-product-link",
+          "settings": {
+            "text": "Shop Now"
+          }
+        },
+        "4c688a2d-b596-44e5-80d5-5989c34554cb": {
+          "type": "key_details",
+          "settings": {
+            "icon": "none",
+            "title": "",
+            "text": "<p>The Brew Box Selection Box contains:</p><ul><li>12 x 50g bags of <strong>wholebean</strong> filter coffee all from Irish Roasters</li><li>Free Brew Box Coffee Subscription (one delivery!)</li><li>Brew Recipes</li><li>Interactive QR codes for each coffee </li></ul>",
+            "text_color": "#1D1D1D",
+            "icon_color": "#1D1D1D",
+            "background_color": "#f5f3ed"
+          }
+        }
+      },
+      "block_order": [
+        "template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-title-1",
+        "template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-price-1",
+        "template--20134917898565__30d26274-370d-4eaa-bbfd-8895b6dc3b41-view-product-link-1",
+        "4c688a2d-b596-44e5-80d5-5989c34554cb"
+      ],
+      "settings": {
+        "product": "brew-box-christmas-coffee-selection-box",
+        "gallery_aspect_ratio": "square",
+        "gallery_image_crop": true,
+        "gallery_thumbnail_position": "below",
+        "gallery_video_autoplay": true,
+        "gallery_video_looping": true,
+        "gallery_hover_zoom": "disabled"
+      }
+    },
+    "dynamic_promo_grid-3": {
+      "type": "dynamic-promo-grid",
+      "blocks": {
+        "promotion-1": {
+          "type": "promotion",
+          "settings": {
+            "image": "shopify://shop_images/Green_Watercolor_Aesthetic_Linkedin_Banner.png",
+            "title": "",
+            "text": "",
+            "color": "#1e1e1e",
+            "block_link": "",
+            "button_text": "",
+            "button_style": "primary",
+            "show_overlay": false,
+            "background": "",
+            "opacity": 1
+          }
+        }
+      },
+      "block_order": [
+        "promotion-1"
+      ],
+      "settings": {
+        "title": "",
+        "section_height": "natural",
+        "section_columns": 1,
+        "text_alignment": "center-center"
+      }
+    },
+    "dynamic_shoppable_image": {
+      "type": "dynamic-shoppable-image",
+      "settings": {
+        "title": "",
+        "image": "shopify://shop_images/Screenshot_2023-11-18_at_09.51.01.png",
+        "image_width": "half",
+        "link_text": "View product",
+        "textbox_title": "Europe's Best Roasters 🤝",
+        "textbox_subheading": "<p>Discover 100+ unique speciality coffees from Europe's top coffee roasters every month. Coffee is roasted and shipped fresh. </p>",
+        "textbox_button_label": "Get started",
+        "textbox_button_link": "https://brew-box-coffee.myshopify.com/a/loop_subscriptions/bundle/e057b154181a497689ebca271807abca",
+        "textbox_button_style": "primary",
+        "textbox_text_alignment": "center",
+        "textbox_text_position": "left"
+      }
+    },
+    "dynamic_testimonials": {
+      "type": "dynamic-testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "5",
+            "text": "<p>I am delighted with our new Sage Bambino Plus espresso machine. It brews great coffee, its a high quality machine, it runs smoothly, and isn’t loud!<br/></p>",
+            "author": ""
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "5",
+            "text": "<p>Thank you to Brew Box for the fast shipping and the great online price!</p>",
+            "author": ""
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.5",
+            "text": "<p>Brilliant coffee subscription company and I've only had good experiences with Brew Box!<br/>Absolutely loved the coffees that I've tried of theirs.</p>",
+            "author": ""
+          }
+        },
+        "testimonial-4": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.5",
+            "text": "<p>I absolutely love this subscription service - its a great way to try new coffee brands and the guys in brew box have been so helpful in recommending products! Great gift idea also.</p>",
+            "author": ""
+          }
+        },
+        "85839b59-f23e-495d-b4c8-371e17f6f138": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.5",
+            "text": "<p> \"I've never tasted coffee this good. The subscription is a game-changer!\" </p>",
+            "author": ""
+          }
+        },
+        "testimonial-5": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "star_rating": "4.5",
+            "text": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+            "author": "<p>Author's name</p>"
+          }
+        },
+        "testimonial-6": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "star_rating": "4.5",
+            "text": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+            "author": "<p>Author's name</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial-1",
+        "testimonial-2",
+        "testimonial-3",
+        "testimonial-4",
+        "85839b59-f23e-495d-b4c8-371e17f6f138",
+        "testimonial-5",
+        "testimonial-6"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "image_crop": "rounded",
+        "text_size": "large"
+      }
+    },
+    "dynamic_search": {
+      "type": "dynamic-search",
+      "disabled": true,
+      "settings": {
+        "title": "Search",
+        "placeholder": "What are you looking for?",
+        "filter_search_by": "disabled",
+        "enable_live_search": true,
+        "enable_live_search_images": false,
+        "show-overlay": false,
+        "color": "#ffffff",
+        "background": "#000000",
+        "opacity": 50
+      }
+    }
+  },
+  "order": [
+    "dynamic_promo_grid-2",
+    "dynamic_slideshow",
+    "dynamic_highlights_banner",
+    "30d26274-370d-4eaa-bbfd-8895b6dc3b41",
+    "dynamic_promo_grid-3",
+    "dynamic_shoppable_image",
+    "dynamic_testimonials",
+    "dynamic_search"
+  ]
+}

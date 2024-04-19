@@ -13,13 +13,18 @@
           "settings": {
           }
         },
-        "rating": {
-          "type": "rating",
+        "price_rwHWkm": {
+          "type": "price",
           "settings": {
           }
         },
-        "price": {
-          "type": "price",
+        "description_QTPxna": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "rating": {
+          "type": "rating",
           "settings": {
           }
         },
@@ -34,21 +39,16 @@
           "type": "share",
           "settings": {
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-          }
         }
       },
       "block_order": [
         "title",
         "vendor",
+        "price_rwHWkm",
+        "description_QTPxna",
         "rating",
-        "price",
         "form",
-        "share",
-        "description"
+        "share"
       ],
       "settings": {
         "gallery_aspect_ratio": "natural",
