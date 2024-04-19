@@ -9,56 +9,51 @@
         "btn-link": "#",
         "btn1-text": "One-off box",
         "btn1-link": "shopify://collections/our-coffee-menu",
-        "title": "Home to a growing pool of world class talent",
-        "text": "<p>In the mountainous land where precision meets passion lies Switzerland! For such a small nation, Switzerland is home to many talented coffee professionals and even <strong>a few world champions</strong>. The challenge for the rest of the world is in getting hold of the coffee itself, which is why we are very proud and excited to share some <strong>tasty and also highly inaccessible Swiss beans</strong>!</p>"
+        "title": "Toronto, Canada",
+        "text": "<p>One of Toronto's most exciting roasters at the moment! Subtext Coffee Roasters pushing the boundaries of coffee quality. Their focus is on highlighting biodiversity and the human labor behind each coffee cherry. They don't blend or rename coffees, nor do they roast dark, aiming to break away from practices that veil producers and priorities coffee's true quality.</p>"
       }
     },
     "section_brand_TnLg7p": {
       "type": "section-brand",
       "settings": {
-        "img": "shopify://shop_images/Mame_Coffee.webp",
+        "img": "shopify://shop_images/Subtext_4.jpg",
         "label": "01. Mame",
-        "title": "Mame Specialty Coffee",
-        "content": "<p>(Zürich, Switzerland)</p><p>MAME (meaning 'beans' in Japanese) is a roastery born from Emi Fukahori’s passion and Mathieu Theis's French flair in a place that has been elevating coffee to an art form in Zurich since 2016. <strong>MAME is internationally renowned</strong> in the specialty coffee world for their love for participating in coffee competitions with both Emi & Mathieu winning many including Mathieu’s <strong>World Barista Championship 3rd place</strong> and Emi’s <strong>World Brewers Cup Champion</strong> title in 2018. </p><p>The Ethiopia filter coffee Chelbesa in this set is of Mame’s love for distinct flavours and dedication to perfectionism. They are one of the roasters we’ve really wanted to work with for many years so we’re particularly excited about this opportunity to share these very special beans with you</p>",
-        "product": "imbibe-colombia-elpuente"
+        "title": "Toronto, Canada",
+        "content": "<p>One of Toronto's most exciting roasters at the moment! Subtext Coffee Roasters pushing the boundaries of coffee quality. Their focus is on highlighting biodiversity and the human labor behind each coffee cherry. They don't blend or rename coffees, nor do they roast dark, aiming to break away from practices that veil producers and priorities coffee's true quality.</p>",
+        "product": "donna-blend-espresso",
+        "product2": "carrow-coffee-quatro-fincas",
+        "product3": "manhattan-coffee-roasters-filter-diego-bermudez-colombia"
       }
     },
     "section_brand_TnLg8p": {
-        "type": "section-brand",
-        "settings": {
-          "img": "shopify://shop_images/Mame_Coffee.webp",
-          "label": "01. Mame",
-          "title": "Mame Specialty Coffee",
-          "content": "<p>(Zürich, Switzerland)</p><p>MAME (meaning 'beans' in Japanese) is a roastery born from Emi Fukahori’s passion and Mathieu Theis's French flair in a place that has been elevating coffee to an art form in Zurich since 2016. <strong>MAME is internationally renowned</strong> in the specialty coffee world for their love for participating in coffee competitions with both Emi & Mathieu winning many including Mathieu’s <strong>World Barista Championship 3rd place</strong> and Emi’s <strong>World Brewers Cup Champion</strong> title in 2018. </p><p>The Ethiopia filter coffee Chelbesa in this set is of Mame’s love for distinct flavours and dedication to perfectionism. They are one of the roasters we’ve really wanted to work with for many years so we’re particularly excited about this opportunity to share these very special beans with you</p>",
-          "product": "imbibe-colombia-elpuente"
-        }
+      "type": "section-brand",
+      "settings": {
+        "img": "shopify://shop_images/Andy_3.jpg",
+        "label": "02. Mame",
+        "title": "Mame Specialty Coffee",
+        "content": "<p>(Zürich, Switzerland)</p><p>MAME (meaning 'beans' in Japanese) is a roastery born from Emi Fukahori’s passion and Mathieu Theis's French flair in a place that has been elevating coffee to an art form in Zurich since 2016. <strong>MAME is internationally renowned</strong> in the specialty coffee world for their love for participating in coffee competitions with both Emi & Mathieu winning many including Mathieu’s <strong>World Barista Championship 3rd place</strong> and Emi’s <strong>World Brewers Cup Champion</strong> title in 2018. </p><p>The Ethiopia filter coffee Chelbesa in this set is of Mame’s love for distinct flavours and dedication to perfectionism. They are one of the roasters we’ve really wanted to work with for many years so we’re particularly excited about this opportunity to share these very special beans with you</p>",
+        "product": "coffee4",
+        "product2": "karimikui-kenya-espresso",
+        "product3": "colombia-aponte-filter"
+      }
     },
     "section_brand_TnLg1p": {
-        "type": "section-brand",
-        "settings": {
-          "img": "shopify://shop_images/Mame_Coffee.webp",
-          "label": "01. Mame",
-          "title": "Mame Specialty Coffee",
-          "content": "<p>(Zürich, Switzerland)</p><p>MAME (meaning 'beans' in Japanese) is a roastery born from Emi Fukahori’s passion and Mathieu Theis's French flair in a place that has been elevating coffee to an art form in Zurich since 2016. <strong>MAME is internationally renowned</strong> in the specialty coffee world for their love for participating in coffee competitions with both Emi & Mathieu winning many including Mathieu’s <strong>World Barista Championship 3rd place</strong> and Emi’s <strong>World Brewers Cup Champion</strong> title in 2018. </p><p>The Ethiopia filter coffee Chelbesa in this set is of Mame’s love for distinct flavours and dedication to perfectionism. They are one of the roasters we’ve really wanted to work with for many years so we’re particularly excited about this opportunity to share these very special beans with you</p>",
-          "product": "imbibe-colombia-elpuente"
-        }
-    },
-    "section_brand_TnLg2p": {
-        "type": "section-brand",
-        "settings": {
-          "img": "shopify://shop_images/Mame_Coffee.webp",
-          "label": "01. Mame",
-          "title": "Mame Specialty Coffee",
-          "content": "<p>(Zürich, Switzerland)</p><p>MAME (meaning 'beans' in Japanese) is a roastery born from Emi Fukahori’s passion and Mathieu Theis's French flair in a place that has been elevating coffee to an art form in Zurich since 2016. <strong>MAME is internationally renowned</strong> in the specialty coffee world for their love for participating in coffee competitions with both Emi & Mathieu winning many including Mathieu’s <strong>World Barista Championship 3rd place</strong> and Emi’s <strong>World Brewers Cup Champion</strong> title in 2018. </p><p>The Ethiopia filter coffee Chelbesa in this set is of Mame’s love for distinct flavours and dedication to perfectionism. They are one of the roasters we’ve really wanted to work with for many years so we’re particularly excited about this opportunity to share these very special beans with you</p>",
-          "product": "imbibe-colombia-elpuente"
-        }
+      "type": "section-brand",
+      "settings": {
+        "img": "shopify://shop_images/WCC_2.jpg",
+        "label": "03. Mame",
+        "title": "Mame Specialty Coffee",
+        "content": "<p>(Zürich, Switzerland)</p><p>MAME (meaning 'beans' in Japanese) is a roastery born from Emi Fukahori’s passion and Mathieu Theis's French flair in a place that has been elevating coffee to an art form in Zurich since 2016. <strong>MAME is internationally renowned</strong> in the specialty coffee world for their love for participating in coffee competitions with both Emi & Mathieu winning many including Mathieu’s <strong>World Barista Championship 3rd place</strong> and Emi’s <strong>World Brewers Cup Champion</strong> title in 2018. </p><p>The Ethiopia filter coffee Chelbesa in this set is of Mame’s love for distinct flavours and dedication to perfectionism. They are one of the roasters we’ve really wanted to work with for many years so we’re particularly excited about this opportunity to share these very special beans with you</p>",
+        "product": "teamwork-seasonal-espresso-guatemala",
+        "product2": "riripa-ethiopia-filter",
+        "product3": "imbibe-colombia-elpuente"
+      }
     }
   },
   "order": [
     "main",
     "section_brand_TnLg7p",
     "section_brand_TnLg8p",
-    "section_brand_TnLg1p",
-    "section_brand_TnLg2p"
+    "section_brand_TnLg1p"
   ]
 }
