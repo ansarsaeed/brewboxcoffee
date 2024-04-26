@@ -1,0 +1,105 @@
+{% style %}
+  #shopify-section-{{ section.id }} .collection-list__content {
+    display:grid;
+    grid-template-columns: repeat(5, minmax(auto, 1fr));
+  }
+
+  #shopify-section-{{ section.id }} .collection-list__content li img{
+    width:254px;
+    height:254px;
+    display:block;
+    margin:auto;
+    aspect-ratio:1;
+    object-size:cover;
+    transition:all .5s linear;
+  }
+  #shopify-section-{{ section.id }} .collection__item-image{
+    box-shadow:2px 2px 5px rgba(0, 0, 0, .2);
+    padding:5px;
+  }
+  #shopify-section-{{ section.id }} .collection__item-image:hover img{
+    transform:scale(1.15);
+  }
+
+  @media only screen and (max-width: 860px) {
+    #shopify-section-{{ section.id }} .collection-list__content {
+      grid-template-columns: repeat(2, minmax(auto, 1fr));
+    }
+  }
+{% endstyle %}
+<div id="shopify-section-{{ section.id }}">
+{% paginate collection.all_products by 250 %}
+<section class="collection-list__container">
+    <h2 class="home-section--title">Search By Brand</h2>
+    {% if collection.all_vendors.size > 0 %}
+        <ul
+            class="
+              home-section--content
+              collection-list__content
+              collection--image-crop-{{ section.settings.image-crop }}
+              {% if section.settings.cta_label == blank %}no-cta{% endif %}
+            "
+            data-layout="grid"
+          >
+            {%- for vendor in collection.all_vendors -%}
+                {%- assign products = collection.products | where: "vendor", vendor -%}
+                {% if products and products.size > 0 %}
+                    {% assign random_number = "now" | date: "%N" | modulo: products.size | plus: 0 %}
+                    {% assign _product = products[random_number]  %}
+                    {% assign random_col = "now" | date: "%N" | modulo:  _product.collections.size | plus: 0 %}
+                    {% assign _collection = _product.collections[random_col] %}
+                    {% assign collection = collections[_collection] %}
+                    {% assign collection_title = collection.title %}
+                    {% assign collection_url = collection.url %}
+
+                    {% assign featured_image = false %}
+                    {% assign featured_image_alt = '' %}
+
+                    {% if _product.featured_image %}
+                        {% assign featured_image = _product.featured_image %}
+                        {% assign featured_image_alt = _product.featured_image.alt | escape %}
+                    {% endif %}
+
+                    <li class="collection__item" >
+                        <a href="{{ collection.url }}">
+                          <figure class="collection__item-image">
+                              {% if featured_image and featured_image_alt %}
+                                <img src="{{ featured_image.src | img_url:'master' }}"
+                                    width="{{ featured_image.width }}"
+                                    height="{{ featured_image.height }}"
+                                    loading="lazy" />
+                              {% else %}
+                                {%- capture index -%}
+                                  {%- cycle '1', '2', '3', '4', '5', '6' -%}
+                                {%- endcapture -%}
+                                {{ 'collection-' | append: index | placeholder_svg_tag: 'placeholder--image' }}
+                              {% endif %}
+                          </figure>
+                      
+                          <span class="collection__item-info collection__item-title">
+                             {{ vendor }}
+                          </span>
+                        </a>
+                      </li>
+
+
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</section>
+{% endpaginate %}
+</div>
+
+{% schema %}
+{
+  "name": "Group By Collection",
+  "class": "section section-group-by",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Group By Collection"
+    }
+  ]
+}
+{% endschema %}
