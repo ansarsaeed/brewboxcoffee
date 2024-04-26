@@ -97,7 +97,7 @@
         "collection_Qetz9k"
       ],
       "custom_css": [
-        ".button-primary{display: none; }"
+        ".button-primary {display: none;}"
       ],
       "settings": {
         "title": "Coffee Equipment",
@@ -108,10 +108,16 @@
         "cta_link": "",
         "cta_button_style": "primary"
       }
+    },
+    "section_groub_by_collection_YjNeyV": {
+      "type": "section-groub-by-collection",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "dynamic_collection_list_9JG3t8"
+    "dynamic_collection_list_9JG3t8",
+    "section_groub_by_collection_YjNeyV"
   ]
 }
